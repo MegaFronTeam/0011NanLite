@@ -1,0 +1,41 @@
+mixin sPromotion(data)
+	// start sPromotion
+	+b.sPromotion.section#sPromotion&attributes(attributes)
+		.container
+			+e.slider--js.swiper
+				.swiper-wrapper
+					-for(i=0;i<5;i++)
+						+e.slide.swiper-slide
+							+e.img
+								.img-wrap-center
+									+img('img/@2x/promotion-img-1.jpg')
+							+e.content
+								.h2 Доверяйте ремонт техники только профессионалам Bosch
+								p Все заказы бытовой техники, оформленные в&nbsp;марте, будут доставлены на&nbsp;первой или второй неделе апреля по&nbsp;ранее согласованной и&nbsp;оплаченной стоимости. Надеемся на&nbsp;ваше понимание!
+							.timer(data-date='01.02.2050 10:50')
+								+icon('clock')
+								.timer__items
+									.timer__item.timer__days 00
+									.timer__item.timer__hours 00
+									.timer__item.timer__minutes 00
+									.timer__item.timer__seconds 00
+				+arrow()
+				.swiper-pagination
+			+e.row.row
+				.col-lg-3.col-sm-6
+					+item-prod('5', '', 'GBH 36 V-LI PLUS', 'Аккумуляторный шуруповерт')
+				.col-lg-3.col-sm-6
+					+item-prod('6', '', 'GBH 36 V-LI PLUS', 'Аккумуляторный шуруповерт')
+				.col-lg-3.col-sm-6
+					+item-prod('7', '', 'GBH 36 V-LI PLUS', 'Аккумуляторный шуруповерт')
+				.col-lg-3.col-sm-6
+					+item-prod('2', '', 'GBH 36 V-LI PLUS', 'Аккумуляторная угловая шлифмашина с X-LOCK')
+				.col-lg-3.col-sm-6
+					+item-prod('5', '', 'GBH 36 V-LI PLUS', 'Аккумуляторный шуруповерт')
+				.col-lg-3.col-sm-6
+					+item-prod('6', '', 'GBH 36 V-LI PLUS', 'Аккумуляторный шуруповерт')
+				.col-lg-3.col-sm-6
+					+item-prod('7', '', 'GBH 36 V-LI PLUS', 'Аккумуляторный шуруповерт')
+				.col-lg-3.col-sm-6
+					+item-prod('2', '', 'GBH 36 V-LI PLUS', 'Аккумуляторная угловая шлифмашина с X-LOCK')
+	// end sPromotion

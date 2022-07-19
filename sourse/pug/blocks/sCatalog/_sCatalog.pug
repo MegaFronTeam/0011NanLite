@@ -1,0 +1,166 @@
+mixin sCatalog(data)
+	// start sCatalog
+	+b.SECTION.sCatalog.section#sCatalog&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Хиты продаж
+	// end sCatalog
+
+mixin sCatalogHit(title='Хиты продаж')
+	// start sCatalog
+	+b.sCatalog.section#sCatalogHit&attributes(attributes)
+		.container
+			+b.section-title
+				h2!= title
+			+e.slider-wrappper
+				+e.slider--js.swiper
+					.swiper-wrapper
+						+e.slide.swiper-slide
+							+item-prod('1', 'slider', 'GBH 36 V-LI PLUS','Аккумуляторный шуруповерт')
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider', 'GBH 36 V-LI PLUS', 'Аккумуляторная угловая шлифмашина с X-LOCK')
+						+e.slide.swiper-slide
+							+item-prod('3', 'slider', 'GBH 36 V-LI PLUS', 'Клеевой пистолет')
+						+e.slide.swiper-slide
+							+item-prod('4', 'slider', 'GBH 36 V-LI PLUS', 'Аккумуляторная шуруповерт')
+				+arrow('d-none d-sm-flex')
+
+mixin sCatalogNew()
+	// start sCatalog
+	+b.sCatalog.section#sCatalog&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Новинки
+			+e.slider-wrappper
+				+e.slider--js.swiper
+					.swiper-wrapper
+						+e.slide.swiper-slide
+							+item-prod('1', 'slider', 'GBH 36 V-LI PLUS','Аккумуляторный шуруповерт','','','toBookmark')
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider', 'CB18DBL', 'Cordless Band Saw','','toCompare')
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider', 'CD3605DA')
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider', 'CD3605DA')
+						+e.slide.swiper-slide
+							+item-prod('2', 'slider')
+				+arrow('d-none d-sm-flex')
+
+mixin item-prod(i, slider, code='VB3616DA', t="MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender", hasOldPrice=true, toCompare, toBookmark)
+	+b.prod-item&attributes(attributes)
+		+e.links
+			if toCompare
+				+e.compare.--active(href="#")
+					+icon('bars')
+			else
+				+e.compare(href="#")
+					+icon('bars')
+			if toBookmark
+				+e.bookmarks.--active(href="#")
+					+icon('star')
+			else
+				+e.bookmarks(href="#")
+					+icon('star')
+		block
+		+e.A.img-link(href="#")
+			+e.img-wrap
+				if !slider
+					.img-wrap-center
+						img(loading="lazy" src=`img/@2x/hit-${i}.png`, alt="")
+				else
+					.img-wrap-center
+						img.swiper-lazy(src="#" data-src=`img/@2x/hit-${i}.png`, alt="")
+			+e.code=code
+			+e.title= t
+		+e.box
+			if hasOldPrice
+				+e.price-wrap
+					+e.price--new 24 600 ₽
+					+e.price--old 28 400 ₽
+			else
+				+e.price--new 22 600 ₽
+			+e.discount 10%
+		+e.btn(href="#") В корзину
+
+mixin sCatalogFromArticle()
+	// start sCatalog
+	+b.sCatalog--familiar#sCatalog&attributes(attributes)
+		+b.section-title
+			h2 Товары из статьи
+		+e.slider-wrappper
+			+e.slider--js.swiper
+				.swiper-wrapper
+					+e.slide.swiper-slide
+						+item-prod('1', 'slider', 'JR3050T', 'Молоток отбойный легкий','toCompare')
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider', 'JR3050T', 'Шуруповерт с 6 положениями регулировки','','toBookmark')
+							//- +e.badge.bg-red Новинка
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider', 'JR3050T', 'Сабельная пила')
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider', 'JR3050T' , 'Сабельная пила')
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider')
+			+arrow('d-none d-sm-flex')
+
+mixin sCatalogAlso()
+	// start sCatalog
+	+b.sCatalog--also.section#sCatalog&attributes(attributes)
+		+b.section-title
+			h2 С этим товаром покупают
+		+e.slider-wrappper
+			+e.slider--js.swiper
+				.swiper-wrapper
+					+e.slide.swiper-slide
+						+item-prod('1', 'slider', 'VB3616DA')
+							+e.badge.bg-red Новинка
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider', 'CB18DBL', 'Cordless Band Saw')
+							+e.badge.bg-red Новинка
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider', 'CD3605DA')
+							+e.badge.bg-red Новинка
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider', 'CD3605DA')
+							+e.badge.bg-red Новинка
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider')
+							+e.badge.bg-red Новинка
+			+arrow('d-none d-sm-flex')
+
+mixin sCatalogSimilar()
+	// start sCatalog
+	+b.sCatalog--similar.section#sCatalog&attributes(attributes)
+		+b.section-title
+			h2 С этим товаром покупают
+		+e.slider-wrappper
+			+e.slider--js.swiper
+				.swiper-wrapper.has-plus-btn
+					-for (var i=0; i < 6; i++)
+						+e.slide.swiper-slide
+							+itemProdLong()
+			+arrow('d-none d-sm-flex d-md-none')
+		.text-center.d-none.d-md-block
+			+e.plus-btn.plus-btn-js
+				+icon('plus')
+
+mixin sCatalogMayNeed()
+	// start sCatalog
+	+b.sCatalog.section.pb-0#sCatalog&attributes(attributes)
+		+b.section-title
+			h2 Вам может пригодиться
+		+e.slider-wrappper
+			+e.slider--js.swiper
+				.swiper-wrapper
+					+e.slide.swiper-slide
+						+item-prod('1', 'slider', 'VB3616DA')
+							+e.badge.bg-red Новинка
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider', 'CB18DBL', 'Cordless Band Saw')
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider', 'CD3605DA')
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider', 'CD3605DA')
+					+e.slide.swiper-slide
+						+item-prod('2', 'slider')
+			+arrow('d-none d-lg-flex')

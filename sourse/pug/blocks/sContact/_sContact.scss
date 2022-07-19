@@ -1,0 +1,234 @@
+// start .sContact
+.sContact {
+	--sPT: 0;
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(30)};
+		--sPB: 18px;
+	}
+	@include media-breakpoint-up(xl){
+		--sPB: 24px;
+	}
+	&__head {
+		position: relative;
+		margin-bottom: rem(48);
+	}
+	&__title {
+		@include rfs(65px);
+		position: absolute;
+		right: rem(70);
+		bottom: rem(50);
+		// font-size: rem(65);
+		text-transform: uppercase;
+		color: $white;
+		line-height: 1.21em;
+		
+		font-weight: 700;
+		@include media-breakpoint-down(md) {
+			right: rem(18);
+			bottom: rem(13);
+		}
+	}
+	.section-title{
+		// margin-top: rem(71);
+	}
+	&__row{
+		--bs-gutter-y: #{rem(30)};
+		margin-bottom: rem(30);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(60);
+		}
+		// @include media-breakpoint-up(lg){
+		// 	@include roww(30px);
+
+		// 	& > *{
+		// 		margin-bottom: 36.5px;
+		// 	}
+		// 	margin-bottom: -36.5px;
+		// }
+	}
+	&__item{
+		&:not(:last-child) {
+			margin-bottom: rem(28);
+		}
+		&.map-inside{
+			min-height: 100%;
+
+			margin-bottom: 48px;
+			@include media-breakpoint-up(lg){
+				margin-bottom: 0;
+				display: flex;
+				flex-direction: column;
+
+			}
+		}
+	}
+	&__header{
+		color: #000;
+		margin-bottom: rem(14);
+	}
+	//
+	&__table{
+		// border: 1px solid $gray-310;
+		&--width {
+			.sContact__gray-col {
+				width: rem(147);
+			}
+		}
+		&--row {
+			display: flex;
+			.sContact__tab-row {
+				margin-bottom: 0 !important;
+			}
+		}
+		&--props {
+			.sContact__tab-row {
+				&:not(:last-child) {
+					margin-bottom: rem(5);
+				}
+			}
+
+		}
+	}
+	&__tab-row{
+		display: flex;
+		@include roww(0);
+		&:not(:last-child) {
+			margin-bottom: rem(14);
+		}
+		// & > *{
+		// 	font-size: 12px;
+		// 	@include media-breakpoint-up(md){
+		// 		font-size: 14px;
+		// 	}
+		// }
+	}
+	&__gray-col{
+		font-size: 12px;
+		color: #000;
+	}
+	&__white-col{
+		color: #000;
+		font-size: 16px;
+	}
+	//
+	&__map{
+		flex-grow: 1;
+		position: relative;
+		min-height: 320px;
+		@include media-breakpoint-up(sm){
+			min-height: 436px;
+		}
+
+		& > *{
+			position: absolute!important;
+			top: 0!important;
+			left: 0!important;
+			bottom: unset!important;
+			right: unset!important;
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+	&__btn-outline{
+		@extend .btn;
+		@extend .btn-outline-primary;
+		width: 100%;
+	}
+	&__wrap{
+		padding: rem(28) rem(40) rem(30) rem(40);
+		background-color: $gray-100;
+		h3 {
+			margin-bottom: rem(15);
+			padding-bottom: rem(10);
+			border-bottom: 1px solid $gray-310;
+		}
+	}
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: rem(10);
+		row-gap: rem(5);
+		margin-bottom: rem(30);
+	}
+	&__column {
+		display: flex;
+		flex-direction: column;
+		row-gap: 5px;
+		justify-content: space-between;
+		width: 100%;
+		&--first {
+			@include media-breakpoint-up(md) {
+				width: calc(50% - 5px);
+			}
+			@include media-breakpoint-up(xl) {
+				width: auto;
+			}
+			.sContact__name {
+				@include media-breakpoint-up(lg) {
+					width: rem(67);
+					margin-right: rem(48);
+				}
+			}
+		}
+		&--second {
+			@include media-breakpoint-up(md) {
+				width: calc(50% - 5px);
+			}
+			@include media-breakpoint-up(xl) {
+				width: auto;
+			}
+			.sContact__name {
+				@include media-breakpoint-up(lg) {
+					width: rem(75);
+					margin-right: rem(127);
+				}
+			}
+		}
+		&--third {
+			@include media-breakpoint-up(md) {
+				width: 100%;
+			}
+			@include media-breakpoint-up(xl) {
+				width: auto;
+			}
+			.sContact__props-item {
+				@include media-breakpoint-up(lg) {
+					flex-grow: 1;
+				}
+			}
+			.sContact__name {
+				@include media-breakpoint-up(lg) {
+					width: rem(75);
+					margin-right: rem(107);
+				}
+			}
+		}
+	}
+	&__props-item{
+		background-color: #fff;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		padding: rem(12) rem(14.8);
+		word-break: break-all;
+		@include media-breakpoint-down(xl) {
+			justify-content: space-between;
+		}
+	}
+	&__name{
+		font-size: rem(14);
+		line-height: 1em;
+		color: #4E4E4E;
+		width: rem(75);
+	}
+	&__info{
+		font-size: rem(16);
+		line-height: 1em;
+		color: #282828;
+		line-height: 1.50em;
+	}
+	&__btn {
+		width: 100%;
+		max-width: rem(287);
+	}
+} // end.sContact

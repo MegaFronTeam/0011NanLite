@@ -1,0 +1,254 @@
+mixin mob-mnu()
+	+b.mob-menu--js.d-lg-none
+		.container
+			+e.search.d-md-none
+				+input('Поиск', 'text', 0, 'search')
+				+e.BUTTON.s-btn(type="button") Искать
+			+e.UL.menu
+				+e.LI.item
+					+e.link--has-dd.has-dd-js Каталог
+					+catalogMobMenu()
+				+e.LI.item: +e.link(href="#") О нас
+				+e.LI.item: +e.link(href="#") Оплата и доставка
+				+e.LI.item: +e.link(href="#") Сервис
+				+e.LI.item: +e.link(href="#") Акции
+				+e.LI.item: +e.link(href="#") Контакты
+				+e.LI.item: +e.link(href="#") Статьи
+				+e.LI.item: +e.link(href="#") Новости
+			//-
+			+e.dd-items.mob-menu-dd-js
+				//-cart
+				+e.dd-item
+					+e.dd-head(href='#')
+						//-+e.cart-box
+						+e.cart
+							+e.cart-icon
+								+icon('cart')
+								+e.number 99
+							+e.cart-txt Корзина
+						+e.cart-price 236 990 ₽
+				//-user
+				+e.dd-item
+					+e.dd-head.dd-head-js
+						+e.icon-link--user
+							+e.icon-box
+								+icon('user')
+							+e.il-txt Войти
+					+e.dd-content.dd-content-js
+						+lcMob()
+				//-
+				+e.dd-item
+					+e.dd-head(href='#')
+						+e.icon-link--heart
+							+e.icon-box
+								+icon('star')
+							+e.il-txt Избранные товары
+				//-
+				+e.dd-item
+					+e.dd-head(href='#')
+						+e.icon-link--bars
+							+e.icon-box
+								+icon('bars')
+							+e.il-txt Список сравнения
+				//-
+				//- +e.dd-item
+				//- 	+e.dd-head.dd-head-js
+				//- 		+e.icon-link--loc
+				//- 			+e.icon-box
+				//- 				+icon('location')
+				//- 			+e.il-txt.text-primary Москва
+				//- 	+e.dd-content.dd-content-js
+				//- 		+e.UL.loc-menu
+				//- 			li: a(href='#') Москва
+				//- 			li: a(href='#') Санкт-Петербург
+				//- 			li: a(href='#') Нижний Новгород
+				//- 			li: a(href='#') Москва
+				//- 			li: a(href='#') Санкт-Петербург
+				//- 			li: a(href='#') Нижний Новгород
+				//- 			li: a(href='#') Москва
+				//- 			li: a(href='#') Санкт-Петербург
+				//- 			li: a(href='#') Нижний Новгород
+			+e.contacts
+				+e.c-item
+					+e.c-icon
+					+e.c-txt
+						| г. Москва
+						br
+						| ш. Дмитровское, д.62, строение 5, этаж 1
+						br
+						| помещение X, комната 1
+				+e.c-item
+					+e.c-icon
+						img(loading="lazy" src="img/svg/icon-tel.svg" alt="")
+					+e.c-txt
+						a(href="tel:84952155063") +7 (495) 109-88-66 (многоканальный)
+				+e.c-item
+					+e.c-icon
+						img(loading="lazy" src="img/svg/icon-mail.svg" alt="")
+					//- +e.c-txt
+					//- 	a(href="mailto:info@husq.ru") info@husq.ru
+				+e.c-item
+					+e.c-icon
+						img(loading="lazy" src="img/svg/icon-clock.svg" alt="")
+					+e.c-txt
+						| пн - пт: 09:00 - 20:00
+						br
+						| сб - вс: 09:00 - 18:00
+			+e.oc-cont
+				+e.order-call.link-modal(href="#modal-call") Заказать звонок
+
+
+mixin top-nav() 
+	// start top-nav
+	+mob-mnu()
+	+b.top-nav--js.block-with-lazy
+		+e.container.container
+			.row.align-items-center
+				+e.burger-col.col-auto.d-lg-none
+					+b.burger--js
+						span
+				+e.logo(href="#").d-inline-block.d-md-none
+						img(loading="lazy" src="img/logo.png" alt="")
+				.col.align-self-stretch.d-none.d-lg-block
+					+e.UL.menu
+						+e.LI.item
+							+e.link--catalog(href="#")
+								+b.burger
+									span
+								.ms-10 Каталог
+							+catalogDD()
+						+e.LI.item: +e.link(href="#") О нас
+						+e.LI.item: +e.link(href="#") Оплата и доставка
+						+e.LI.item: +e.link(href="#") Сервис
+						+e.LI.item: +e.link(href="#") Акции
+						+e.LI.item: +e.link(href="#") Контакты
+						+e.LI.item: +e.link(href="#") Статьи
+						+e.LI.item: +e.link(href="#") Новости
+				
+					//-dd here
+					
+	// end top-nav
+
+
+
+mixin catalogDD()
+	+b.catalog-dd
+		.container
+			.row.catalog-dd__list.UL
+				.col-4.LI
+					+e.link(href="#")
+						+e.img-wrap
+							img(loading="lazy" src="img/@2x/catalog-1.png" alt="")
+						+e.title Аккумуляторные инструменты
+				.col-4.LI
+					+e.link(href="#")
+						+e.img-wrap
+							img(loading="lazy" src="img/@2x/catalog-2.png" alt="")
+						+e.title Инструменты с функцией Connectivity и Bluetooth-модули
+				.col-4.LI
+					+e.link(href="#")
+						+e.img-wrap
+							img(loading="lazy" src="img/@2x/catalog-3.png" alt="")
+						+e.title Дрели, ударные дрели и шуруповерты
+				.col-4.LI
+					+e.link(href="#")
+						+e.img-wrap
+							img(loading="lazy" src="img/@2x/catalog-4.png" alt="")
+						+e.title Перфораторы и отбойные молотки
+				.col-4.LI
+					+e.link(href="#")
+						+e.img-wrap
+							img(loading="lazy" src="img/@2x/catalog-5.png" alt="")
+						+e.title Аккумуляторные инструменты
+				.col-4.LI
+					+e.link(href="#")
+						+e.img-wrap
+							img(loading="lazy" src="img/@2x/catalog-6.png" alt="")
+						+e.title Инструменты с функцией Connectivity и Bluetooth-модули
+				.col-4.LI
+					+e.link(href="#")
+						+e.img-wrap
+							img(loading="lazy" src="img/@2x/catalog-1.png" alt="")
+						+e.title Дрели, ударные дрели и шуруповерты
+				.col-4.LI
+					+e.link(href="#")
+						+e.img-wrap
+							img(loading="lazy" src="img/@2x/catalog-2.png" alt="")
+						+e.title Перфораторы и отбойные молотки
+
+mixin catalogSubDD(diff="")
+	+e.sub-dd
+		+e.content
+			a(href='#')=`Дрели-шуруповерты ${diff}`
+			a(href='#') Ударные дрели-шуруповерты
+			a(href='#') Ударные шуруповерты
+			a(href='#') Ударные гайковерты
+			a(href='#') Перфораторы SDS+
+			a(href='#') Перфораторы SDS-Max
+			a(href='#') Перфораторы SDS-Max
+			a(href='#') УШМ
+			a(href='#') Пилы
+			a(href='#') Многофункциональные устройства
+			a(href='#') Отвертка
+			a(href='#')=`Дрели-шуруповерты ${diff}`
+			a(href='#') Ударные дрели-шуруповерты
+			a(href='#') Ударные шуруповерты
+			a(href='#') Ударные гайковерты
+			a(href='#') Перфораторы SDS+
+			a(href='#') Перфораторы SDS-Max
+			a(href='#') Перфораторы SDS-Max
+			a(href='#') УШМ
+			a(href='#') Пилы
+			a(href='#') Многофункциональные устройства
+			a(href='#') Отвертка
+
+
+mixin catalogMobMenu()
+	+e.submenu.submenu-js
+		.container
+			+e.back-link.mob-menu__link.back-link-js
+				+icon('chevron-left')
+				span Назад
+			ul.mob-menu__menu
+				li.mob-menu__item
+					span.mob-menu__link.mob-menu__link--has-dd.has-subdd-js Аккумуляторный инструмент
+					+catalogMobSubMenu()
+				li.mob-menu__item
+					span.mob-menu__link.mob-menu__link--has-dd.has-subdd-js Сетевой электроинструмент
+					+catalogMobSubMenu('11')
+				li.mob-menu__item
+					span.mob-menu__link.mob-menu__link--has-dd.has-subdd-js Садовая техника
+					+catalogMobSubMenu('22')
+				li.mob-menu__item
+					span.mob-menu__link.mob-menu__link--has-dd.has-subdd-js Алмазная резка
+					+catalogMobSubMenu('33')
+				li.mob-menu__item
+					span.mob-menu__link.mob-menu__link--has-dd.has-subdd-js Ручной инструмент
+					+catalogMobSubMenu('44')
+				li.mob-menu__item
+					span.mob-menu__link.mob-menu__link--has-dd.has-subdd-js Аксессуары
+					+catalogMobSubMenu('55')
+
+mixin catalogMobSubMenu(diff="")
+	+e.submenu.sub2menu-js
+		.container
+			+e.back-link.mob-menu__link.back2-link-js
+				+icon('chevron-left')
+				span Назад
+			ul.mob-menu__menu
+				li.mob-menu__item: a.mob-menu__link(href='#') Дрели-шуруповерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Ударные дрели-шуруповерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Ударные шуруповерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Ударные гайковерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Дрели-шуруповерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Ударные дрели-шуруповерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Ударные шуруповерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Ударные гайковерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Дрели-шуруповерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Ударные дрели-шуруповерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Ударные шуруповерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Ударные гайковерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Дрели-шуруповерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Ударные дрели-шуруповерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Ударные шуруповерты
+				li.mob-menu__item: a.mob-menu__link(href='#') Ударные гайковерты

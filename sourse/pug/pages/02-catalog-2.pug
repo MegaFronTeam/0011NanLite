@@ -1,0 +1,29 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sCategory/_sCategory.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sArticals/_sArticals.pug
+include ../blocks/sNewsBox/_sNewsBox.pug
+include ../blocks/sSeo/_sSeo.pug
+include ../blocks/sArticle/_sArticle.pug
+include ../blocks/sCatalogPage/_sCatalogPage.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= null
+
+block title
+	- let  title= '02-catalog-2'
+	title= title
+block pagecontent
+	//-+mob-mnu()
+	+header()
+	+topLine()
+	+top-nav()
+	+page-head('Аккумуляторные инструменты Bosch', '', '', 'Аккумуляторные инструменты с&nbsp;литий-ионными аккумуляторами Bosch отличаются высокой мощностью и&nbsp;малым весом. Они предоставят неограниченную свободу передвижения и&nbsp;обеспечат высокую производительность в&nbsp;каждом классе напряжения. Благодаря профессиональной системе 12V можно устанавливать любой аккумулятор 12&nbsp;В и&nbsp;использовать зарядное устройство с&nbsp;любым инструментом 12&nbsp;В.', 'Главная', 'Каталог', 'Аккумуляторные инструменты').--subcatalog
+	+sCatalogPage2()
+	+sSeo()
+	+footer()

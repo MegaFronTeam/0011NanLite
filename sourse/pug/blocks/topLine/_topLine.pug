@@ -1,0 +1,134 @@
+mixin topLine()
+	+b.topLine--js.d-none.d-md-block
+		+e.container.container
+			+e.row.row.align-items-center
+				.col-auto.align-self-stretch
+					+e.dd-btn--loc
+						+icon('location')
+						span Москва
+						+icon('chevron-down')
+						+cityDD()
+				.col-auto.ms-auto.me-auto.d-xl-block.d-none
+					+e.shedule
+						+e.shedule-item
+							img(loading='lazy' src="img/svg/clock.svg" alt="")
+							span пн. - пт. 09:00 - 20:00
+						+e.shedule-item
+							img(loading='lazy' src="img/svg/clock.svg" alt="")
+							span сб. - вс. 09:00 - 18:00
+				.col-auto.me-auto.me-xl-0.align-self-stretch
+					+e.dd-btn
+						+icon('tel')
+						a(href="tel:+74952155063").tel-link 8 495 215-50-63
+						+icon('chevron-down')
+						+telDD()
+			+e.bottom-row.row.align-items-center
+				+e.logo-col.col-auto
+					+e.logo(href="#")
+						img(loading="lazy" src="img/logo.png" alt="")
+				+e.search-col.col
+					+e.search.search-btn-js.muted-down-md
+						+e.search-txt.d-none.d-xl-block Поисковой запрос
+						+icon('zoom')
+						+searchDD()
+				+e.dd-btn--lc.col-auto
+					+e.icon-link
+						+icon('user')
+						span Войти
+						+lcDD()
+				+e.item.col-auto
+					+e.icon-link(href='#')
+						+icon('bars')
+						span Сравнение
+				+e.item.col-auto
+					+e.icon-link(href='#')
+						+icon('bookmarks')
+						span Избранное
+				+e.item.col-auto
+					+e.icon-link(href='#')
+						+icon('cart')
+							//- +e.number 99
+						span Корзина
+mixin cityDD()
+	+b.city-dd
+		+e.search-row.row
+			.col
+				+e.location
+						+icon('location')
+						span Москва
+						+icon('chevron-down')
+				+input('', 'text', 'Выбирете свой город', 'city')
+			.col-auto
+				+e.BUTTON.btn(type="button") Искать
+		+e.cont
+			ul
+				li: +e.link(href="#").text-primary Москва
+				li: +e.link(href="#").text-dark Санкт-Петербург
+				li: +e.link(href="#").text-dark Нижний Новгород
+				li: +e.link(href="#").text-dark Москва
+				li: +e.link(href="#").text-dark Нижний Новгород
+			ul
+				li: a(href="#").text-primary Москва
+				- for (var x = 0; x < 20; x++)
+					li: +e.link(href="#") Санкт-Петербург
+					li: +e.link(href="#") Нижний Новгород
+					li: +e.link(href="#") Москва
+					li: +e.link(href="#") Нижний Новгород
+					li: +e.link(href="#") Москва
+mixin telDD()
+	+b.tell-dd
+		+e.link(href="tel:88003331892") 8 800 333-18-92
+		+e.link(href="tel:88003331892") 8 800 333-18-92
+		+e.order-btn(href='#') Заказать звонок
+mixin lcDD()
+	+b.lc-dd
+		+e.link(href='#') Мои заказы
+		+e.link(href='#') Избранное
+		+e.link(href='#') Профиль
+		+e.log-btn(href="#")
+			+icon('exit')
+			span Выйти
+mixin lcMob()
+	+b.lc-mob
+		+e.link(href='#') Мои заказы
+		+e.link(href='#') Избранное
+		+e.link(href='#') Профиль
+		+e.log-btn(href="#")
+			+icon('exit')
+			span Выйти
+
+mixin searchDD()
+	+b.search-dd--js
+		+e.row.row
+			.col
+				+e.search-row.row
+					.col
+						+input('Искать везде', 'select', false, 'look-for')
+					.col
+						+input('', 'text', false, 'txt')
+				+e.categories.mb-30
+					+e.c-item(href='#')
+						+e.c-txt Дрели-шуруповерты
+						+e.icon
+							+icon('chevron-right')
+					+e.c-item(href='#')
+						+e.c-txt Ударные дрели-шуруповерты
+						+e.icon
+							+icon('chevron-right')
+			.col-auto
+				+e.BUTTON.btn(type="button") Найти
+			+e.items-row.row
+				.col-sm-6.col-lg-4
+					+item-prod('1', false, 'VB3616DA')
+						+e.badge.bg-red Новинка
+				.col-sm-6.col-lg-4
+					+item-prod('1', false, 'VB3616DA')
+						+e.badge.bg-red Новинка
+				.col-sm-6.col-lg-4
+					+item-prod('1', false, 'VB3616DA')
+						+e.badge.bg-red Новинка
+
+
+	// start topLine
+	
+	// end topLine

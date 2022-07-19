@@ -1,0 +1,24 @@
+mixin sConfirm(first)
+	// start sConfirm
+	if first
+		+b.sConfirm.section#sConfirm&attributes(attributes)
+			.container.text-center
+				h1 Заказ оформлен
+				+e.wrap
+					h4 Ваш заказ
+					.h1 № 21212
+				+e.wrap--indent
+					h4 Итоговая сумма заказа
+					.h1 33 294 ₽
+				+e.btn(href='#').btn.btn-primary Перейти к оплате
+	else
+		+b.sConfirm--2.text-white.section#sConfirm&attributes(attributes)
+			.container.text-center
+				h1 Заказ оформлен
+				+e.wrap
+					h4 Ваш заказ
+					.h1 № 21212
+				p Ожидайте подтверждения заказа в ближайшее время. Спасибо за покупку!
+				+e.btn(href='#').btn.btn-white Вернуться в каталог
+				+e.btn(href='#').btn.btn-outline-white В личный кабинет
+	// end sConfirm

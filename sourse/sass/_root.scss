@@ -1,0 +1,18 @@
+:root {
+	--animate-delay: 1.2s;
+	--fontSizeBase: #{$em-base};
+
+	--sPT: 24px;
+	--sPB: 24px;
+	--sTPB: 25px;
+	@include media-breakpoint-up(md){
+		--sPT: 30px;
+		--sPB: 30px;
+		--sTPB: 28px;
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: 36px;
+		--sPB: 36px;
+		--sTPB: 30px;
+	}
+}

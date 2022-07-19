@@ -1,0 +1,119 @@
+ 
+	  
+.soc{
+	@include roww(10px, m);
+	display: flex;
+	&__item{
+		border: 1px solid $body-color;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+		text-decoration: none !important; 
+		vertical-align: middle;
+		@include mt;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&:hover{
+		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
+			// opacity: .6 ;
+		}
+		
+		.icon{
+			font-size: rem(20);
+		}
+	}
+	 
+
+}
+ 
+
+.counter{
+	counter-reset: num;
+	&__item {
+		position: relative; 
+		&::before {
+			content: counter(num);
+			counter-increment: num;
+		}
+	}
+}
+
+.page-head {
+	padding-top: rem(17);
+	margin-bottom: rem(30);
+	border-top: 1px solid $gray-400;
+	&__title-wrap {
+		background-image: linear-gradient(90deg, rgba(0, 86, 145, 0.9) 0%, rgba(0, 142, 207, 0.9) 100%);
+	}
+	&__container {
+		position: relative;
+	}
+	// .breadcrumb {
+	// 	padding-bottom: 0;
+	// }
+	&__title {
+		color: $white;
+		display: flex;
+		align-items: center;
+		padding: rem(27.800) 0;
+		h1 {
+			margin-bottom: 0;
+		}
+		.icon {
+			font-size: rem(36);
+			margin-right: rem(8);
+			fill: currentColor;
+		}
+	}
+	&__descr {
+		font-size: 12px;
+		line-height: 160%;
+	}
+	&__log-out {
+		position: absolute;
+		top: 62%;
+		right: 0;
+		padding: rem(3) rem(20);
+		color: $white;
+		@include media-breakpoint-up(md) {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		.icon {
+			font-size: rem(15);
+			margin-right: 6px;
+			fill: currentColor;
+		}
+		span {
+			font-size: rem(16);
+			letter-spacing: 0.03em;
+			vertical-align: text-top;
+		}
+	}
+	&--catalog {
+		margin-bottom: 24px;
+		padding-bottom: rem(17);
+		border-bottom: 1px solid $gray-400;
+		.breadcrumb {
+			padding-bottom: 0;
+		}
+	}
+	&--subcatalog {
+		margin-bottom: 24px;
+		.page-head__title {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+	&--order {
+		padding-bottom: 0;
+	}
+	&--article {
+		padding-bottom: rem(21);
+		border-bottom: 1px solid $gray-400;
+		.breadcrumb {
+			padding-bottom: 0;
+		}
+	}
+}

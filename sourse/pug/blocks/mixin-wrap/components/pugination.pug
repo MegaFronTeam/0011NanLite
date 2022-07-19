@@ -1,0 +1,19 @@
+//- pugination
+mixin pugin(addClases)
+	+b.pagination(class=addClases)
+		+e.row.row
+			.col-auto.me-auto
+				+e.btn--controll(href="#")
+					+icon('swiper-left')
+			+puginItem(1, 'current')
+			+puginItem(2)
+			+puginItem(3)
+			+puginItem(4)
+			+puginItem('...')
+			.col-auto.ms-auto
+				+e.btn--controll(href="#")
+					+icon('swiper-right')
+
+mixin puginItem(num, addClasses)
+	.col-auto
+		+e.btn--link(href="#" class=addClasses)=num

@@ -1,0 +1,28 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sCategory/_sCategory.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sArticals/_sArticals.pug
+include ../blocks/sNewsBox/_sNewsBox.pug
+include ../blocks/sSeo/_sSeo.pug
+include ../blocks/sArticle/_sArticle.pug
+include ../blocks/sCatalogPage/_sCatalogPage.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= null
+
+block title
+	- let  title= '02-catalog-3'
+	title= title
+block pagecontent
+	//-+mob-mnu()
+	+header()
+	+topLine()
+	+top-nav()
+	+page-head('Система 36 В', '', '', 'Если тебе нужна максимальная мощность вместе с&nbsp;удобством беспроводного инструмента, оптимальный выбор&nbsp;&mdash; наши системы 36&nbsp;В. Благодаря системе Flexible Power ты&nbsp;сможешь устанавливать любой 36&nbsp;В аккумулятор и&nbsp;использовать зарядное устройство с&nbsp;любым 36&nbsp;В инструментом.', 'Главная', 'Каталог', 'Аккумуляторные инструменты', 'Система 36 В').--subcatalog
+	+sCatalogPage3()
+	+footer()

@@ -1,0 +1,73 @@
+
+	// start .sContent
+	.sContent {
+		 
+	padding-top: rem(30);
+	padding-bottom: rem(45);
+	@include media-breakpoint-up(lg) {
+		padding-bottom: rem(90);
+	}
+	h4 {
+		margin-bottom: rem(15);
+	}
+	p {
+		font-size: rem(16);
+		line-height: 1.60em;
+		margin-bottom: 0;
+	}
+	&__text {
+		p {
+			margin-bottom: rem(23.800);
+			&:last-child {
+				margin-bottom: rem(25);
+			}
+		}
+	}
+	ul {
+		list-style-type: none;
+		li {
+			display: flex;
+			max-width: rem(794);
+			margin-bottom: rem(25);
+			&:last-child {
+				margin-bottom: rem(30);
+			}
+			.icon {
+				font-size: rem(40);
+				color: $blue;
+				margin-right: rem(24);
+				flex: 0 0 auto;
+				width: 40px;
+			}
+			h4 {
+				margin-bottom: rem(13);
+			}
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__item {
+		margin-bottom: rem(15);
+		p:not(:last-of-type) {
+			margin-bottom: rem(25);
+		}
+		&--indent {
+			h4 {
+				margin-bottom: 0;
+			}
+		}
+		&--mb {
+			margin-bottom: rem(30);
+		}
+	}
+	&__time {
+		margin-bottom: rem(21);
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+} // end.sContent

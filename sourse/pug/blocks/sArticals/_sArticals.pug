@@ -1,0 +1,57 @@
+mixin sArticals()
+	// start sArticals
+	+b.SECTION.sArticals.section#sArticals&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Статьи
+			+e.row.row
+				+itemNews("1",'Доверяйте ремонт техники только профессионалам Bosch', 'Все заказы бытовой техники, оформленные в марте, будут доставлены на первой или второй неделе апреля по ранее согласованной и оплаченной стоимости. Надеемся на ваше понимание!', 'col-12 col-md-6')
+				+itemNews("2",'Избавтесь от&nbsp;пыли чтобы, не&nbsp;вдыхать&nbsp;её', 'Способы удаления пыли для более легкой и безопасной работы', 'col-12 col-md-6')
+			+e.btn-wrap
+				+btn('Все статьи').btn.btn-outline-primary
+	// end sArticals
+
+mixin itemNews(i ,t="Заголовок SEO текста",descr="Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой", bootClasses='col-12 col-md-6')
+	+e.col(class=bootClasses)&attributes(attributes)
+		+e.news-item(href="#")
+			+e.img-wrap.DIV
+				+e.tag Измерительная техника
+				img(loading="lazy" src=`img/@2x/artical-${i}.jpg` alt="")
+			+e.text-wrap
+				+e.title!= t
+				+e.descr!= descr
+
+//- mixin itemNews2(i ,t="Всего один CLICK!",descr="Все заказы бытовой техники, оформленные в&nbsp;марте, будут доставлены на&nbsp;первой или второй неделе апреля по&nbsp;ранее согласованной и&nbsp;оплаченной стоимости. Надеемся на&nbsp;ваше понимание!", bootClasses='col-12 col-md-6 col-lg-4')
+//- 	+e.col(class=bootClasses)&attributes(attributes)
+//- 		+e.news-item--secondary(href="#")
+//- 			+e.img-wrap.DIV
+//- 				//- +e.tag Измерительная техника
+//- 				img(loading="lazy" src=`img/@2x/artical-${i}.jpg` alt="")
+//- 			+e.text-wrap
+//- 				+e.date 12.05.2022
+//- 				+e.title!= t
+//- 				+e.descr!= descr
+//- 				+e.read Читать
+//- 					+icon('chevron-right')
+
+//- mixin sArticalsPage()
+//- 	// start sArticals
+//- 	+b.sArticals--page.section#sArticals&attributes(attributes)
+//- 		.container
+//- 			//- +e.image-wrap
+//- 			//- 	+pic('news-bg.jpg', 'bg', 0)
+//- 			//- 	+e.head-title новости
+//- 			+e.row.row
+//- 				+NewsBoxItem('1', '12.05.2022', 'Всего один CLICK!','Все заказы бытовой техники, оформленные в&nbsp;марте, будут доставлены на&nbsp;первой или второй неделе апреля по&nbsp;ранее согласованной и&nbsp;оплаченной стоимости. Надеемся на&nbsp;ваше понимание!')
+//- 				+itemNews2("4")
+//- 				+itemNews2("5", 'Все данные в одном формате', 'MeasureOn&nbsp;&mdash; приложение для простого документирования поэтажных планов помещений, результатов измерений, фотографий и&nbsp;заметок прямо на&nbsp;рабочей площадке.')
+//- 				+itemNews2("6", 'Созданы для работы<br>по дереву')
+//- 				+itemNews2("7")
+//- 				+itemNews2("6", 'Все данные в одном формате', 'MeasureOn&nbsp;&mdash; приложение для простого документирования поэтажных планов помещений, результатов измерений, фотографий и&nbsp;заметок прямо на&nbsp;рабочей площадке.')
+//- 				+itemNews2("8", 'Созданы для работы<br>по дереву')
+//- 				+itemNews2("2")
+//- 				+itemNews2("1", 'Все данные в одном формате', 'MeasureOn&nbsp;&mdash; приложение для простого документирования поэтажных планов помещений, результатов измерений, фотографий и&nbsp;заметок прямо на&nbsp;рабочей площадке.')
+//- 				+itemNews2("8", 'Созданы для работы<br>по дереву')
+//- 			//- .text-center
+//- 			//- 	+e.BUTTON.plus-btn(type='button')
+//- 			//- 		+icon('plus')

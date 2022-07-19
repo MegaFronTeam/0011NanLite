@@ -1,0 +1,16 @@
+// start .sSeo
+.sSeo {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background: #F7F7F7;
+	h2{
+		margin-bottom: rem(30);
+		font-size: 24px;
+		font-weight: 300;
+		@include media-breakpoint-up(md){
+			font-size: rem(34);
+		}
+	}
+
+
+} // end.sSeo

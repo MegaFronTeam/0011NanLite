@@ -1,0 +1,54 @@
+// start .sConfirm
+@use "sass:math";
+
+.sConfirm {
+	--sPT: 60px;
+	--sPB: 60px;
+	background-color: $gray-100;
+	@include media-breakpoint-up(md){
+		--sPT: 72px;
+		--sPB: 150px;
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: 120px;
+		--sPB: 209px;
+	}
+	&--2 {
+		background-image: linear-gradient(90deg, rgba(0, 86, 145, 0.9) 0%, rgba(0, 142, 207, 0.9) 100%);
+		@include media-breakpoint-up(xl) {
+			--sPB: 182px;
+		}
+	}
+	h1 {
+		margin-bottom: rem(27);
+	}
+	&__wrap {
+		margin-bottom: rem(25);
+		h4 {
+			margin-bottom: rem(0);
+			line-height: 1.25;
+		}
+		&--indent {
+			margin-bottom: rem(58);
+		}
+	}
+	p {
+		max-width: rem(432);
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: rem(27);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(58);
+		}
+	}
+	&__btn {
+		display: block;
+		width: 100%;
+		max-width: rem(255);
+		margin-left: auto;
+		margin-right: auto;
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+		}
+	}
+} // end.sConfirm

@@ -1,0 +1,184 @@
+mixin sOrder(data)
+	// start sOrder
+	+b.sOrder.section#sOrder&attributes(attributes)
+		.container
+			//- block
+			//- +b.section-title.light.long
+			//- 	h2 Оформление
+			+e.row.row
+				.col-lg-7
+					+e.login-txt.h4 Авторизация
+					+e.login-sm
+						| Если у Вас есть аккаунт авторизуйтесь на сайте. Мы сохраним всю информацию по заказу
+						|
+						br.d-none.d-sm-block
+						| и автоматически заполним ваши контактные данные.
+					//- +e.login-btn(href='#') Авторизоваться
+					+e.login-btn(href='#').btn.btn-outline-primary Войти
+					//-1
+					+e.big-title.h4 Контактные данные
+					+e.content
+						+form-wrap
+							+input('', 'text', 'ФИО*', 'name')
+							+input('', 'tel', 'Телефон*', 'tel')(value="8 916 176 05 12").is-valid
+							+e.input-incorrect-wrap
+								+input('', 'email', 'E-mail*', 'email')(value="fasxsa@fassd.sasa").is-invalid
+								.invalid-feedback Неверный адрес электронной почты
+					//-2
+					+e.big-title.h4 Способ получения
+					+e.content
+						+form-wrap
+							+input('', 'text', 'Город*', 'city')
+							+e.delivery.delivery-group-dd-js
+								+e.del-row.row
+									+e.del-title.col-auto Варианты доставки
+									.col
+										+deliveryItem({
+											icon: 'car',
+											price: '500 ₽',
+											time: '1-2 дня',
+											value: 'value1',
+										})
+											| Курьерская доставка по Москве
+										+deliveryItem({
+											icon: 'plane',
+											price: '500 ₽',
+											time: 'от 1-2 дней',
+											value: 'value2',
+										})
+											| Доставка по России
+										+deliveryItem({
+											icon: 'house',
+											price: '0 ₽',
+											time: '',
+											value: 'value3',
+										})
+											| Самовывоз
+										+deliveryItem({
+											img: 'dpd',
+											price: 'от 250 ₽',
+											time: 'от 1-2 дней',
+										})
+											| Самовывоз
+											+e.SPAN.caption до пункта самовывоза
+										+deliveryItem({
+											img: 'dpd',
+											price: 'от 250 ₽',
+											time: 'от 1-2 дней',
+											ddContent: true,
+											value: 'value4',
+										})(checked)
+											| Доставка DPD
+											br
+											| до пункта самовывоза
+							+input('', 'text', 'Адрес*', 'address')
+							+input('', 'textarea', 'Ваше сообщение', 'message')
+							//-+input('', '', '', '')
+					//-
+					+e.big-title.h4 Способ оплаты
+					+e.content
+						+form-wrap
+							+e.ways-row.row
+								+wayToPay('coins', 'cash')
+									| Наличный расчет
+								+wayToPay('card', 'online')(checked)
+									| Оплата online
+								+wayToPay('blank', 'account')
+									| Оплата по счёту
+									br
+									| для юр. лиц
+					+e.foot
+						+e.f-row.row.align-items-center
+							.col-sm
+								+e.polite.text-center.text-sm-start
+									| Нажимая кнопку «Оформить заказ», вы соглашаетесь
+									|
+									br.d-sm-block.d-none
+									a(href="#") с Политикой конфиденциальности.
+							.col-sm-auto
+								+e.f-btn(href='#') В корзину
+				.col-lg-4.ms-auto
+					//- +orderContent2()
+					+orderContent()
+	// end sOrder
+
+mixin deliveryItem(data)
+	+e.LABEL.d-label
+		input(type="radio" class="d-none" name='delivery' value=data.value)&attributes(attributes)
+		+e.d-item(class=`${data.addClasses || ''}`)
+			+e.d-head
+				+e.d-row.row.align-items-center
+					span.col-auto.d-block
+						+e.logo
+							if data.icon
+								+icon(data.icon)
+							if data.img
+								img(loading="lazy" alt="" src=`img/svg/${data.img}.svg`)
+					+e.name-col.col.d-block
+						block
+					span.col.col-sm-auto.d-block
+						+e.d-sub-row.row.align-items-center
+							+e.d-price.col-sm-auto=data.price
+							+e.d-time.col-sm-auto=data.time
+			if data.ddContent
+				+e.d-content.active
+					+e.d-btn Выбрать ПВЗ
+
+mixin wayToPay(icon,val)
+	+e.way-col.col-md-4
+		+e.LABEL.way-label
+			input(type="radio" name="way-to-pay" value=val class="d-none")&attributes(attributes)
+			+e.way
+				+e.w-icon
+					+icon(icon)
+				+e.w-txt
+					block
+
+mixin orderContent()
+	+b.order-content
+		+e.box.order-content-dd-js
+			+e.dd-item
+				+e.dd-head.dd-head-js.h4 Состав заказа
+				+e.dd-content.dd-content-js.active
+					+e.items
+						+goodsItemAlt()
+						+goodsItemAlt()
+					+e.edit-btn(href='#') Редактировать заказ
+			+e.f-data
+				+fDataItem('Товары', '3 шт.')
+				+fDataItem('Вес', '37 кг')
+				+fDataItem('Скидка', '-12 568 ₽', 'text-danger')
+				+fDataItem('Скидка по промокоду', '-12 568 ₽', 'text-danger')
+				+fDataItem('Доставка', '1500 ₽', 'pb-12')
+				+fDataItem('ИТОГО', '33 294  ₽', 'huge-row')
+
+//- mixin orderContent2()
+//- 	+b.order-content--2
+//- 		+e.box.order-content-dd-js
+//- 			+e.dd-item
+//- 				+e.dd-head.dd-head-js.h4 Состав заказа
+//- 				+e.dd-content.dd-content-js.active
+//- 					+e.f-data
+//- 						+fDataItem('Товары', '3 шт.')
+//- 						+fDataItem('Вес', '37 кг')
+//- 						+fDataItem('Скидка', '-12 568 ₽', 'text-danger')
+//- 						+fDataItem('Скидка по промокоду', '-12 568 ₽', 'text-danger')
+//- 						+fDataItem('Доставка', '500 ₽', 'pb-12')
+//- 						+fDataItem('ИТОГО', '24 600 ₽', 'huge-row')
+
+mixin goodsItemAlt(amount='100 шт.')
+	+b.g-item-alt
+		+e.row.row
+			+e.img-col.col-sm
+				+e.img(href='#' target="_blank")
+					img(loading="lazy" src="img/@2x/category-7.png" alt="")
+			+e.col-with-row.col-sm
+				+e.inner-row.row.align-items-center
+					+e.txt-col.col-md
+						+e.title(href='#' target="_blank") GBH 36 V-LI PLUS
+						+e.code Клеевой пистолет
+						+e.price--new.h4 24 600 ₽
+						+e.price--old 28 400 ₽
+						+e.amount-col
+							p Кол-во
+							!=`${amount}`

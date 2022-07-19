@@ -1,0 +1,174 @@
+mixin sPAcc(data)
+	// start sPAcc
+	+b.SECTION.sPAcc.section#sPAcc&attributes(attributes)
+		+e.container.container
+			+e.row.row.tabs
+				.col-lg-3.tabs__caption
+					+e.tab-btn.tabs__btn Профиль
+					+e.tab-btn.tabs__btn.active История заказов
+				.col-lg-9.tabs__wrap
+					+e.info-content.tabs__content
+						+e.profile-txt
+							+e.p-title.h4 Учётная запись
+							+e.p-data
+								+pDataItem('ФИО', 'Неретин Николай Игоревич')
+								+pDataItem('Телефон', '+7 (916) 176-05-12')
+								+pDataItem('Почта', 'nicolomelodini@gmail.com')
+								+pDataItem('Пароль', '•••••••••••••')
+							+e.change-btn.btn-outline-primary(type="button") Изменить
+						+e.change-box
+							+form-wrap()
+								+e.inputs
+									+input('', 'text', 'ФИО', 'name', true)(value="Неретин Николай Игоревич")
+									+input('', 'tel', 'Телефон', 'tel', true)(value="79161760512")
+									+input('', 'email', 'Почта', 'mail', true)(value="nicolomelodini@gmail.com")
+									+input('', 'password', 'Пароль', 'pass', true)(value="1234567890111")
+									+input('', 'password', 'Потвторить пароль', 'pass-repeat', true)(value="1234567890111")
+								+e.btns-row.row
+									.col-sm-6.col-md-auto
+										+e.btn--cancel(type="button") Отмена
+									.col-sm-6.col-md-auto
+										+e.btn--save.btn-primary(type="submit") Сохранить
+						+e.profile-txt
+							+e.p-title.h3 Адрес доставки
+							+e.p-data
+								+pDataItem('Город', 'Москва')
+								+pDataItem('Адрес', '1117463, Паустовского, 4')
+							+e.change-btn.btn-outline-primary(type="button") Изменить
+					.tabs__content.active
+						+pAccOrders()
+
+	// end sPAcc
+
+mixin pDataItem(name,val)
+	+e.pd-row.row
+		+e.pd-name.col-auto=name
+		+e.pd-val.col=val
+
+mixin pAccOrders()
+	+b.pa-orders
+		+e.title.h4 Заказы
+		+e.items.pa-orders-dd-js
+			+pAccOrdersItem('', 'Не оплачен')
+			+pAccOrdersItem('', 'Не оплачен')
+			+pAccOrdersItem('', 'На доставке', 'true')
+			+pAccOrdersItem('', 'На доставке', 'true')
+			+pAccOrdersItem('active', 'Оформлен', 'true')
+
+mixin pAccOrdersItem(activeClasses, paid, delivered)
+	+e.item(class=activeClasses)
+		+e.head.dd-head-js
+			+e.h-main-row.row.align-items-center
+				.col
+					+e.h-sub-row.row.align-items-center
+						+e.num-col.col-md Заказ №121212
+						+e.date-col.col-md 12.03.2020
+						+e.price-col.col-md 33 294 ₽
+				if paid=="Не оплачен"
+					+e.status-col--noPaid.col-auto Не оплачен
+				else if paid=="На доставке"
+					+e.status-col.col-auto На доставке
+				else
+					+e.status-col.col-auto Оформлен
+				.col-auto
+					+e.chevron
+						//- +icon('chevron-down')
+		+e.content.dd-content-js(class=activeClasses)
+			+e.top-box
+				+e.t-row.row
+					+e.tr-col-12
+						if delivered
+							+e.t-title Статус доставки: Доставлен
+							+e.t-dates
+								+tDateItem('02.03.2020', 'Собираем')
+								+tDateItem('03.03.2020', 'Отправляем')
+								+tDateItem('03.03.2020', 'В пути')
+								+tDateItem('05.03.2020', 'Ждёт в магазине')
+								+tDateItem('06.03.2020', 'Доставлен')
+						else 
+							+e.t-title--notDelivered Статус доставки: -
+					+e.tl-col-12
+						+e.t-title Информация о заказе
+						+e.t-info
+							if delivered
+								+tInfoItem('Статус заказа', 'На доставке')
+							else
+								+tInfoItem('Статус заказа', 'Не оплачен').text-danger
+							+tInfoItem('Способ доставки', 'Почтой России')
+							+tInfoItem('Стоимость доставки', '500 ₽')
+							+tInfoItem('Адрес доставки', '1117463, Москва, Паустовского, 4')
+					+e.tl-col-12
+						+e.t-title Контактая информация
+						+e.t-info
+							+tInfoItem('ФИО получателя', 'Неретин<br>Николай Игоревич')
+							+tInfoItem('Телефон', '+7 (916) 176-05-12')
+							+tInfoItem('Почта', 'nicolomelodini@gmail.com')
+				+e.goods
+					+e.g-title
+						h4 Состав заказа
+					+e.g-items
+						+goodsItem('100 шт.')
+						+goodsItem('100 шт.')
+			+e.foot
+				+e.f-data.ms-auto
+					+fDataItem('Товары', '3 шт.')
+					+fDataItem('Вес', '37 кг')
+					+fDataItem('Скидка', '-11 890 ₽', 'text-danger')
+					+fDataItem('Скидка по промокоду', '-11 890 ₽', 'text-danger pb-12')
+					+fDataItem('ИТОГО', '24 600 ₽', 'huge-row')
+
+mixin goodsItem(amount='1')
+	+b.g-item
+		//- +e.row.row.align-items-center
+		//- 	+e.img-col.col-auto
+		//- 		+e.img(href='#' target="_blank")
+		//- 			img(loading="lazy" src="img/@2x/category-7.png" alt="")
+		//- 	+e.col-with-row.col
+		//- 		+e.inner-row.row.align-items-center
+		//- 			+e.txt-col.col-md
+		//- 				+e.title(href='#' target="_blank") Шуруповерт с 6 положениями регулировки
+		//- 				+e.code FS2700
+		//- 			.col-md-auto
+		//- 				+e.price--old 18 500 ₽
+		//- 				+e.price--new 16 500 ₽
+		//- 	+e.amount-col.col-auto=`× ${amount}`
+		+e.img
+			//- .img-wrap-center
+			img(loading="lazy" src='img/@2x/card-img-1.png' alt="")
+		+e.info-wrap
+			+e.product-head
+				a(href="#") GBH 36 V-LI PLUS
+				p Клеевой пистолет
+		+e.price-wrap
+			+e.discount -10%
+			+e.price-col
+				+e.price--new 24 600 ₽
+				+e.price--old 28 400 ₽
+			+e.value
+				p Кол-во
+				+e.amount-col!=`${amount}`
+
+mixin tInfoItem(key,val)
+	//- +e.ti-row.row
+	//- 	+e.ti-key-col.col-xl-auto!= key
+	//- 	+e.ti-val-col.col-xl!= val
+	+e.info-item
+		+e.ti-key-col!= key
+		+e.ti-val-col&attributes(attributes)!= val
+
+mixin tDateItem(date,status)
+	//- +e.td-row.row
+	//- 	+e.td-date-col.col-xl-auto
+	//- 		+e.td-ball&attributes(attributes)
+	//- 		span=date
+	//- 	+e.td-status-col.col-xl=status
+	+e.delivery-item
+		+e.td-ball&attributes(attributes)
+		span!= date
+		+e.td-status-col!= status
+		
+
+mixin fDataItem(key,val, addClasses)
+	+e.fd-row.row(class=addClasses)
+		+e.fd-key-col.col=key
+		+e.fd-val-col.col-auto=val

@@ -1,0 +1,57 @@
+mixin sContact()
+	// start sContact
+	+b.SECTION.sContact.section#sContact&attributes(attributes)
+		.container
+			//- +e.head.bg-wrap
+			//- 	+pic('contact-bg.jpg', 'bg', 0).picture.bg
+			//- 	+e.title контакты
+			+e.row.row
+				.col-lg-4
+					+contactItem('Контактая информация')
+						+e.table
+							+tableRow('Телефон', '+7 (916) 176-05-12')
+							+tableRow('Почта', 'nicolomelodini@gmail.com')
+					+contactItem('Адрес магазина')
+						+e.table
+							+tableRow('', 'г. Москва, Дмитровское шоссе, д.62, с. 5')
+					+contactItem('Режим работы')
+						+e.table--row
+							+tableRow('ПН. - ПТ.', 'c 9:00 до 20:00')
+							+tableRow('СБ. - ВС.', 'c 10:00 до 18:00')
+				.col-lg-8
+					+e.map
+						iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2239.5156698618516!2d37.56355966648197!3d55.85371906501976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b537a5656ddadb%3A0xcf5941a075bf386b!2z0JTQvNC40YLRgNC-0LLRgdC60L7QtSDRiC4sIDYyINGB0YLRgNC-0LXQvdC40LUgNSwg0JzQvtGB0LrQstCwLCDQoNC-0YHRgdC40Y8sIDEyNzQ3NA!5e0!3m2!1sru!2sua!4v1616290125361!5m2!1sru!2sua" width="700" height="400" style="border:0;" allowfullscreen="" loading="lazy")
+			+e.row.row
+				.col-lg-4
+					+contactItem('Реквизиты')
+						+e.table--props
+							+tableRow('Название', 'ООО «Техносадов»')
+							+tableRow('ОГРН', '1187746800845')
+							+tableRow('ИНН', '7743273314')
+							+tableRow('КПП', '771301001')
+							+tableRow('Расч. счет', '40702810037100000151')
+							+tableRow('Банк', 'Филиал № 7701 Банка ВТБ (ПАО) г.Москва')
+							+tableRow('Корр. счет', '40702810037100000151')
+							+tableRow('БИК', '044525745')
+							+tableRow('Юр. адрес:', '127474 г.Москва, ш. Дмитровское, д.62, строение 5, этаж 1, помещение X, офис 1')
+					+e.btn(href="#").btn.btn-outline-primary Скачать реквизиты
+				.col-lg-8
+					block
+			//- +b.section-title.light.long
+			//- 	h2 главный офис
+	// end sContact
+
+mixin contactItem(title, addClasses='')
+	+e.item(class=addClasses)
+		+e.header.h4=title
+		block
+
+mixin tableRow(name, val)
+	+e.tab-row.row
+		if name 
+			+e.gray-col.col-12!=name
+		if block
+			+e.white-col.col-12
+				block
+		else
+			+e.white-col.col-12!=val

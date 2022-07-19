@@ -1,0 +1,54 @@
+mixin sForm()
+	// start sForm
+	+b.SECTION.sForm.section#sForm&attributes(attributes)
+		.container
+			+b.section-title.long
+				h4 Форма обратной связи
+				+form-wrap
+					+input('', 'textarea', 'Ваше сообщение', 'message')
+					+input('', 'text', 'ФИО*', 'full-name')
+					+input('', 'tel', 'Телефон*')
+					+input('', 'email', 'E-mail*')
+					+e.wrap
+						p Нажимая кнопку «Отправить», вы соглашаетесь с #[a(href='#') Политикой конфиденциальности.]
+						+e.btn.btn.btn-primary(type="submit") Отправить
+					//- +e.foot
+					//- 	+e.f-row.row.align-items-center
+					//- 		.col-md
+					//- 			+e.policy
+					//- 				| Нажимая кнопку «Отправить», вы соглашаетесь
+					//- 				|
+					//- 				br
+					//- 				| с
+					//- 				|
+					//- 				a(href='#') Политикой конфиденциальности.
+					//- 		.col-md-auto.text-center.text-md-start
+					//- 			+e.BUTTON.btn(type="submit") Отправить
+	// end sForm
+
+mixin sForm2()
+	// start sForm
+	+b.sForm.section#sForm&attributes(attributes)
+		+b.section-title.long
+			h4 Обратная связь
+			+form-wrap
+				+input('', 'textarea', 'Ваше сообщение', 'message')
+				+input('', 'text', 'ФИО*', 'full-name')
+				+input('', 'tel', 'Телефон*')
+				+input('', 'email', 'E-mail*')
+				+e.wrap
+					p Нажимая кнопку «Отправить», вы соглашаетесь с #[a(href='#') Политикой конфиденциальности.]
+					+e.btn.btn.btn-primary(type="submit") Отправить
+				//- +e.foot
+				//- 	+e.f-row.row.align-items-center
+				//- 		.col-md
+				//- 			+e.policy
+				//- 				| Нажимая кнопку «Отправить», вы соглашаетесь
+				//- 				|
+				//- 				br
+				//- 				| с
+				//- 				|
+				//- 				a(href='#') Политикой конфиденциальности.
+				//- 		.col-md-auto.text-center.text-md-start
+				//- 			+e.BUTTON.btn(type="submit") Отправить
+	// end sForm

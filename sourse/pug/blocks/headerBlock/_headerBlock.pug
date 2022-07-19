@@ -1,0 +1,25 @@
+mixin headerBlock()
+	// start headerBlock
+	+b.headerBlock.section#headerBlock&attributes(attributes)
+			+e.slider-wrap
+				.swiper.gallery-top
+					.swiper-wrapper
+						+headerBlockSlide()
+						+headerBlockSlide()
+						//- +headerBlockSlide(2)
+						+headerBlockSlide()
+						+headerBlockSlide()
+						+headerBlockSlide()
+					.swiper-pagination
+
+	// end headerBlock
+
+mixin headerBlockSlide(imgNum='1')
+	+e.slide.swiper-slide
+		+e.slide-link(href='#')
+			img.swiper-lazy(src="#" data-src=`img/@2x/header-slide-${imgNum}.png`, alt="")
+			+e.container.container.DIV
+				+e.slider-text
+					+e.title Доверяйте ремонт техники только профессионалам Bosch
+					+e.descr Все заказы бытовой техники, оформленные в марте, будут доставлены на первой или второй неделе апреля по ранее согласованной и оплаченной стоимости. Надеемся на ваше понимание!
+					+e.btn Подробнее
