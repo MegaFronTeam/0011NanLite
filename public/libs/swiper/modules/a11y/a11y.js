@@ -203,14 +203,20 @@ export default function A11y(_ref) {
       addElRoleDescription($(swiper.slides), params.itemRoleDescriptionMessage);
     }
 
-    addElRole($(swiper.slides), params.slideRole);
+    if (params.slideRole) {
+      addElRole($(swiper.slides), params.slideRole);
+    }
+
     const slidesLength = swiper.params.loop ? swiper.slides.filter(el => !el.classList.contains(swiper.params.slideDuplicateClass)).length : swiper.slides.length;
-    swiper.slides.each((slideEl, index) => {
-      const $slideEl = $(slideEl);
-      const slideIndex = swiper.params.loop ? parseInt($slideEl.attr('data-swiper-slide-index'), 10) : index;
-      const ariaLabelMessage = params.slideLabelMessage.replace(/\{\{index\}\}/, slideIndex + 1).replace(/\{\{slidesLength\}\}/, slidesLength);
-      addElLabel($slideEl, ariaLabelMessage);
-    });
+
+    if (params.slideLabelMessage) {
+      swiper.slides.each((slideEl, index) => {
+        const $slideEl = $(slideEl);
+        const slideIndex = swiper.params.loop ? parseInt($slideEl.attr('data-swiper-slide-index'), 10) : index;
+        const ariaLabelMessage = params.slideLabelMessage.replace(/\{\{index\}\}/, slideIndex + 1).replace(/\{\{slidesLength\}\}/, slidesLength);
+        addElLabel($slideEl, ariaLabelMessage);
+      });
+    }
   };
 
   const init = () => {
