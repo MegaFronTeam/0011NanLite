@@ -46,41 +46,32 @@ mixin sCatalogNew()
 							+item-prod('2', 'slider')
 				+arrow('d-none d-sm-flex')
 
-mixin item-prod(i, slider, code='VB3616DA', t="MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender", hasOldPrice=true, toCompare, toBookmark)
+mixin item-prod(i, slider, code='Арт. №15-2009-4KIT', t="Светодиодная лампа-трубка Nanlite PavoTube II 6C", newPrice ,hasOldPrice, inStock=true)
 	+b.prod-item&attributes(attributes)
 		+e.links
-			if toCompare
-				+e.compare.--active(href="#")
-					+icon('bars')
-			else
-				+e.compare(href="#")
-					+icon('bars')
-			if toBookmark
-				+e.bookmarks.--active(href="#")
-					+icon('star')
-			else
-				+e.bookmarks(href="#")
-					+icon('star')
+			+e.compare(href="#")
+				+icon('heart')
 		block
 		+e.A.img-link(href="#")
 			+e.img-wrap
 				if !slider
 					.img-wrap-center
-						img(loading="lazy" src=`img/@2x/hit-${i}.png`, alt="")
+						img(loading="lazy" src=`img/@2x/catalog-img-${i}.png`, alt="")
 				else
 					.img-wrap-center
-						img.swiper-lazy(src="#" data-src=`img/@2x/hit-${i}.png`, alt="")
-			+e.code=code
+						img.swiper-lazy(src="#" data-src=`img/@2x/catalog-img-${i}.png`, alt="")
 			+e.title= t
 		+e.box
-			if hasOldPrice
-				+e.price-wrap
-					+e.price--new 24 600 ₽
-					+e.price--old 28 400 ₽
+			+e.price-wrap
+				+e.price--new!= newPrice
+				if hasOldPrice
+					+e.price--old!= hasOldPrice
+			+e.code=code
+			if inStock
+				+e.inStock в наличии
 			else
-				+e.price--new 22 600 ₽
-			+e.discount 10%
-		+e.btn(href="#") В корзину
+				+e.notInStock нет в наличии
+		+e.btn(href="#") Купить
 
 mixin sCatalogFromArticle()
 	// start sCatalog

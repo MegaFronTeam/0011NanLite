@@ -2,7 +2,7 @@
 mixin pugin(addClases)
 	+b.pagination(class=addClases)
 		+e.row.row
-			.col-auto.me-auto
+			.col-auto
 				+e.btn--controll(href="#")
 					+icon('swiper-left')
 			+puginItem(1, 'current')
@@ -10,7 +10,8 @@ mixin pugin(addClases)
 			+puginItem(3)
 			+puginItem(4)
 			+puginItem('...')
-			.col-auto.ms-auto
+			+puginItem(7)
+			.col-auto
 				+e.btn--controll(href="#")
 					+icon('swiper-right')
 

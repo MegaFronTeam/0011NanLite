@@ -294,13 +294,13 @@
 			--head-bg: #{$light};
 		}
 
-		--head-bord-col: #{$gray-310};
+		--head-bord-col: #{$gray-300};
 		--head-col: #{$body-color};
 		--head-num-col: #{$blue};
 		--date-col: #4E4E4E;
 		&.active{
 			--head-bg: #{$gray-100};
-			--head-bord-col: #{$gray-310};
+			--head-bord-col: #{$gray-300};
 			--head-col: #{$white};
 			--head-num-col: #{$blue};
 			--date-col: #000;
@@ -312,7 +312,7 @@
 		}
 		&:not(.active) {
 			.pa-orders__head:hover {
-				background-color: $gray-310;
+				background-color: $gray-300;
 			}
 		}
 	}
@@ -542,7 +542,7 @@
 
 	}
 	&__g-title{
-		// border-top: 1px solid $gray-310;
+		// border-top: 1px solid $gray-300;
 		// padding-top: 20px;
 		// &:before{
 		// 	content: '';

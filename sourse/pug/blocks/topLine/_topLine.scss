@@ -323,7 +323,7 @@
 		flex-shrink: 0;
 		font-weight: 300;
 		line-height: 1.2;
-		color: $gray-720;
+		color: $gray-700;
 		width: 263px;
 		font-size: 16px;
 		@include media-breakpoint-up(xl){
@@ -588,7 +588,7 @@
 	overflow-x: hidden;
 
 	background-color: $white;
-	border: 1px solid $gray-310;
+	border: 1px solid $gray-300;
 	position: absolute;
 	z-index: 99;
 	top: 100%;

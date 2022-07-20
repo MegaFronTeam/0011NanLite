@@ -7,22 +7,19 @@ mixin sCatalogPage(data)
 				.col-lg-3
 					+b.cat-aside.cat-aside-dd-js
 						+e.box
-							+e.header Каталог
+							+e.header Продукция
 								+icon('chevron-down')
 							+e.items
-								+asideItem('Аккумуляторные инструменты').current
-								+asideItem('Инструменты с функцией Connectivity и Bluetooth-модули')
-								+asideItem('Система 18 В')
-								+asideItem('Дрели-шуруповерты')
-								+asideItem('Ударные дрели-шуруповерты')
+								+e.link(href="#").active Светодиодные лампы-трубки Nanlite PavoTube LED
+								+e.link(href="#") Светодиодные панели Nanlite LED
+								+e.link(href="#") Осветители направленного света Nanlite LED
+								+e.link(href="#") Принадлежности и аксессуары Nanlite
 				.col-lg-9
 					+e.row.row
-						+catalogPageItem(1, 'Инструменты с функцией Connectivity и Bluetooth-модули')
-						+catalogPageItem(2, 'Дрели, ударные дрели и шуруповерты')
-						+catalogPageItem(3, 'Перфораторы и отбойные молотки')
-						+catalogPageItem(4, 'Угловые шлифмашины и металлообработка')
-						+catalogPageItem(5, 'Стационарные инструменты и столы')
-						+catalogPageItem(6, 'Шлифмашины и рубанки')
+						+catalogPageItem(1, 'Светодиодные лампы-трубки Nanlite PavoTube LED')
+						+catalogPageItem(2, 'Светодиодные панели Nanlite LED')
+						+catalogPageItem(3, 'Осветители направленного света Nanlite LED')
+						+catalogPageItem(4, 'Принадлежности и аксессуары Nanlite')
 	// end sCatalogPage
 
 mixin catalogPageItem(imgNum, name, bootClasses="")
@@ -30,8 +27,8 @@ mixin catalogPageItem(imgNum, name, bootClasses="")
 		+e.item(href='#')
 			+e.img-wrap
 				.img-wrap-center
-					img(loading="lazy" src=`img/@2x/catalog-${imgNum}.png` alt="")
-			+e.i-name=name
+					img(loading="lazy" src=`img/@2x/catalog-img-${imgNum}.png` alt="")
+			+e.i-name.text-center=name
 
 mixin sCatalogPage2(data)
 	// start sCatalogPage
@@ -42,14 +39,13 @@ mixin sCatalogPage2(data)
 				.col-lg-3
 					+b.cat-aside.cat-aside-dd-js
 						+e.box
-							+e.header Каталог
+							+e.header Продукция
 								+icon('chevron-down')
 							+e.items
-								+asideItem('Аккумуляторные инструменты')
-								+asideItem('Инструменты с функцией Connectivity и Bluetooth-модули')
-								+asideItem('Система 18 В')
-								+asideItem('Дрели-шуруповерты')
-								+asideItem('Ударные дрели-шуруповерты')
+								+e.link(href="#").active Светодиодные лампы-трубки Nanlite PavoTube LED
+								+e.link(href="#") Светодиодные панели Nanlite LED
+								+e.link(href="#") Осветители направленного света Nanlite LED
+								+e.link(href="#") Принадлежности и аксессуары Nanlite
 				.col-lg-9
 					+e.row.row
 						+catalogPageItem(1, 'Инструменты с функцией Connectivity и Bluetooth-модули')
@@ -82,48 +78,35 @@ mixin sCatalogPage3(data)
 		+e.container.container
 			block
 			+e.main-row.row
-				.col-12
-					+e.filtred
-						+e.filtred-item
-							+e.filtred-reset(href="#")
-							+e.filtred-text Зарядный ток (A): 4 А
-						+e.filtred-item 
-							+e.filtred-reset(href="#")
-							+e.filtred-text Зарядное напряжение аккумулятора (В): 10,8 – 12 В
-						+e.filtred-drop(href="#") 
-							+icon('reset')
-							| Сбросить выбор
 				.col-lg-3
 					+b.cat-aside.cat-aside-dd-js
 						+e.box
-							+e.header Каталог
+							+e.header Продукция
 								+icon('chevron-down')
 							+e.items
-								+asideItem('Аккумуляторные инструменты')
-								+asideItem('Инструменты с функцией Connectivity и Bluetooth-модули')
-								+asideItem('Система 18 В')
-								+asideItem('Дрели-шуруповерты')
-								+asideItem('Ударные дрели-шуруповерты')
-					+FiltersBlock()
-					+filterBtnsBar()
+								+e.link(href="#").active Светодиодные лампы-трубки Nanlite PavoTube LED
+								+e.link(href="#") Светодиодные панели Nanlite LED
+								+e.link(href="#") Осветители направленного света Nanlite LED
+								+e.link(href="#") Принадлежности и аксессуары Nanlite
+					//- +FiltersBlock()
+					//- +filterBtnsBar()
 				.col-lg-9
 					+e.options
 						+e.o-row.row
+							.col-sm
+								h1 Светодиодные лампы-трубки
+							.col-sm-auto.ms-auto
+								+e.select
+									+input('Цена по возрастанию', 'select')
 							.col-auto.d-none.d-md-block
 								+e.icon-btn
 									+icon('square')
 							.col-auto.d-none.d-md-block
 								+e.icon-btn.active
 									+icon('lines')
-							.col-auto.ms-auto
-								+e.select
-									+input('Цена по возрастанию', 'select')
 					+sqprodItemsRow()
-					+longProdItemsRow()
-					+pugin('pb-48 pb-md-60')
-					+b.description
-						h2 Система 36 В
-						p Если тебе нужна максимальная мощность вместе с удобством беспроводного инструмента, оптимальный выбор - наши системы 36 В. Благодаря системе Flexible Power ты сможешь устанавливать любой 36 В аккумулятор и использовать зарядное устройство с любым 36 В инструментом.
+					//- +longProdItemsRow()
+					+pugin()
 
 mixin sCatalogPage4(data)
 	// start sCatalogPage
@@ -134,19 +117,20 @@ mixin sCatalogPage4(data)
 				.col-lg-3
 					+b.cat-aside.cat-aside-dd-js
 						+e.box
-							+e.header Инструменты
+							+e.header Продукция
 								+icon('chevron-down')
 							+e.items
-								+asideItem('Дрели-шуруповерты')
-								+asideItem('Ударные дрели-шуруповерты')
-								+asideItem('Ударные шуруповерты')
-					+FiltersBlock()
-					+filterBtnsBar()
+								+e.link(href="#").active Светодиодные лампы-трубки Nanlite PavoTube LED
+								+e.link(href="#") Светодиодные панели Nanlite LED
+								+e.link(href="#") Осветители направленного света Nanlite LED
+								+e.link(href="#") Принадлежности и аксессуары Nanlite
+					//- +FiltersBlock()
+					//- +filterBtnsBar()
 				.col-lg-9
 					+e.options
 						+e.o-row.row.align-items-start
 							.col
-								h2 Инструменты
+								h1 Инструменты
 							.col-auto
 								+e.o-sub-row.row
 									.col-auto
@@ -159,43 +143,44 @@ mixin sCatalogPage4(data)
 										+e.icon-btn.active
 											+icon('lines')
 					+longProdItemsRow()
-					+pugin('pb-48 pb-md-60')
-			+b.sSeo#sSeo
-				h2 Заголовок SEO текста
-				p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+					+pugin()
 
 mixin sqprodItemsRow(addClasses)
 	+e.row.row.pb-48.pb-md-60(class=addClasses)
 		.col-xsm-6.col-md-4
-			+item-prod('1', false, 'VB3616DA')
-				+e.badge.bg-blue Хит
+			+item-prod('1', false, 'Арт. №15-2009-4KIT', 'Светодиодная лампа-трубка Nanlite PavoTube II 6C', '7 500 ₽', '9 500 ₽')
 		.col-xsm-6.col-md-4
-			+item-prod('2', false, 'CB18DBL', 'Cordless Band Saw')
-				+e.badge.bg-green Новинка
+			+item-prod('5', false, 'Арт. №15-2009-4KIT', 'Светодиодная лампа-трубка Nanlite PavoTube T8-7X', '8 100 ₽', false, false)
 		.col-xsm-6.col-md-4
-			+item-prod('2', false, 'CB18DBL', 'MULTI VOLT(36V) Cordless Metal Cutting Saw', false)
+			+item-prod('6', false, 'Арт. №15-2009-4KIT', 'Светодиодная лампа Nanlite PavoBulb 10C RGBWW LED', '6 500 ₽', false)
 		.col-xsm-6.col-md-4
-			+item-prod('1', false, 'VB3616DA')
+			+item-prod('7', false, 'Арт. №15-2009-4KIT', 'Крепление магнитное для лампы Nanlite PavoBulb 10C', '860 ₽', '1 000 ₽')
 		.col-xsm-6.col-md-4
-			+item-prod('2', false, 'CB18DBL', 'Cordless Band Saw')
+			+item-prod('8', false, 'Арт. №15-2009-4KIT', 'Комплект Nanlite PavoBulb 10C-4Kit RGBWW LED', '46 900 ₽', false, false)
 		.col-xsm-6.col-md-4
-			+item-prod('2', false, 'CB18DBL', 'MULTI VOLT(36V) Cordless Metal Cutting Saw', false)
+			+item-prod('9', false, 'Арт. №15-2009-4KIT', 'Светодиодная лампа-трубка Nanlite PavoTube II 15X', '32 700 ₽', false,)
+		.col-xsm-6.col-md-4
+			+item-prod('10', false, 'Арт. №15-2009-4KIT', 'Светодиодная лампа-трубка Nanlite PavoTube 15C RGBWW', '18 410 ₽', false)
+		.col-xsm-6.col-md-4
+			+item-prod('11', false, 'Арт. №15-2009-4KIT', 'Комплект Nanlite PavoTube 15C-KIT 2 RGBWW (61 см)', '34 320 ₽', '38 500 ₽', false)
+		.col-xsm-6.col-md-4
+			+item-prod('12', false, 'Арт. №15-2009-4KIT', 'Комплект Nanlite PavoTube II 15X-KIT 4 RGBWW (61 см)', '117 550 ₽', false)
 		block
 
 mixin longProdItemsRow(addClasses)
 	+e.row.row(class=addClasses)
 		.col-12
-			+itemProdLong('Шуруповерт с 6 положениями регулировки', '1','new')
+			+itemProdLong('Светодиодная лампа-трубка Nanlite PavoTube II 6C', '1','new', '7 500 ₽', '9 500 ₽')
 		.col-12
-			+itemProdLong('Шуруповерт с 6 положениями регулировки и с проводом длинной 5 м', '2')
-		//- .col-xsm-6.col-md-12
-		//- 	+itemProdLong('Шуруповерт с 6 положениями регулировки', '3','new')
-		//- .col-xsm-6.col-md-12
-		//- 	+itemProdLong('Шуруповерт с 6 положениями регулировки', '3','new')
-		//- //- .col-xsm-6.col-md-12
-		//- 	+itemProdLong('5')
-		//- .col-xsm-6.col-md-12
-		//- 	+itemProdLong('6')
+			+itemProdLong('Светодиодная лампа-трубка Nanlite PavoTube T8-7X', '5', '', '8 100 ₽', '', false)
+		.col-12
+			+itemProdLong('Светодиодная лампа Nanlite PavoBulb 10C RGBWW LED', '6', 'new', '6 500 ₽', '')
+		.col-12
+			+itemProdLong('Крепление магнитное для лампы Nanlite PavoBulb 10C', '7', 'new', '860 ₽', '1 000 ₽')
+		.col-12
+			+itemProdLong('Комплект Nanlite PavoBulb 10C-4Kit RGBWW LED', '8', 'new', '46 900 ₽', '', false)
+		.col-12
+			+itemProdLong('Светодиодная лампа-трубка Nanlite PavoTube II 15X', '9', '', '32 700 ₽', '')
 
 mixin filterBtnsBar()
 	+b.filter-bar-btns.d-flex.d-lg-none.pb-60
@@ -269,36 +254,33 @@ mixin in-r(name='radio-btn-group', checked=false)
 			+e.INPUT.radio-input(type="radio", name = name)
 			block
 
-mixin itemProdLong(title,img,tag)
+mixin itemProdLong(title,img,tag, newPrice, oldPrice, inStock=true)
 	+b.long-item
 		+e.about-col(href="#")
 			if tag
-				.prod-item__badge.bg-green Новинка
+				.prod-item__badge Новинка
 			else
 			+e.img
 				.img-wrap-center
-					img(loading='lazy' src=`img/@2x/lc-img-${img}.png` alt="")
-			+e.content-col
-				+e.code VB3616DA
-				if title
-					+e.title=title
-				else
-					+e.title MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
-				dl
-					dt Страна производства1
-					dd Швеция
-					dt Габариты в упаковке (мм)
-					dd 305 x 520 x 610
-					dt 305 x 520 x 610
-					dd 19.2кг
+					img(loading='lazy' src=`img/@2x/catalog-img-${img}.png` alt="")
 		+e.price-col
-			.prod-item__discount 10%
+			+e.content-col
+				if title
+					+e.title(href="#")=title
+				+e.code Арт. №15-2009-4KIT
+				if inStock
+					+e.inStock в наличии
+				else
+					+e.notInStock нет в наличии
 			+e.links
 				+e.compare(href="#")
-					+icon('bars')
-				+e.bookmarks(href="#")
-					+icon('star')
-			+e.price--new 16 500 ₽
-			+e.price--old 18 500 ₽
-			//- +e.btn-col.col-md-auto
-			+e.btn(href='#') В корзину
+					+icon('heart')
+			+e.footer-row.row
+				.col-auto
+					+e.price--new!= newPrice
+				if oldPrice
+					.col-auto
+						+e.price--old!= oldPrice
+				//- +e.btn-col.col-md-auto
+				.col.text-sm-end
+					+e.btn(href='#') Купить

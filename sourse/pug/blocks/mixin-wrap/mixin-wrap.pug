@@ -27,21 +27,23 @@ mixin ie11()
 	 
 	<!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 
-mixin page-head(title, logout, icon, descr, ...items)
+mixin page-head(...items)
 	+b.page-head&attributes(attributes)
+		+e.section-bg
+			+pic('section-bg.jpg')
 		.container
 			+breadcrumb(...items)
-		if title
-			+e.title-wrap
-				+e.container.container
-					+e.title
-						if icon
-							+icon(`${icon}`)
-						h1!= title
-						if descr
-							+e.descr!= descr
-					if logout 
-						+e.log-out(href='#')
-							+icon('exit')
-							//- img(loading="lazy" src="img/svg/exit2.svg" alt="")
-							span Выйти
+		//- if title
+		//- 	+e.title-wrap
+		//- 		+e.container.container
+		//- 			+e.title
+		//- 				if icon
+		//- 					+icon(`${icon}`)
+		//- 				h1!= title
+		//- 				if descr
+		//- 					+e.descr!= descr
+		//- 			if logout 
+		//- 				+e.log-out(href='#')
+		//- 					+icon('exit')
+		//- 					//- img(loading="lazy" src="img/svg/exit2.svg" alt="")
+		//- 					span Выйти

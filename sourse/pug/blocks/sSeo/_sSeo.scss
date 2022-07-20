@@ -1,16 +1,22 @@
 // start .sSeo
 .sSeo {
-	padding-top: 60px;
-	padding-bottom: 60px;
-	background: #F7F7F7;
-	h2{
-		margin-bottom: rem(30);
-		font-size: 24px;
-		font-weight: 300;
-		@include media-breakpoint-up(md){
-			font-size: rem(34);
+	--sPT: #{rem(35)};
+	--sPB: #{rem(60)};
+	@include media-breakpoint-up(sm) {
+		--sPT: #{rem(70)};
+		--sPB:#{rem(120)};
+	}
+	h4 {
+		text-transform: uppercase;
+		margin-bottom: rem(18);
+	}
+	p {
+		margin-bottom: 0;
+		color: $gray-700;
+		line-height: 1.375em;
+		font-size: rem(14);
+		@include media-breakpoint-up(sm) {
+			font-size: rem(16);
 		}
 	}
-
-
 } // end.sSeo

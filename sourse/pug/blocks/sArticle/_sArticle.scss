@@ -74,9 +74,9 @@
 	}
 	&__box{
 		// border-top: 4px solid $primary;
-		// border-right: 1px solid $gray-310;
-		// border-bottom: 1px solid $gray-310;
-		// border-left: 1px solid $gray-310;
+		// border-right: 1px solid $gray-300;
+		// border-bottom: 1px solid $gray-300;
+		// border-left: 1px solid $gray-300;
 
 		// padding: 24px 20px;
 	}
@@ -106,10 +106,10 @@
 
 		padding-bottom: 28px;
 		margin-bottom: 14px;
-		border-bottom: 1px solid $gray-310;
+		border-bottom: 1px solid $gray-300;
 		padding-left: rem(20);
 		&:first-of-type {
-			border-top: 1px solid $gray-310;
+			border-top: 1px solid $gray-300;
 			padding-top: rem(14);
 		}
 		&:last-child{

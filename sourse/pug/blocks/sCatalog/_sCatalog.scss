@@ -142,35 +142,42 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	padding: 60px 20px 20px;
-	background-color: $light;
+	align-items: center;
+	padding-bottom: rem(20);
+	// padding: 60px 20px 20px;
+	// background-color: $light;
 	min-height: 100%;
 	line-height: math.div(22, 18);
 	@include mt;
-	border: 1px solid #E6E6E6;
-	
+	border: 1px solid $gray-100;
+	box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.08);
+	border-radius: 20px;
+	text-align: center;
+	&:hover {
+		box-shadow: 0px 3px 20px rgba(30, 159, 204, 0.2);
+	}
 	&__links {
 		position: absolute;
-		top: 22px;
-		right: 22px;
+		top: 10px;
+		right: 10px;
 		z-index: 10;
 		@include media-breakpoint-down(sm) {
 			top: 5px;
 		}
 		.icon {
-			stroke: #cccccc;
-			font-size: 18px;
-			color: transparent;
-			fill: none;
+			// stroke: #cccccc;
+			font-size: 24px;
+			color: $gray-500;
+			// fill: none;
 			@include mt;
 			&:hover {
-				stroke: $primary;
+				color: $primary;
 			}
 		}
 		
 	}
 	&__compare {
-		margin-right: 10px;
+		// margin-right: 10px;
 	}
 	&__compare--active,
 	&__bookmarks--active {
@@ -182,7 +189,7 @@
 	
 	&__img-link {
 		// display: block;
-		flex-grow: 1;
+		// flex-grow: 1;
 		&:hover {
 			.prod-item__code {
 				color: $cyan;
@@ -193,7 +200,10 @@
 	&__img-wrap {
 		@include block(222,180);
 		max-width: 222px;
-		margin-bottom: 10px;
+		margin-left: auto;
+    margin-right: auto;
+		margin-top: rem(31);
+		margin-bottom: rem(5);
 		img {
 			position: absolute;
 			top: 0;
@@ -207,39 +217,70 @@
 	&__code{
 		font-size: 16px;
 		line-height: 160%;
-		color: $primary;
+		color: $gray-600;
+		margin-bottom: rem(3);
 	}
 	&__title {
 		display: block;
-		margin-bottom: rem(12);
-		font-size: 14px;
-		line-height: 1.4;
-		font-weight: 300;
-		color: $body-color;
+		margin-bottom: rem(18);
+		font-size: 16px;
+		line-height: 1.375em;
+		font-weight: 600;
+		color: $gray-700;
+		border-top: 1px solid $gray-100;
+		padding-top: rem(18);
+		padding-left: rem(18);
+		padding-right: rem(18);
 	}
 	&__box{
 		position: relative;
-		padding: 10px 0;
-		min-height: 77px;
-		border-top: 1px solid #e6e6e6;		
+		flex-grow: 1;
 	}
 	
 	&__price-wrap {
 		display: flex;
 		flex-direction: column;
+		margin-bottom: rem(18);
 	}
 	
 	&__price--old {
 		font-size: 14px;
 		text-decoration-line: line-through;
-		color: #CCCCCC;
 		white-space: nowrap;
+		color: $red;
+		padding-top: 5px;
 	}
 	
+	&__inStock, &__notInStock {
+		color: $gray-600;
+		// position: relative;
+		// padding-left: 16px;
+		margin-bottom: rem(18);
+		&:before {
+			content: '';
+			display: inline-block;
+			// position: absolute;
+			margin-right: 10px;
+			width: 9px;
+			height: 9px;
+			border-radius: 50%;
+		}
+	}
+	&__inStock {
+		&:before {
+			background-color: $green;
+		}
+	}
+	&__notInStock {
+		&:before {
+			background-color: $red;
+		}
+	}
+
 	&__price--new {
-		margin-bottom: 10px;
 		font-size: 24px;
 		white-space: nowrap;
+		font-family: 'Play', sans-serif;
 	}
 
 	&__discount {
@@ -262,6 +303,9 @@
 		color: $white;
 		display: block;
 		width: 100%;
+		max-width: rem(222);
+		margin-left: auto;
+		margin-right: auto;
 		&:hover {
 			color: $white;
 			background-color: $cyan;
@@ -300,43 +344,53 @@
 
 	&__badge {
 		position: absolute;
-		left: 20px;
-		top:20px;
+		left: 30px;
+		top: 0px;
 
 		color: $white;
-		font-size: 14px;
+		font-size: 10px;
+		font-weight: 700;
 		line-height: 1.2;
 		padding: 4px 7px;
 		z-index: 10;
-
-		&.bg-green{
-			background-color: $green;
-		}
-		&.bg-blue{
-			background-color: $blue;
-		}
+		background-color: $red;
+		border-radius: 0px 0px 5px 5px;
+		text-transform: uppercase;
+		// &.bg-green{
+		// 	background-color: $green;
+		// }
+		// &.bg-blue{
+		// 	background-color: $blue;
+		// }
 	}
 }
 //
 .long-item{
+	@include mt;
 	position: relative;
 	display: flex;
 	padding: 0 0 0 20px;
-	border: 1px solid $gray-400;
-
+	box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.08);
+	border-radius: 20px;
+	&:hover {
+		box-shadow: 0px 3px 20px rgba(30, 159, 204, 0.2);
+	}
 	@include media-breakpoint-down(md){
 		min-height: 100%;
 		display: flex;
 		flex-direction: column;
+		padding: 0;
 	}
 
 	&__about-col{
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 70%;
+		width: 31%;
+		padding-right: rem(20);
 		@include media-breakpoint-down(md) {
 			width: 100%;
+			padding-right: 0;
 		}
 		@include media-breakpoint-down(sm) {
 			flex-wrap: wrap;
@@ -349,28 +403,28 @@
 		}
 	}
 	&__img{
-		@include block(215,165);
-		max-width: 215px;
-		margin-top: auto;
-		margin-right: rem(50);
+		@include block(222,180);
+		max-width: 222px;
+		// margin-top: auto;
+		// margin-right: rem(50);
 		width: 100%;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
+		// padding-top: 20px;
+		// padding-bottom: 20px;
+		// img {
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0;
+		// 	width: 100%;
+		// 	height: 100%;
+		// }
 	}
 	&__content-col{
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		padding: 20px 20px 20px 0;
+		// padding: 20px 20px 20px 0;
+		flex-grow: 1;
 		@include media-breakpoint-down(md){
-			flex-grow: 1;
 			display: flex;
 			flex-direction: column;
 		}
@@ -387,17 +441,20 @@
 	&__price-col{
 		display: flex;
 		flex-direction: column;
-		position: relative;
+		// position: relative;
 		margin-left: auto;
-		padding: 20px;
-		min-width: 30%;
-		border-left: 1px solid $gray-400;
+		padding: rem(15) rem(10) rem(10) rem(15);
+		// min-width: 30%;
+		min-height: rem(230);
 		@include media-breakpoint-down(md) {
 			width: 100%;
-		}
-		@include media-breakpoint-down(md){
 			margin-bottom: 12px;
 			justify-content: center;
+		}
+		@include media-breakpoint-up(md){
+			padding: rem(30) rem(20) rem(20) rem(39);
+			border-left: 1px solid $gray-100;
+			width: 69%;
 		}
 	}
 	.prod-item__discount{
@@ -406,38 +463,60 @@
 	}
 	&__links {
 		position: absolute;
-		right: 20px;
-		top: 20px;
+		right: 10px;
+		top: 10px;
 		// @include media-breakpoint-up(lg){
-		// 	top: 14px;
+			// 	top: 14px;
 		// }
 		// @include media-breakpoint-up(md){
-		// 	right: 23px;
-		// 	top: 5px;
+			// 	right: 23px;
+			// 	top: 5px;
 		// }
 		.icon {
-			font-size: 19px;
+			font-size: 24px;
 			@include mt;
-			stroke: $gray-600;
-			fill: none;
+			// stroke: $gray-600;
+			// fill: none;
 		}
-	}
-	&__compare {
-		margin-right: 13px;
-		&:hover {
-			.icon {
-				stroke: $primary;
-			}
-		}
-	}
-	&__bookmarks {
-		&:hover {
-			.icon {
-				stroke: $primary;
-			}
+		&:hover, &.active {
+			color: $primary;
 		}
 	}
 	
+	&__compare {
+		color: $gray-500;
+		&:hover, &.active {
+			color: $primary;
+		}
+		.icon {
+			font-size: 24px;
+		}
+	}
+	&__inStock, &__notInStock {
+		color: $gray-600;
+		// position: relative;
+		// padding-left: 16px;
+		margin-bottom: rem(18);
+		&:before {
+			content: '';
+			display: inline-block;
+			// position: absolute;
+			margin-right: 10px;
+			width: 9px;
+			height: 9px;
+			border-radius: 50%;
+		}
+	}
+	&__inStock {
+		&:before {
+			background-color: $green;
+		}
+	}
+	&__notInStock {
+		&:before {
+			background-color: $red;
+		}
+	}
 	&__tag{
 		position: absolute;
 		top: 0;
@@ -454,26 +533,19 @@
 		}
 	}
 	&__code{
-		color: $primary;
+		color: $gray-600;
+		margin-bottom: rem(3);
 	}
 	&__title{
-		margin-bottom: 15px;
-		font-weight: 300;
-		font-size: 14px;
-		color: $body-color;
+		margin-bottom: 18px;
+		font-weight: 600;
+		font-size: 16px;
+		color: $gray-700;
 	}
-	dl {
-		margin-bottom: 0;
-		color: $body-color;
-	}
-	dt {
-		font-weight: 400;
-		font-size: 14px;
-	}
-	dd {
-		margin-bottom: 10px;
-		font-weight: 300;
-		font-size: 14px;
+	&__footer-row {
+		align-items: center;
+		--bs-gutter-x: #{rem(10)};
+		--bs-gutter-y: #{rem(10)};
 	}
 	// &__lower-row{
 	// 	margin-top: auto;
@@ -489,20 +561,24 @@
 		white-space: nowrap;
 		font-size: 14px;
 		text-decoration-line: line-through;
-		color: #cccccc;
+		color: $red;
 		white-space: nowrap;
 		margin-right: 7px;
 	}
 	&__price--new{
 		white-space: nowrap;
-		font-size: 20px;
+		font-size: 24px;
 		line-height: math.div(19, 16);
+		font-family: 'Play', sans-serif;
 	}
 	&__btn{
 		@extend .btn;
 		@extend .btn-primary;		
 		min-width: 184px;
 		margin: auto auto 0;
+		--bs-btn-padding-y: #{rem(11)};
+		--bs-btn-color: #{$white};
+		--bs-btn-border-radius: #{rem(10)};
 	}
 	&__btn-col{
 		@include media-breakpoint-down(md){
