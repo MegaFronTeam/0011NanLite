@@ -7,6 +7,7 @@ mixin sOrder(data)
 			//- 	h2 Оформление
 			+e.row.row
 				.col-lg-7
+					h1 оформление
 					+e.login-txt.h4 Авторизация
 					+e.login-sm
 						| Если у Вас есть аккаунт авторизуйтесь на сайте. Мы сохраним всю информацию по заказу
@@ -14,21 +15,20 @@ mixin sOrder(data)
 						br.d-none.d-sm-block
 						| и автоматически заполним ваши контактные данные.
 					//- +e.login-btn(href='#') Авторизоваться
-					+e.login-btn(href='#').btn.btn-outline-primary Войти
+					+e.login-btn(href='#').btn.btn-primary Авторизация
 					//-1
 					+e.big-title.h4 Контактные данные
 					+e.content
 						+form-wrap
 							+input('', 'text', 'ФИО*', 'name')
-							+input('', 'tel', 'Телефон*', 'tel')(value="8 916 176 05 12").is-valid
-							+e.input-incorrect-wrap
-								+input('', 'email', 'E-mail*', 'email')(value="fasxsa@fassd.sasa").is-invalid
-								.invalid-feedback Неверный адрес электронной почты
+							+input('', 'tel', 'Телефон*', 'tel').is-valid
+							+input('', 'email', 'E-mail*', 'email').is-invalid
 					//-2
 					+e.big-title.h4 Способ получения
 					+e.content
 						+form-wrap
 							+input('', 'text', 'Город*', 'city')
+							+in-c("checkbox", 'Моего города нет в списке')
 							+e.delivery.delivery-group-dd-js
 								+e.del-row.row
 									+e.del-title.col-auto Варианты доставки
@@ -85,10 +85,8 @@ mixin sOrder(data)
 									| Оплата online
 								+wayToPay('blank', 'account')
 									| Оплата по счёту
-									br
-									| для юр. лиц
 					+e.foot
-						+e.f-row.row.align-items-center
+						+e.f-row.row
 							.col-sm
 								+e.polite.text-center.text-sm-start
 									| Нажимая кнопку «Оформить заказ», вы соглашаетесь
@@ -96,7 +94,7 @@ mixin sOrder(data)
 									br.d-sm-block.d-none
 									a(href="#") с Политикой конфиденциальности.
 							.col-sm-auto
-								+e.f-btn(href='#') В корзину
+								+e.f-btn(href='#') Оформить
 				.col-lg-4.ms-auto
 					//- +orderContent2()
 					+orderContent()
@@ -138,18 +136,18 @@ mixin orderContent()
 	+b.order-content
 		+e.box.order-content-dd-js
 			+e.dd-item
-				+e.dd-head.dd-head-js.h4 Состав заказа
+				+e.dd-head.dd-head-js.h3 Состав заказа
 				+e.dd-content.dd-content-js.active
 					+e.items
 						+goodsItemAlt()
+						+goodsItemAlt('× 20')
+						+goodsItemAlt()
 						+goodsItemAlt()
 					+e.edit-btn(href='#') Редактировать заказ
-			+e.f-data
-				+fDataItem('Товары', '3 шт.')
-				+fDataItem('Вес', '37 кг')
-				+fDataItem('Скидка', '-12 568 ₽', 'text-danger')
-				+fDataItem('Скидка по промокоду', '-12 568 ₽', 'text-danger')
-				+fDataItem('Доставка', '1500 ₽', 'pb-12')
+			+e.f-data4
+				+fDataItem('Товары', '4')
+				+fDataItem('Вес', '30 кг')
+				+fDataItem('Скидка', '-11 890 ₽', 'text-primary pb-20')
 				+fDataItem('ИТОГО', '33 294  ₽', 'huge-row')
 
 //- mixin orderContent2()
@@ -166,19 +164,17 @@ mixin orderContent()
 //- 						+fDataItem('Доставка', '500 ₽', 'pb-12')
 //- 						+fDataItem('ИТОГО', '24 600 ₽', 'huge-row')
 
-mixin goodsItemAlt(amount='100 шт.')
+mixin goodsItemAlt(amount='× 1')
 	+b.g-item-alt
 		+e.row.row
-			+e.img-col.col-sm
+			+e.img-col.col-sm-auto
 				+e.img(href='#' target="_blank")
-					img(loading="lazy" src="img/@2x/category-7.png" alt="")
+					img(loading="lazy" src="img/@2x/catalog-img-1.png" alt="")
 			+e.col-with-row.col-sm
 				+e.inner-row.row.align-items-center
 					+e.txt-col.col-md
-						+e.title(href='#' target="_blank") GBH 36 V-LI PLUS
-						+e.code Клеевой пистолет
-						+e.price--new.h4 24 600 ₽
-						+e.price--old 28 400 ₽
-						+e.amount-col
-							p Кол-во
-							!=`${amount}`
+						+e.title(href='#' target="_blank") MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
+						+e.price--new.h4 16 500 ₽
+						+e.price--old 18 500 ₽
+		+e.amount-col
+			!=`${amount}`

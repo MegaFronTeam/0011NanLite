@@ -30,15 +30,18 @@ mixin sForm2()
 	// start sForm
 	+b.sForm.section#sForm&attributes(attributes)
 		+b.section-title.long
-			h4 Обратная связь
+			h4 ФОРМА ОБРАТНОЙ СВЯЗИ
 			+form-wrap
-				+input('', 'textarea', 'Ваше сообщение', 'message')
-				+input('', 'text', 'ФИО*', 'full-name')
-				+input('', 'tel', 'Телефон*')
-				+input('', 'email', 'E-mail*')
+				+e.row.row 
+					.col-lg-6
+						+input('', 'text', 'ФИО*', 'full-name')
+						+input('', 'tel', 'Телефон*')
+						+input('', 'email', 'E-mail*')
+					.col-lg-6
+						+input('', 'textarea', 'Ваше сообщение', 'message')
 				+e.wrap
-					p Нажимая кнопку «Отправить», вы соглашаетесь с #[a(href='#') Политикой конфиденциальности.]
 					+e.btn.btn.btn-primary(type="submit") Отправить
+					p Нажимая кнопку «Отправить», вы соглашаетесь с #[a(href='#') Политикой конфиденциальности.]
 				//- +e.foot
 				//- 	+e.f-row.row.align-items-center
 				//- 		.col-md

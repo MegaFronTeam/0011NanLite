@@ -3,13 +3,20 @@ mixin sNewsBox(main)
 	if main
 		+b.SECTION.sNewsBox.section#sNewsBox&attributes(attributes)
 			.container
-					h2 Новости
+					h1 Новости
+					+e.wrap(href="#")
+						+pic('news-img-main.jpg')
+						+e.mainTitle.font-monospace новости
 					+e.row.row
-						+NewsBoxItem('1', '12.05.2022', 'Всего один CLICK!','Все заказы бытовой техники, оформленные в&nbsp;марте, будут доставлены на&nbsp;первой или второй неделе апреля по&nbsp;ранее согласованной и&nbsp;оплаченной стоимости. Надеемся на&nbsp;ваше понимание!')
-						+NewsBoxItem('2','12.05.2022', 'Все данные в одном формате','MeasureOn – приложение для простого документирования поэтажных планов помещений, результатов измерений, фотографий и заметок прямо на рабочей площадке.')
-						+NewsBoxItem('3','12.05.2022', 'Созданы для работы по дереву','Все заказы бытовой техники, оформленные в марте, будут доставлены на первой или второй неделе апреля по ранее согласованной и оплаченной стоимости. Надеемся на ваше понимание!')
+						+NewsBoxItem('1')
+						+NewsBoxItem('2')
+						+NewsBoxItem('3')
+						+NewsBoxItem('4')
+						+NewsBoxItem('5')
+						+NewsBoxItem('6')
 					+e.btn-wrap
-						+btn('Все статьи')
+						+e.btn(href="#") Показать ещё
+							+icon('chevron-down-24')
 	else
 		+b.SECTION.sNewsBox--2.section#sNewsBox&attributes(attributes)
 			.container
@@ -32,7 +39,10 @@ mixin NewsBoxItem(img,date, title,descr)
 			+e.img-wrap
 				.img-wrap-center
 					img(loading="lazy" src=`img/@2x/news-${img}.jpg` alt="")
-			+e.date=date
-			+e.title!= title
-			+e.descr!= descr
-			+e.more Читать
+			+e.content
+				+e.title.h4 Заголовок SEO текста
+				+e.item-row.row
+					.col Событие
+					.col-auto 11-04-2022
+				+e.descr Позаботьтесь о тепле и безопасности с принадлежностями для работы с цепной пилой
+			+e.more Читать дальше

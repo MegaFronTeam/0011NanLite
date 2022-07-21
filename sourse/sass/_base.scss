@@ -461,10 +461,10 @@ a{
 	position: absolute;
 	top: 50%;
 
-	width: 42px;
-	height: 54px;
+	width: 50px;
+	height: 50px;
 	color: $primary;
-	background: #EFF1F2;
+	// background: #EFF1F2;
 	
 	display: flex;
 	align-items: center;
@@ -477,16 +477,17 @@ a{
 	}
 	.icon{
 		@include mt();
-		font-size: 24px;
-		color: transparent;
-		fill: none;
-		stroke: $primary;
+		font-size: 50px;
+		// color: transparent;
+		// fill: none;
+		// stroke: $primary;
 	}
 
 	@include mt();
-	box-shadow: 2px 2px 12px 0 rgba($black, 0) !important;
+	// box-shadow: 2px 2px 12px 0 rgba($black, 0) !important;
 	&:hover{
-		box-shadow: 2px 2px 12px 0 rgba($black, .2) !important;
+		// box-shadow: 2px 2px 12px 0 rgba($black, .2) !important;
+		background-color: transparent;
 		.icon{
 			transform: scale(1.1);
 		}
@@ -646,6 +647,7 @@ a{
 
 .main-wrapper {
 	overflow-x: hidden;
+	overflow-y: hidden;
 	display: flex;
 	flex-direction: column;
 	min-width: 0;
@@ -870,7 +872,7 @@ body{
 }
 
 .btn-primary {
-	// color: $white;
+	--bs-btn-color: #{$white};
 	--bs-btn-hover-bg: #{$cyan};
 	--bs-btn-hover-color: #{$white};
 	--bs-btn-hover-border-color: #{$cyan};

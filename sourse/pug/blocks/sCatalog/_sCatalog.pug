@@ -8,7 +8,7 @@ mixin sCatalog(data)
 
 mixin sCatalogHit(title='Хиты продаж')
 	// start sCatalog
-	+b.sCatalog.section#sCatalogHit&attributes(attributes)
+	+b.sCatalog--hit.section#sCatalogHit&attributes(attributes)
 		.container
 			+b.section-title
 				h2!= title
@@ -16,13 +16,13 @@ mixin sCatalogHit(title='Хиты продаж')
 				+e.slider--js.swiper
 					.swiper-wrapper
 						+e.slide.swiper-slide
-							+item-prod('1', 'slider', 'GBH 36 V-LI PLUS','Аккумуляторный шуруповерт')
+							+item-prod('7', 'slider', 'Арт. №15-2009-4KIT', 'Крепление магнитное для лампы Nanlite PavoBulb 10C', '860 ₽', '1 000 ₽')
 						+e.slide.swiper-slide
-							+item-prod('2', 'slider', 'GBH 36 V-LI PLUS', 'Аккумуляторная угловая шлифмашина с X-LOCK')
+							+item-prod('12', 'slider', 'Арт. №15-2009-4KIT', 'Комплект Nanlite PavoTube II 15X-KIT 4 RGBWW (61 см)', '117 550 ₽')
 						+e.slide.swiper-slide
-							+item-prod('3', 'slider', 'GBH 36 V-LI PLUS', 'Клеевой пистолет')
+							+item-prod('8', 'slider', 'Арт. №15-2009-4KIT', 'Комплект Nanlite PavoBulb 10C-4Kit RGBWW LED', '46 900 ₽', '', false)
 						+e.slide.swiper-slide
-							+item-prod('4', 'slider', 'GBH 36 V-LI PLUS', 'Аккумуляторная шуруповерт')
+							+item-prod('6', 'slider', 'Арт. №15-2009-4KIT', 'Светодиодная лампа Nanlite PavoBulb 10C RGBWW LED', '6 500 ₽')
 				+arrow('d-none d-sm-flex')
 
 mixin sCatalogNew()
@@ -46,8 +46,10 @@ mixin sCatalogNew()
 							+item-prod('2', 'slider')
 				+arrow('d-none d-sm-flex')
 
-mixin item-prod(i, slider, code='Арт. №15-2009-4KIT', t="Светодиодная лампа-трубка Nanlite PavoTube II 6C", newPrice ,hasOldPrice, inStock=true)
+mixin item-prod(i, slider, code='Арт. №15-2009-4KIT', t="Светодиодная лампа-трубка Nanlite PavoTube II 6C", newPrice ,hasOldPrice, inStock=true, newProd=false)
 	+b.prod-item&attributes(attributes)
+		if newProd 
+			+e.badge Новинка
 		+e.links
 			+e.compare(href="#")
 				+icon('heart')
@@ -63,7 +65,7 @@ mixin item-prod(i, slider, code='Арт. №15-2009-4KIT', t="Светодиод
 			+e.title= t
 		+e.box
 			+e.price-wrap
-				+e.price--new!= newPrice
+				+e.price--new.font-monospace!= newPrice
 				if hasOldPrice
 					+e.price--old!= hasOldPrice
 			+e.code=code
@@ -82,16 +84,15 @@ mixin sCatalogFromArticle()
 			+e.slider--js.swiper
 				.swiper-wrapper
 					+e.slide.swiper-slide
-						+item-prod('1', 'slider', 'JR3050T', 'Молоток отбойный легкий','toCompare')
+						+item-prod('7', 'slider', 'Арт. №15-2009-4KIT', 'Крепление магнитное для лампы Nanlite PavoBulb 10C', '860 ₽', '1 000 ₽')
 					+e.slide.swiper-slide
-						+item-prod('2', 'slider', 'JR3050T', 'Шуруповерт с 6 положениями регулировки','','toBookmark')
-							//- +e.badge.bg-red Новинка
+						+item-prod('12', 'slider', 'Арт. №15-2009-4KIT', 'Комплект Nanlite PavoTube II 15X-KIT 4 RGBWW (61 см)', '117 550 ₽')
 					+e.slide.swiper-slide
-						+item-prod('2', 'slider', 'JR3050T', 'Сабельная пила')
+						+item-prod('8', 'slider', 'Арт. №15-2009-4KIT', 'Комплект Nanlite PavoBulb 10C-4Kit RGBWW LED', '46 900 ₽', '', false)
 					+e.slide.swiper-slide
-						+item-prod('2', 'slider', 'JR3050T' , 'Сабельная пила')
+						+item-prod('6', 'slider', 'Арт. №15-2009-4KIT', 'КСветодиодная лампа Nanlite PavoBulb 10C RGBWW LED', '6 500 ₽')
 					+e.slide.swiper-slide
-						+item-prod('2', 'slider')
+						+item-prod('8', 'slider', 'Арт. №15-2009-4KIT', 'Комплект Nanlite PavoBulb 10C-4Kit RGBWW LED', '46 900 ₽', '', false)
 			+arrow('d-none d-sm-flex')
 
 mixin sCatalogAlso()
@@ -135,6 +136,21 @@ mixin sCatalogSimilar()
 			+e.plus-btn.plus-btn-js
 				+icon('plus')
 
+mixin sCatalogSimilarProducts()
+	+b.sCatalog--similarProducts.section#sCatalog&attributes(attributes)
+		+b.section-title
+			h2 похожие товары
+		+e.row.row
+			.col-sm-6.col-lg-3
+				+item-prod('5', false, 'Арт. №15-2009-4KIT', 'Светодиодная лампа-трубка Nanlite PavoTube T8-7X', '8 100 ₽', false, false)
+			.col-sm-6.col-lg-3
+				+item-prod('1', false, 'Арт. №15-2009-4KIT', 'Светодиодная лампа-трубка Nanlite PavoTube II 6C', '7 500 ₽', '9 500 ₽', true, true)
+			.col-sm-6.col-lg-3
+				+item-prod('10', false, 'Арт. №15-2009-4KIT', 'Светодиодная лампа-трубка Nanlite PavoTube 15C RGBWW', '18 410 ₽', false)
+			.col-sm-6.col-lg-3
+				+item-prod('11', false, 'Арт. №15-2009-4KIT', 'Комплект Nanlite PavoTube 15C-KIT 2 RGBWW (61 см)', '34 320 ₽', '38 500 ₽', false)
+		+e.btn(href='#') Показать ещё
+			+icon('chevron-down')
 mixin sCatalogMayNeed()
 	// start sCatalog
 	+b.sCatalog.section.pb-0#sCatalog&attributes(attributes)

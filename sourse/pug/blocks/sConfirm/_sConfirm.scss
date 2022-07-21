@@ -2,53 +2,109 @@
 @use "sass:math";
 
 .sConfirm {
-	--sPT: 60px;
-	--sPB: 60px;
-	background-color: $gray-100;
+	--sPT: 4px;
+	--sPB: 40px;
 	@include media-breakpoint-up(md){
-		--sPT: 72px;
-		--sPB: 150px;
+		--sPT: 4px;
+		--sPB: 84px;
 	}
 	@include media-breakpoint-up(xl){
-		--sPT: 120px;
-		--sPB: 209px;
+		// --sPT: 120px;
+		// --sPB: 209px;
 	}
 	&--2 {
-		background-image: linear-gradient(90deg, rgba(0, 86, 145, 0.9) 0%, rgba(0, 142, 207, 0.9) 100%);
-		@include media-breakpoint-up(xl) {
-			--sPB: 182px;
+		.sConfirm {
+			&__wrap {
+				padding: rem(20) rem(18) rem(40) rem(18);
+				@include media-breakpoint-up(md) {
+					padding: rem(50) 0 rem(50) rem(90);
+				}
+			}
 		}
 	}
 	h1 {
+		@extend .h2;
 		margin-bottom: rem(27);
+		text-transform: uppercase;
+	}
+	&__container {
+		padding-top: rem(30);
+		padding-bottom: rem(30);
+		position: relative;
+		z-index: 1;
+		@include media-breakpoint-up(md) {
+			padding-top: rem(50);
+			padding-bottom: rem(70);
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: calc(100% + 160px);
+			height: 100%;
+			top: 0;
+			left: -80px;
+			border-radius: 20px;
+			background-color: #fff;
+			z-index: -1;
+		}
 	}
 	&__wrap {
-		margin-bottom: rem(25);
-		h4 {
-			margin-bottom: rem(0);
-			line-height: 1.25;
+		// margin-bottom: rem(25);
+		padding: rem(20) rem(18) rem(20) rem(18);
+		border-radius: 20px;
+		overflow: hidden;
+		color: $white;
+		@include media-breakpoint-up(md) {
+			padding: rem(50) 0 rem(64) rem(90);
+		}
+		h3 {
+			margin-bottom: rem(13);
+			line-height: 1.16em;
+			@include media-breakpoint-up(md) {
+				margin-bottom: rem(18);
+			}
+		}
+		p {
+			margin-bottom: 0;
+			font-size: rem(13);
+			@include media-breakpoint-up(md) {
+				font-size: rem(18);
+			}
+			&:last-of-type {
+				margin-bottom: rem(18);
+			}
+			strong {
+				font-size: rem(15);
+				@include media-breakpoint-up(md) {
+					font-size: rem(20);
+				}
+			}
 		}
 		&--indent {
-			margin-bottom: rem(58);
-		}
-	}
-	p {
-		max-width: rem(432);
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: rem(27);
-		@include media-breakpoint-up(lg) {
-			margin-bottom: rem(58);
+			// margin-bottom: rem(58);
 		}
 	}
 	&__btn {
 		display: block;
 		width: 100%;
-		max-width: rem(255);
-		margin-left: auto;
+		max-width: rem(263);
 		margin-right: auto;
-		&:not(:last-child) {
-			margin-bottom: rem(15);
+		--bs-btn-padding-y: #{rem(10.5)};
+		&--outline {
+			--bs-btn-color: #fff;
+			--bs-btn-padding-y: #{rem(11)};
 		}
+	}
+	&__wait {
+		color: $gray-600;
+		max-width: rem(263);
+		font-size: rem(14);
+		margin-bottom: rem(12);
+	}
+	&__thanks {
+		font-weight: 700;
+		font-size: rem(14);
+		margin-bottom: rem(27);
 	}
 } // end.sConfirm

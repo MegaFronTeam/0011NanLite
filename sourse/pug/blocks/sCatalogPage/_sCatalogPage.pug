@@ -15,6 +15,8 @@ mixin sCatalogPage(data)
 								+e.link(href="#") Осветители направленного света Nanlite LED
 								+e.link(href="#") Принадлежности и аксессуары Nanlite
 				.col-lg-9
+					+e.o-row
+						h1 Каталог
 					+e.row.row
 						+catalogPageItem(1, 'Светодиодные лампы-трубки Nanlite PavoTube LED')
 						+catalogPageItem(2, 'Светодиодные панели Nanlite LED')
@@ -162,7 +164,7 @@ mixin sqprodItemsRow(addClasses)
 		.col-xsm-6.col-md-4
 			+item-prod('10', false, 'Арт. №15-2009-4KIT', 'Светодиодная лампа-трубка Nanlite PavoTube 15C RGBWW', '18 410 ₽', false)
 		.col-xsm-6.col-md-4
-			+item-prod('11', false, 'Арт. №15-2009-4KIT', 'Комплект Nanlite PavoTube 15C-KIT 2 RGBWW (61 см)', '34 320 ₽', '38 500 ₽', false)
+			+item-prod('11', false, 'Арт. №15-2009-4KIT', 'Комплект Nanlite PavoTube 15C-KIT 2 RGBWW (61 см)', '34 320 ₽', '38 500 ₽')
 		.col-xsm-6.col-md-4
 			+item-prod('12', false, 'Арт. №15-2009-4KIT', 'Комплект Nanlite PavoTube II 15X-KIT 4 RGBWW (61 см)', '117 550 ₽', false)
 		block
@@ -277,7 +279,7 @@ mixin itemProdLong(title,img,tag, newPrice, oldPrice, inStock=true)
 					+icon('heart')
 			+e.footer-row.row
 				.col-auto
-					+e.price--new!= newPrice
+					+e.price--new.font-monospace!= newPrice
 				if oldPrice
 					.col-auto
 						+e.price--old!= oldPrice

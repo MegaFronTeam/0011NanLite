@@ -3,81 +3,48 @@ mixin sProdCard(data)
 	+b.SECTION.sProdCard.section#sProdCard&attributes(attributes)
 		.container
 			block
-			mixin prodHeader(header,label, color)
-				.section-title.hit
-					if label
-						.label(class=`label--${color}`)= label
-						h1.p-0!= header
-					else
-						.col
-							h1.p-0!= header
-			+prodHeader('Аккумуляторная угловая шлифмашина с X-LOCK GBH 36 V-LI PLUS','Хит','red')
+			//- mixin prodHeader(header,label, color)
+			//- 	.section-title.hit
+			//- 		if label
+			//- 			.label(class=`label--${color}`)= label
+			//- 			h1.p-0!= header
+			//- 		else
+			//- 			.col
+			//- 				h1.p-0!= header
+			//- +prodHeader('Аккумуляторная угловая шлифмашина с X-LOCK GBH 36 V-LI PLUS','Хит','red')
 			+e.main-row.row
 				.col-lg-8
 					+prodCardSliders()
 					+productTabs()
 				+e.side-col.col-lg-4
+					h1.p-0 Светодиодная лампа-трубка Nanlite PavoTube II 15X
 					mixin available(available)
 						if available
-							+e.available.--true В наличии
+							+e.available.--true в наличии
 						else
-							+e.available.--false Нет в наличии
-					+available('available')
+							+e.available.--false нет в наличии
 					+e.number Артикул: 12C1467P
+					+available('available')
+					+e.desc-item
+						p.fw-bold Доставка:&nbsp;
+						p Курьером в пределах МКАД - при сумме заказа от 1500р (от 1500р до 4999р стоимость доставки 200руб, от 5000р - бесплатно)
+					+e.desc-item
+						p.fw-bold Самовывоз бесплатно:&nbsp;
+						p Москва Сормовский проезд 11/7
+						p Отправка заказов по всей России
+					+e.desc-item
+						p.fw-bold Габариты в упаковке:&nbsp;
+						p 315мм x 375мм x 102мм
+					+e.desc-item
+						p.fw-bold Вес:&nbsp;
+						p 2.81кг
+					+e.desc-more-info
+						p 12В
+						p 35 Нм
+						p 1500 об/мин
 					+buyBlock()
-					+e.property.property-dd-js
-						+e.property-item
-							+e.property-head.dd-head-js.active Варианты доставки
-							+e.property-content.dd-content-js
-								p Курьерская доставка по Москве
-								span от 200 до 500 руб. / 1-2 дня
-								p Доставка по России
-								span от 500 руб. / 1-2 дня
-								p Самовывоз
-								span Бесплатно
-								+e.property-note При заказе от 5 000 руб. доставка бесплатная. Точную стоимость доставки уточняйте у менеджера.
-						+e.property-item
-							+e.property-head.dd-head-js Описание
-							+e.property-content.dd-content-js
-								p Страна производства
-								span Швеция
-								p Габариты в упаковке (мм)
-								span 305 x 520 x 610
-								p Вес
-								span 19.2кг
-								+e.property-link(href='#') Подробнее
-					+e.row.row
-						//- .col-auto.d-none.d-sm-block
-							//- +e.icons-row.row
-							//- 	.col-auto
-							//- 		+e.icon(href='#')
-							//- 			+icon('heart')
-							//- 			| В избранное
-							//- 	.col-auto
-							//- 		+e.icon(href='#')
-							//- 			+icon('bars')
-							//- 			| Сравнить
-							//- 	.col-auto
-							//- 		+e.icon(href='#')
-							//- 			+icon('share')
-						//- .col-12.col-lg
-						//- 	+prodCardSliders('d-lg-none')
-							//- 			| Поделиться
-							//- +e.subtitle DF332DWME
-					+e.promo
-						+e.promo-head
-							+e.promo-title Акции
-							+e.promo-link(href='#') Все акции
-						mixin promoItem(img,title)
-							+e.promo-item(href="#")
-								+e.promo-wrapper
-									img(src=`img/@2x/promo-${img}.jpg`)
-								+e.promo-name!= title
-						+promoItem('1','Созданы для работы по дереву')
-						+promoItem('2','Всего один CLICK!')
-						+promoItem('3','Все данные в одном формате')
-			+sCatalogHit('Рекомендуемые товары').sCatalog--prodcard
-	
+			+sCatalogHit('с этим товаром покупают').sCatalog--prodcard
+			+sCatalogSimilarProducts
 					//- +tableDescr('Наличие в магазинах')
 					//- 	+tableDescrItem('Магазин Дмитровка', 'В наличии')
 					//- 	+tableDescrItem('Магазин Дмитровка', 'Под заказ')
@@ -106,117 +73,39 @@ mixin productTabs()
 				.swiper-wrapper
 					+productTabsSlide('Описание', 'active')
 					+productTabsSlide('Характеристики')
-					+productTabsSlide('Документы')
-					+productTabsSlide('Запасные части')
-					+productTabsSlide('Отзывы','count')
+					+productTabsSlide('Видео')
 		+e.wrap.tabs__wrap
 			.tabs__content.active
-				+e.title Описание
-				p Газонокосилка бензиновая Husqvarna LC140 9676367-01 используется для кошения травы. Имеет вместительный контейнер. Бензиновый двигатель Briggs&amp;Stratton 450 series обеспечивает длительный срок службы машины. Колеса на&nbsp;шарикоподшипниках отличаются высокой плавностью хода. Складная рукоятка обеспечивает удобство хранения и&nbsp;транспортировки косилки. Центральная регулировка высоты скашивания варьируется от&nbsp;25&nbsp;до&nbsp;75&nbsp;мм
+				p Nanlite PavoTube II&nbsp;RGBWW&nbsp;&mdash; это следующая эволюция светодиодных пиксельных трубок Nanlite. Компания Nanlite использовала отзывы владельцев PavoTube по&nbsp;всему миру для усовершенствования конструкции своих светодиодных трубок. Они стали более яркими, свет более рассеянный и&nbsp;равномерный, добавлены пиксельные спецэффекты, прочный металлический корпус, совместимость с&nbsp;DMX и&nbsp;расширенное управление приложениями.
+				p PavoTube II&nbsp;15X&nbsp;RGBWW LED с&nbsp;расширенным и&nbsp;более точным диапазоном цветовой температуры от&nbsp;2700K до&nbsp;12000K с&nbsp;регулировкой от&nbsp;зеленого до&nbsp;пурпурного, средним индексом CRI&nbsp;96, значением TLCI&nbsp;98, а&nbsp;также полным спектром управления оттенками и&nbsp;насыщенностью RGB.
+				p Благодаря внутреннему литий-ионному аккумулятору емкостью 2200 мАч PavoTube II&nbsp;15X может работать в&nbsp;течение 1&nbsp;часа 26&nbsp;минут при полной яркости. Полная зарядка аккумулятора достигается за&nbsp;3&nbsp;часа с&nbsp;помощью прилагаемого адаптера переменного тока, который также может питать Pavotube II&nbsp;15X&nbsp;в процессе длительных съемок.
+				p В&nbsp;дополнение к&nbsp;пятнадцати регулируемым спецэффектам PavoTube II&nbsp;15X предлагает десять новых эффектов на&nbsp;основе пикселей, расширяющих творческие возможности. Пиксельные эффекты включают Hue Loop, CCT Loop, INT Loop, Multi-color, Gradient, Scrolling, Marching, Flame, Rainbow и&nbsp;Driving. Практические эффекты включают Hue Loop, CCT Loop, INT Loop, CCT Flash, HUE Flash, CCT Pulse, Hue Pulse, Storm, Police Car, TV, Paparazzi, Candle/Fire, Disco, Bad Bulb, Firework, Explosion и&nbsp;Welding.
+				p Модернизированный металлический корпус PavoTube II&nbsp;15X обеспечивает надежную защиту при эксплуатации прибора, а&nbsp;три встроенных приемника &frac14;&quot; значительно расширяют возможности монтажа.
 			.tabs__content
 				+e.table
-					+prodTabsTableRow('Номинальная потребляемая мощность','1100 Вт')
-					+prodTabsTableRow('Напряжение сети','220 - 240 В')
-					+prodTabsTableRow('Макс. производительность','4000 л/ч')
-					+prodTabsTableRow('Максимальная высота всасывания','Максимальная высота всасывания 8 м')
-					+prodTabsTableRow('Макс. высота подачи','Макс. высота подачи 46 м')
-					+prodTabsTableRow('Макс. давление','Макс. давление 4,6 бар')
+					+prodTabsTableRow('Distance and CCT')
+					+prodTabsTableRow('@ 0.5m 2700K', '1374 lux')
+					+prodTabsTableRow('@ 1m 2700K', '343 lux')
+					+prodTabsTableRow('@ 2m 2700K', '86 lux')
+					+prodTabsTableRow('@ 3m 2700K', '38 lux')
+					+prodTabsTableRow('@ 0.5m 3200K', '1399 lux')
 			.tabs__content
-				+e.title Инструкция
-				+e.docs
-					+e.docs-item
-						+icon('doc')
-						+e.doc-title Аккумуляторная угловая шлифмашина с X-LOCK GBH 36 V-LI PLUS
-						button.prodTabs__docs-btn Скачать
-			.tabs__content
-				+e.title Запасные части
-				+itemProdLong('Шуруповерт с 6 положениями регулировки', '1','new')
-			.tabs__content
-				+e.title Отзывы
-				+b.feedback
-					+e.item
-						+e.source
-							img(src="img/@2x/yandex-market.png") 
-							| Отзывы с Яндекс.Маркета 
-						+e.content
-							+e.info
-								+e.date 28.10.2014 | 15:47
-								+e.user Сошников Андрей
-							+e.rating #[span Оценка пользователя] 
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-							p #[span Достоинства] Цена и качество сборки
-							p #[span Недостатки] Пока нет
-							+e.text.--main.P #[span Отзыв] Искал генератор мощностью ~6 кВт для строительства дачи и&nbsp;далее для установки как резервная станция. На&nbsp;поиски было пол года, так что в&nbsp;вопрос углубился конкретно. Первым делом рассматривал Hunday, так как фирма на&nbsp;слуху и&nbsp;постоянно видел в&nbsp;работе у&nbsp;строителей. Но&nbsp;пообщавшись с&nbsp;владельцами и&nbsp;потрогав руками в&nbsp;магазине вариант отпал сразу. Отвратительная сборка, провода висят как лапша, ломаются постоянно. Про фирму Fubag раньше вообще не&nbsp;слышал, но&nbsp;продукция заинтересовала. Начал копать и&nbsp;т.д. долго рассказывать, но&nbsp;выбор в&nbsp;данной категории единственный верный. Работает как часы. Для автозапуска требуется приобретение не&nbsp;дешового блока, но&nbsp;оно того стоит.
-						+e.source-link(href='#') Все отзывы на Яндекс.Маркете 
-					+e.item
-						+e.source.--bosch 
-							img(src="img/logo.png")
-							| Отзывы пользователей Бош.ру
-							//- a(href="#") Makita.ru
-						+e.content
-							+e.info
-								+e.date 28.10.2014 | 15:47
-								+e.user Евгений
-							+e.rating.--bosch #[span Оценка пользователя ] 
-								+icon('star')
-								+icon('star')
-								+icon('star','icon-star--empty')
-								+icon('star','icon-star--empty')
-								+icon('star','icon-star--empty')
-							+e.text.P #[span Отзыв] Какие 6&nbsp;квт? Максимум&nbsp;4,96квт, смотрите инструксию. Врете вместе с&nbsp;фирмой производителя...
-							+e.answer
-								+e.info
-									span Ответ Бош.ру
-									+e.manager 
-										img(src="img/@2x/fb-logo.png") 
-										| Артём Нестеров, старший менеджер
-									//- +e.date 28.10.2014 | 15:47
-								+e.text.P Евгений, рекомендуем ознакомиться со&nbsp;статьей об&nbsp;максимальной и&nbsp;номинальной мощности двигателя. Все встанет на&nbsp;свои места.
-								+e.link(href="#") Ссылка
-						+e.source-link(href='#') Показать все отзывы #[sup 34] 
-					+e.form
-						+e.form-title Оставить отзыв
-						+form-wrap
-							+e.rate
-								+e.rate-label Моя оценка:
-								+icon('star')
-								+icon('star')
-								+icon('star','icon-star--empty')
-								+icon('star','icon-star--empty')
-								+icon('star','icon-star--empty')
-							+e.inputs
-								+input('', 'textarea', 'Ваше сообщение', 'message')
-								+input('', 'text', 'ФИО*', 'full-name')
-								+input('', 'tel', 'Телефон*')
-								+input('', 'email', 'E-mail*')
-							+e.foot
-								+e.f-row.row.align-items-center
-									.col-md
-										+e.policy
-											| Нажимая кнопку «Отправить», вы соглашаетесь
-											|
-											br
-											| с
-											|
-											a(href='#') Политикой конфиденциальности.
-									.col-md-auto.text-center.text-md-start
-										+e.BUTTON.btn.btn.btn-primary(type="submit") Отправить
-					
-
-
+				//- +e.title Инструкция
+				//- +e.docs
+				//- 	+e.docs-item
+				//- 		+icon('doc')
+				//- 		+e.doc-title Аккумуляторная угловая шлифмашина с X-LOCK GBH 36 V-LI PLUS
+				//- 		button.prodTabs__docs-btn Скачать
 
 mixin prodTabsTableRow(name, val)
 	+e.t-row.row
 		+e.t-name-col.col-6=name
-		+e.t-val-col.col-6=val
+		if val
+			+e.t-val-col.col-6=val
 
 mixin productTabsSlide(title, addClass="")
 	.swiper-slide
-		+e.btn.tabs__btn(class=addClass)=title
+		+e.btn.tabs__btn.font-monospace(class=addClass)=title
 
 mixin miniSlider()
 	+b.mini-slider
@@ -254,25 +143,21 @@ mixin buyBlock()
 		+e.close-bar.d-md-none.buy-bl-toggle-js
 			+icon('chevron-down')
 		+e.main-row.row
-			+e.price-col.col.col-md-6.col-lg-12
+			+e.price-col.col.col-md-6.col-lg-12.order-1
 				+e.price-row.row
-					.col.col-lg-12.col-xl.d-flex.flex-column
-						+e.price--new 16 500 ₽
+					.col.col.d-flex
+						+e.price--new.font-monospace 16 500 ₽
 						+e.price--old 18 500 ₽
-					+e.inputs-col.col.col-lg-12.col-xl
+					+e.inputs-col.col.col
 						+e.price
 							+e.p-btn--min 
 							+e.INPUT.p-input.form-control(type='number' value="1")
 							+e.p-btn--plus
-			+e.btns-col.col-auto.col-md-6.col-lg-12
-				+e.btn-row.row
-					.col-md-6.col-lg-12
-						+e.buy-btn(href="#") В корзину
-					+e.bill-col.col-md-6.col-lg-12
-						+e.bill-btn(href="#") Запросить счёт
-					+e.bill-col.col-md-6.col-lg-12.d-none.d-lg-block
-						+e.bill-btn(href="#") Уведомить о поступлении
-			+e.open-col.col-auto.d-md-none.buy-bl-toggle-js
+			+e.btns-col.col-12.col-sm-auto.col-md-6.col-lg-12.order-3.order-sm-2
+				+e.buy-btn(href="#") Купить
+				//- +e.btn-row.row
+				//- 	.col-md-6.col-lg-12
+			+e.open-col.col-auto.d-md-none.buy-bl-toggle-js.order-2.order-sm-3
 				+e.open
 					span
 
@@ -288,7 +173,10 @@ mixin prodCardSliders(addClasses='')
 							+prodCardSlide(1)
 							+prodCardSlide(1)
 							+prodCardSlide(1)
-					+arrow('d-none d-sm-flex')
+							+prodCardSlide(1)
+							+prodCardSlide(1)
+							+prodCardSlide(1)
+					//- +arrow('d-none d-sm-flex')
 			.col-12
 				+e.thumb-slider
 					.swiper.sProdCard-thumb-js
@@ -298,15 +186,17 @@ mixin prodCardSliders(addClasses='')
 							+prodCardThumb(3)
 							+prodCardThumb(4)
 							+prodCardThumb(5)
+							+prodCardThumb(6)
+							+prodCardThumb(7)
 
 mixin prodCardThumb(imgNum)
 	.swiper-slide
 		+e.th-item
-			img.swiper-lazy(src="#" data-src=`img/@2x/thumb-${imgNum}.jpg` alt="")
+			img.swiper-lazy(src=`img/@2x/catalog-img-${imgNum}.png` data-src=`img/@2x/catalog-img-${imgNum}.png` alt="")
 
 mixin prodCardSlide(imgNum)
 	.swiper-slide
-		+e.slide-img(href=`img/@2x/prod-gallery-1.jpg` data-fancybox=`prod-gallery`)
+		+e.slide-img(href=`img/@2x/prod-card-img.jpg` data-fancybox=`prod-gallery`)
 			.img-wrap-center
-				img.swiper-lazy(src="#" data-src=`img/@2x/prod-card-img.png` alt="")
+				img.swiper-lazy(src="#" data-src=`img/@2x/prod-card-img.jpg` alt="")
 

@@ -10,14 +10,14 @@
 	}
 
 	@include media-breakpoint-up(xl){
-		--sPB: 90px;
+		--sPB: 120px;
 	}
 
 	&__row{
-		& > *{
-			margin-bottom: 24px;
-		}
-		margin-bottom: -24px;
+		// & > *{
+		// 	margin-bottom: 24px;
+		// }
+		// margin-bottom: -24px;
 
 		// padding-bottom: 24px;
 		@include media-breakpoint-up(md){
@@ -27,9 +27,27 @@
 			// padding-bottom: 48px;
 		}
 	}
+	&__slider-col {
+		padding-top: rem(20);
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			display: block;
+			height: 1px;
+			width: calc(100% - var(--bs-gutter-x));
+			top: 0;
+			left: calc(var(--bs-gutter-x) / 2);
+			background-color: $gray-500;
+		}
+		@include media-breakpoint-up(lg) {
+			padding-top: rem(33);
+		}
+	}
 	h1 {
 		@extend .h2;
 		line-height: 1.26em;
+		text-transform: uppercase;
 		margin-bottom: rem(28);
 	}
 	&__baner{
@@ -37,6 +55,8 @@
 		padding-top: math.div(459, 730) * 100%;
 
 		margin-bottom: 24px;
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+		border-radius: 15px;
 		@include media-breakpoint-up(md){
 			margin-bottom: 28px;
 		}
@@ -44,21 +64,18 @@
 	&__date{
 		font-size: 14px;
 		line-height: math.div(17, 14);
-		color: rgba(51, 51, 51, 0.5);
-		margin-bottom: 12px;
+		color: $gray-600;
+		margin-bottom: 18px;
 	}
 	&__content{
-		// h2{
-		// 	font-size: 16px;
-		// 	@include media-breakpoint-up(md){
-		// 		font-size: 20px;
-		// 	}
-		// 	line-height: 1.4;
-		// 	margin-bottom: 24px;
-		// }
-		margin-bottom: rem(30);
+		margin-bottom: rem(48);
+		.h4 {
+			text-transform: uppercase;
+			margin-bottom: rem(18);
+		}
 		p{
-			margin-bottom: 30px;
+			margin-bottom: rem(11);
+			color: $gray-700;
 		}
 
 		& > *:last-child{
@@ -73,12 +90,34 @@
 		} 
 	}
 	&__box{
-		// border-top: 4px solid $primary;
-		// border-right: 1px solid $gray-300;
-		// border-bottom: 1px solid $gray-300;
-		// border-left: 1px solid $gray-300;
+		background-color: $white;
 
-		// padding: 24px 20px;
+		padding: rem(20) rem(15) rem(20);
+		border: 1px solid $gray-100;
+		// border-top: 18px solid $primary;
+		border-radius: 20px;
+		margin-bottom: rem(20);
+		position: relative;
+		overflow: hidden;
+		&:before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 14px;
+			background-color: $primary;
+			left: 0;
+			top: 0;
+		}
+		@include media-breakpoint-up(md){
+			padding: rem(38) rem(30) rem(30);
+			&:before {
+				height: 18px;
+			}
+		}
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 0;
+		}
 	}
 	&__headline {
 		display: flex;
@@ -103,23 +142,11 @@
 	}
 	&__b-item{
 		display: block;
-
-		padding-bottom: 28px;
-		margin-bottom: 14px;
-		border-bottom: 1px solid $gray-300;
-		padding-left: rem(20);
-		&:first-of-type {
-			border-top: 1px solid $gray-300;
-			padding-top: rem(14);
+		&:not(:last-child) {
+			border-bottom: 1px solid $gray-500;
+			padding-bottom: rem(20);
+			margin-bottom: rem(20);
 		}
-		&:last-child{
-			padding-bottom: 0;
-			padding-right: 0;
-			padding-top: 0;
-			margin: 0;
-			border: none;
-		}
-
 		&:hover{
 			// & > *{
 			// 	color: $primary;
@@ -132,18 +159,18 @@
 	&__b-date{
 		@include mt();
 		display: block;
-		font-size: 16px;
+		font-size: 14px;
 		line-height: 1.40em;
-		color: #000;
-		margin-bottom: 0;
+		color: $gray-600;
+		margin-bottom: 8px;
 	}
 	&__b-txt{
 		@include mt();
 		display: block;
-		font-size: 24px;
+		font-size: 14px;
 		line-height: 1.25em;
-		color: #000;
-		margin-bottom: 13px;
+		color: $gray-700;
+		margin-bottom: 8px;
 	}
 	&__ball{
 		display: flex;
@@ -157,15 +184,15 @@
 		
 		span {
 			margin-bottom: 0;
-			font-size: rem(18);
+			font-size: rem(14);
 		}
 		.icon{
+			flex: 0 0 auto;
 			color: transparent;
 			stroke: $primary;
 			stroke-width: 2px;
-			font-size: 13px;
+			font-size: 8px;
 			margin-left: 8px;
-			margin-top: 5px;
 		}
 	}
 	&__{}

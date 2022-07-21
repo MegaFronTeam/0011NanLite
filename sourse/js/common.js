@@ -427,7 +427,7 @@ function eventHandler() {
 				},
 				768: {
 					// direction: 'vertical',
-					spaceBetween: 30,
+					spaceBetween: 20,
 				},
 			},
 			//lazy

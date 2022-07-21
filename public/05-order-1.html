@@ -591,7 +591,7 @@
 													</a>
 													<div class="prod-item__box">
 														<div class="prod-item__price-wrap">
-															<div class="prod-item__price prod-item__price--new">
+															<div class="prod-item__price prod-item__price--new font-monospace">
 															</div>
 														</div>
 														<div class="prod-item__code">VB3616DA
@@ -623,7 +623,7 @@
 													</a>
 													<div class="prod-item__box">
 														<div class="prod-item__price-wrap">
-															<div class="prod-item__price prod-item__price--new">
+															<div class="prod-item__price prod-item__price--new font-monospace">
 															</div>
 														</div>
 														<div class="prod-item__code">VB3616DA
@@ -655,7 +655,7 @@
 													</a>
 													<div class="prod-item__box">
 														<div class="prod-item__price-wrap">
-															<div class="prod-item__price prod-item__price--new">
+															<div class="prod-item__price prod-item__price--new font-monospace">
 															</div>
 														</div>
 														<div class="prod-item__code">VB3616DA
@@ -1183,12 +1183,7 @@
 				<div class="container">
 					<nav>
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="/"><span>Оформление</span></a></li>
-							<li class="breadcrumb-item"><a href="#"><span></span></a></li>
-							<li class="breadcrumb-item"><a href="#"><span></span></a></li>
-							<li class="breadcrumb-item"><a href="#"><span></span></a></li>
-							<li class="breadcrumb-item"><a href="#"><span>Главная</span></a></li>
-							<li class="breadcrumb-item"><a href="#"><span>Корзина</span></a></li>
+							<li class="breadcrumb-item"><a href="/"><span>Корзина</span></a></li>
 							<li class="breadcrumb-item active"><a href="#"><span>Оформление</span></a></li>
 						</ol>
 					</nav>
@@ -1199,13 +1194,14 @@
 				<div class="container">
 					<div class="sOrder__row row">
 						<div class="col-lg-7">
+							<h1>оформление</h1>
 							<div class="sOrder__login-txt h4">Авторизация
 							</div>
 							<div class="sOrder__login-sm">
 								Если у Вас есть аккаунт авторизуйтесь на сайте. Мы сохраним всю информацию по заказу
 								<br class="d-none d-sm-block"/>и автоматически заполним ваши контактные данные.
 							</div>
-							<a class="sOrder__login-btn btn btn-outline-primary" href="#">Войти
+							<a class="sOrder__login-btn btn btn-primary" href="#">Авторизация
 							</a>
 							<div class="sOrder__big-title h4">Контактные данные
 							</div>
@@ -1218,18 +1214,15 @@
 										</div>
 										<!-- +e.input-wrap-->
 										<div class="form-wrap__input-wrap form-group">
-											<label><span class="form-wrap__input-title">Телефон*</span><input class="form-wrap__input form-control is-valid" name="tel" type="tel" placeholder="" value="8 916 176 05 12"/>
+											<label><span class="form-wrap__input-title">Телефон*</span><input class="form-wrap__input form-control is-valid" name="tel" type="tel" placeholder=""/>
 											</label>
 										</div>
 										<!-- +e.input-wrap-->
-										<div class="form-wrap__input-incorrect-wrap">
-											<div class="form-wrap__input-wrap form-group">
-												<label><span class="form-wrap__input-title">E-mail*</span><input class="form-wrap__input form-control is-invalid" name="email" type="email" placeholder="" value="fasxsa@fassd.sasa"/>
-												</label>
-											</div>
-											<!-- +e.input-wrap-->
-											<div class="invalid-feedback">Неверный адрес электронной почты</div>
+										<div class="form-wrap__input-wrap form-group">
+											<label><span class="form-wrap__input-title">E-mail*</span><input class="form-wrap__input form-control is-invalid" name="email" type="email" placeholder=""/>
+											</label>
 										</div>
+										<!-- +e.input-wrap-->
 									</form>
 								</div>
 							</div>
@@ -1243,6 +1236,8 @@
 											</label>
 										</div>
 										<!-- +e.input-wrap-->
+										<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox"/><span class="custom-input__text form-check-label">Моего города нет в списке</span>
+										</label>
 										<div class="form-wrap__delivery delivery-group-dd-js">
 											<div class="form-wrap__del-row row">
 												<div class="form-wrap__del-title col-auto">Варианты доставки
@@ -1315,7 +1310,7 @@
 													<input class="d-none" type="radio" name="way-to-pay" value="account"/><span class="form-wrap__way"><span class="form-wrap__w-icon">
 													<svg class="icon icon-blank ">
 														<use xlink:href="img/svg/sprite.svg#blank"></use>
-													</svg></span><span class="form-wrap__w-txt">Оплата по счёту<br/>для юр. лиц</span></span>
+													</svg></span><span class="form-wrap__w-txt">Оплата по счёту</span></span>
 												</label>
 											</div>
 										</div>
@@ -1323,7 +1318,7 @@
 								</div>
 							</div>
 							<div class="sOrder__foot">
-								<div class="sOrder__f-row row align-items-center">
+								<div class="sOrder__f-row row">
 									<div class="col-sm">
 										<div class="sOrder__polite text-center text-sm-start">
 											Нажимая кнопку «Оформить заказ», вы соглашаетесь
@@ -1331,7 +1326,7 @@
 										</div>
 									</div>
 									<div class="col-sm-auto">
-										<a class="sOrder__f-btn" href="#">В корзину
+										<a class="sOrder__f-btn" href="#">Оформить
 										</a>
 									</div>
 								</div>
@@ -1341,58 +1336,96 @@
 							<div class="order-content">
 								<div class="order-content__box order-content-dd-js">
 									<div class="order-content__dd-item">
-										<div class="order-content__dd-head dd-head-js h4">Состав заказа
+										<div class="order-content__dd-head dd-head-js h3">Состав заказа
 										</div>
 										<div class="order-content__dd-content dd-content-js active">
 											<div class="order-content__items">
 												<div class="g-item-alt">
 													<div class="g-item-alt__row row">
-														<div class="g-item-alt__img-col col-sm">
-															<a class="g-item-alt__img" href="#" target="_blank"><img loading="lazy" src="img/@2x/category-7.png" alt=""/>
+														<div class="g-item-alt__img-col col-sm-auto">
+															<a class="g-item-alt__img" href="#" target="_blank"><img loading="lazy" src="img/@2x/catalog-img-1.png" alt=""/>
 															</a>
 														</div>
 														<div class="g-item-alt__col-with-row col-sm">
 															<div class="g-item-alt__inner-row row align-items-center">
 																<div class="g-item-alt__txt-col col-md">
-																	<a class="g-item-alt__title" href="#" target="_blank">GBH 36 V-LI PLUS
+																	<a class="g-item-alt__title" href="#" target="_blank">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
 																	</a>
-																	<div class="g-item-alt__code">Клеевой пистолет
+																	<div class="g-item-alt__price g-item-alt__price--new h4">16 500 ₽
 																	</div>
-																	<div class="g-item-alt__price g-item-alt__price--new h4">24 600 ₽
-																	</div>
-																	<div class="g-item-alt__price g-item-alt__price--old">28 400 ₽
-																	</div>
-																	<div class="g-item-alt__amount-col">
-																		<p>Кол-во</p>100 шт.
+																	<div class="g-item-alt__price g-item-alt__price--old">18 500 ₽
 																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
+													<div class="g-item-alt__amount-col">× 1
+													</div>
 												</div>
 												<div class="g-item-alt">
 													<div class="g-item-alt__row row">
-														<div class="g-item-alt__img-col col-sm">
-															<a class="g-item-alt__img" href="#" target="_blank"><img loading="lazy" src="img/@2x/category-7.png" alt=""/>
+														<div class="g-item-alt__img-col col-sm-auto">
+															<a class="g-item-alt__img" href="#" target="_blank"><img loading="lazy" src="img/@2x/catalog-img-1.png" alt=""/>
 															</a>
 														</div>
 														<div class="g-item-alt__col-with-row col-sm">
 															<div class="g-item-alt__inner-row row align-items-center">
 																<div class="g-item-alt__txt-col col-md">
-																	<a class="g-item-alt__title" href="#" target="_blank">GBH 36 V-LI PLUS
+																	<a class="g-item-alt__title" href="#" target="_blank">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
 																	</a>
-																	<div class="g-item-alt__code">Клеевой пистолет
+																	<div class="g-item-alt__price g-item-alt__price--new h4">16 500 ₽
 																	</div>
-																	<div class="g-item-alt__price g-item-alt__price--new h4">24 600 ₽
-																	</div>
-																	<div class="g-item-alt__price g-item-alt__price--old">28 400 ₽
-																	</div>
-																	<div class="g-item-alt__amount-col">
-																		<p>Кол-во</p>100 шт.
+																	<div class="g-item-alt__price g-item-alt__price--old">18 500 ₽
 																	</div>
 																</div>
 															</div>
 														</div>
+													</div>
+													<div class="g-item-alt__amount-col">× 20
+													</div>
+												</div>
+												<div class="g-item-alt">
+													<div class="g-item-alt__row row">
+														<div class="g-item-alt__img-col col-sm-auto">
+															<a class="g-item-alt__img" href="#" target="_blank"><img loading="lazy" src="img/@2x/catalog-img-1.png" alt=""/>
+															</a>
+														</div>
+														<div class="g-item-alt__col-with-row col-sm">
+															<div class="g-item-alt__inner-row row align-items-center">
+																<div class="g-item-alt__txt-col col-md">
+																	<a class="g-item-alt__title" href="#" target="_blank">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
+																	</a>
+																	<div class="g-item-alt__price g-item-alt__price--new h4">16 500 ₽
+																	</div>
+																	<div class="g-item-alt__price g-item-alt__price--old">18 500 ₽
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="g-item-alt__amount-col">× 1
+													</div>
+												</div>
+												<div class="g-item-alt">
+													<div class="g-item-alt__row row">
+														<div class="g-item-alt__img-col col-sm-auto">
+															<a class="g-item-alt__img" href="#" target="_blank"><img loading="lazy" src="img/@2x/catalog-img-1.png" alt=""/>
+															</a>
+														</div>
+														<div class="g-item-alt__col-with-row col-sm">
+															<div class="g-item-alt__inner-row row align-items-center">
+																<div class="g-item-alt__txt-col col-md">
+																	<a class="g-item-alt__title" href="#" target="_blank">MULTI VOLT (36V) Cordless Portable Rebar Cutter/Bender
+																	</a>
+																	<div class="g-item-alt__price g-item-alt__price--new h4">16 500 ₽
+																	</div>
+																	<div class="g-item-alt__price g-item-alt__price--old">18 500 ₽
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="g-item-alt__amount-col">× 1
 													</div>
 												</div>
 											</div>
@@ -1400,35 +1433,23 @@
 											</a>
 										</div>
 									</div>
-									<div class="order-content__f-data">
+									<div class="order-content__f-data4">
 										<div class="order-content__fd-row row">
 											<div class="order-content__fd-key-col col">Товары
 											</div>
-											<div class="order-content__fd-val-col col-auto">3 шт.
+											<div class="order-content__fd-val-col col-auto">4
 											</div>
 										</div>
 										<div class="order-content__fd-row row">
 											<div class="order-content__fd-key-col col">Вес
 											</div>
-											<div class="order-content__fd-val-col col-auto">37 кг
+											<div class="order-content__fd-val-col col-auto">30 кг
 											</div>
 										</div>
-										<div class="order-content__fd-row row text-danger">
+										<div class="order-content__fd-row row text-primary pb-20">
 											<div class="order-content__fd-key-col col">Скидка
 											</div>
-											<div class="order-content__fd-val-col col-auto">-12 568 ₽
-											</div>
-										</div>
-										<div class="order-content__fd-row row text-danger">
-											<div class="order-content__fd-key-col col">Скидка по промокоду
-											</div>
-											<div class="order-content__fd-val-col col-auto">-12 568 ₽
-											</div>
-										</div>
-										<div class="order-content__fd-row row pb-12">
-											<div class="order-content__fd-key-col col">Доставка
-											</div>
-											<div class="order-content__fd-val-col col-auto">1500 ₽
+											<div class="order-content__fd-val-col col-auto">-11 890 ₽
 											</div>
 										</div>
 										<div class="order-content__fd-row row huge-row">

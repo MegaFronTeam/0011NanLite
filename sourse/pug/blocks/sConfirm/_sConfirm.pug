@@ -2,23 +2,28 @@ mixin sConfirm(first)
 	// start sConfirm
 	if first
 		+b.sConfirm.section#sConfirm&attributes(attributes)
-			.container.text-center
-				h1 Заказ оформлен
-				+e.wrap
-					h4 Ваш заказ
-					.h1 № 21212
-				+e.wrap--indent
-					h4 Итоговая сумма заказа
-					.h1 33 294 ₽
-				+e.btn(href='#').btn.btn-primary Перейти к оплате
+			+e.container.container
+				h1 оформление
+				+e.wrap.bg-wrap 
+					+pic('done-bg-1.jpg', 'bg', 0).picture-bg
+					h3 Заказ оформлен
+					p Номер Вашего заказа: № 
+						strong 121212
+					p Итоговая сумма заказа: 
+						strong 33 294 ₽
+					+e.btn(href='#').btn.btn-primary Перейти к оплате
 	else
-		+b.sConfirm--2.text-white.section#sConfirm&attributes(attributes)
-			.container.text-center
-				h1 Заказ оформлен
-				+e.wrap
-					h4 Ваш заказ
-					.h1 № 21212
-				p Ожидайте подтверждения заказа в ближайшее время. Спасибо за покупку!
-				+e.btn(href='#').btn.btn-white Вернуться в каталог
-				+e.btn(href='#').btn.btn-outline-white В личный кабинет
+		+b.sConfirm--2.section#sConfirm&attributes(attributes)
+			+e.container.container
+				h1 оформление
+				+e.wrap.bg-wrap 
+					+pic('done-bg-2.jpg', 'bg', 0).picture-bg
+					h3 Заказ оплачен
+					p Номер Вашего заказа: № 
+						strong 121212
+					p Итоговая сумма заказа: 
+						strong 33 294 ₽
+					+e.wait Ожидайте подтверждения заказа в ближайшее время.
+					+e.thanks Спасибо за покупку!
+					+e.btn--outline(href='#').btn.btn-outline-primary Вернуться в каталог
 	// end sConfirm

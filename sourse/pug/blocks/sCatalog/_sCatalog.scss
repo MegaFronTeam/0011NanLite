@@ -7,6 +7,9 @@
 	.section-title {
 		padding-bottom: 15px !important;
 	}
+	h2 {
+		text-transform: uppercase;
+	}
 	&.sCatalog--also{
 		.sCatalog__slide{
 			@include media-breakpoint-up(lg){
@@ -22,6 +25,45 @@
 	&.sCatalog--prodcard {
 		.section-title {
 			margin-bottom: 15px;
+		}
+	}
+	&--hit {
+		border-bottom: 1px solid $gray-500;
+	}
+	&--similarProducts {
+		padding-top: rem(33);
+		padding-bottom: rem(20);
+		.section-title {
+			margin-bottom: rem(18) !important;
+		}
+		.sCatalog {
+			&__row {
+				--bs-gutter-x: #{rem(30)};
+				--bs-gutter-y: #{rem(30)};
+				margin-bottom: rem(24);
+				@include media-breakpoint-up(md) {
+					margin-bottom: rem(48);
+				}
+			}
+			&__btn {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				.icon {
+					flex: 0 0 auto;
+					margin-left: rem(5);
+					font-size: rem(7);
+					fill: none;
+					stroke-width: 2px;
+					stroke: $primary;
+				}
+			}
+		}
+		.prod-item {
+			&__badge {
+				left: 0;
+				border-radius: 0;
+			}
 		}
 	}
 	&.sCatalog--similar{
@@ -122,14 +164,16 @@
 	&.sCatalog--familiar{
 		padding-bottom: 0;
 		h2 {
-			font-size: rem(24);
+			font-size: rem(20);
+			text-transform: uppercase;
+			margin-bottom: rem(8);
 		}
 		.prod-item__box {
 			min-height: rem(69);
 		}
 		.sCatalog__slide{
 			@include media-breakpoint-up(lg){
-				width: calc((100% / 3) - (30px * 2 / 3))!important;
+				width: calc((100% / 4) - (30px * 2 / 4))!important;
 				max-width: rem(262);
 			}
 		}
@@ -153,6 +197,7 @@
 	box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.08);
 	border-radius: 20px;
 	text-align: center;
+	z-index: 1;
 	&:hover {
 		box-shadow: 0px 3px 20px rgba(30, 159, 204, 0.2);
 	}
@@ -280,7 +325,6 @@
 	&__price--new {
 		font-size: 24px;
 		white-space: nowrap;
-		font-family: 'Play', sans-serif;
 	}
 
 	&__discount {
@@ -302,7 +346,7 @@
 		@extend .btn-primary;
 		color: $white;
 		display: block;
-		width: 100%;
+		width: calc(100% - 30px);
 		max-width: rem(222);
 		margin-left: auto;
 		margin-right: auto;
@@ -351,7 +395,7 @@
 		font-size: 10px;
 		font-weight: 700;
 		line-height: 1.2;
-		padding: 4px 7px;
+		padding: 4px 11px;
 		z-index: 10;
 		background-color: $red;
 		border-radius: 0px 0px 5px 5px;
@@ -569,7 +613,6 @@
 		white-space: nowrap;
 		font-size: 24px;
 		line-height: math.div(19, 16);
-		font-family: 'Play', sans-serif;
 	}
 	&__btn{
 		@extend .btn;

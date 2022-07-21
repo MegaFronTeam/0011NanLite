@@ -7,6 +7,7 @@ mixin sCart(data)
 			//- 	h2 Корзина
 			+e.main-row.row
 				.col-lg-8
+					h1 корзина
 					+cartItem()
 					+cartItem()
 					+cartItem()
@@ -14,34 +15,27 @@ mixin sCart(data)
 					+e.box
 						+e.order-txt.h4 Ваш заказ
 						+e.o-rows
-							+orderRow('Товары', '3 шт.')
-							+orderRow('Вес', '37 кг')
-							+orderRow('Скидка', '-12 568 ₽', 'text-danger')
+							+orderRow('Товары', '4')
+							+orderRow('Вес', '30 кг')
+							+orderRow('Скидка', '-11 890 ₽', 'text-primary')
+						+e.o-row--result.font-monospace.row
+							+e.result.col ИТОГО
+							+e.result--2.col-auto 24 600 ₽
 						+e.promo
 							+input('Промокод', 'text', false, 'promo')
 							+e.p-btn(type='button')
 								+icon('enter')
-						+e.promo
-							+input('Промокод', 'text', false, 'promo')(value="Freetrimer2020").is-invalid
-							//- +e.p-btn(type='button')
-							//- 	+icon('check')
-						+e.promo
-							+input('Промокод', 'text', false, 'promo')(value="Freetrimer2020").is-valid
-							//- +e.p-btn(type='button')
-							//- 	+icon('cross')
-						+e.o-row--result.row
-							+e.result.col ИТОГО
-							+e.result--2.col-auto 24 600 ₽
+						//- +e.promo
+						//- 	+input('Промокод', 'text', false, 'promo')(value="Freetrimer2020").is-invalid
+						//- 	//- +e.p-btn(type='button')
+						//- 	//- 	+icon('check')
+						//- +e.promo
+						//- 	+input('Промокод', 'text', false, 'promo')(value="Freetrimer2020").is-valid
+						//- 	//- +e.p-btn(type='button')
+						//- 	//- 	+icon('cross')
 						+e.btns-box
-							+e.bb-btn--green(href="#") Оформить
-							+e.bb-btn--white(href='#') Запросить счёт
+							+e.bb-btn--green(href="#") Купить
 						+e.sm Доступные способы и время доставки можно выбрать при оформлении заказа
-					+e.delivery-wrap
-						+e.headline
-							+icon('car')
-							p Бесплатная доставка
-							+e.delivery-price 0 ₽
-						p Только для отправки в регионы России до пунктов выдачи ТК DPD (Акция не распространяется на г.Норильск, города и другие населенные пункты республики Якутия(Саха) и Чукотского АО)
 	// end sCart
 mixin orderRow(name,val,addClasses='')
 	+e.o-row.row
@@ -51,33 +45,21 @@ mixin orderRow(name,val,addClasses='')
 mixin cartItem()
 	+e.item
 		+e.cross(href='#')
-			+icon('delete')
+			+icon('trash')
 		+e.img
-			+e.tag Новинка
-			img(loading="lazy" src='img/@2x/category-7.png' alt="")
+			//- +e.tag Новинка
+			img(loading="lazy" src='img/@2x/catalog-img-1.png' alt="")
 		+e.info-wrap
-			+e.product-head
-				a(href="#") GBH 36 V-LI PLUS
-				p Клеевой пистолет
-			+e.product-body
-				+e.product-feature
-					+e.feature-title Страна производства
-					+e.feature-text Швеция
-				+e.product-feature
-					+e.feature-title Габариты в упаковке (мм)
-					+e.feature-text 305 x 520 x 610
-				+e.product-feature
-					+e.feature-title Вес
-					+e.feature-text 19.2кг
-		+e.price-wrap
-			+e.discount -10%
-			+e.price-col
-				+e.price--new 24 600 ₽
-				+e.price--old 28 400 ₽
-			+e.inputs
-				+e.i-btn--min -
-				+e.INPUT.amount-input.form-control(type="number" value="1")
-				+e.i-btn--plus +
+				p Комплект Nanlite PavoTube 15C-KIT 4 RGBWW (61 см)
+		+e.inputs
+			+e.i-btn--min -
+			+e.INPUT.amount-input.form-control(type="number" value="1")
+			+e.i-btn--plus +
+		+e.price-col
+			+e.price--new.font-monospace 24 600 ₽
+			+e.price--old 28 400 ₽
+		//- +e.price-wrap
+			//- +e.discount -10%
 			
 
 	//- +e.item
