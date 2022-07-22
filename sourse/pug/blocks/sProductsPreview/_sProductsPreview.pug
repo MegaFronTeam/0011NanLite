@@ -1,19 +1,45 @@
 mixin sProductsPreview(data)
-	// start sProductsPreview
-	+b.SECTION.sProductsPreview.section#sProductsPreview&attributes(attributes)
-		+e.container.container-fluid
-			+e.row.row
-				.col-lg-7
-					+e.wrap
-						+e.blur-wrap
-							img(src='img/@2x/banner-img-1.jpg').blur
-							img(src='img/@2x/banner-img-1.jpg')
-						.h1 Где встречаются мощность и портативность 
-				+e.card.col-lg-auto
-					img(src="img/@2x/name-1.png")
-					+e.link(href="#")
-						+e.img-wrap
-							.img-wrap-center
-								+img('img/@2x/sProductsPreview-img-1.png')
-						+e.moreInfo.h3 узнать больше
-	// end sProductsPreview
+	div
+		- for (var x = 0; x < 4; x++)
+			// start sProductsPreview
+			+b.sProductsPreview.section#sProductsPreview&attributes(attributes)
+				+e.container.container-fluid
+					+e.row.row
+						.col-lg
+							+e.wrap
+								+e.blur-wrap
+									img(src='img/@2x/banner-img-1.jpg' loading="lazy").blur
+									img(src='img/@2x/banner-img-1.jpg' loading="lazy")
+								.h1 Где встречаются мощность и портативность 
+						.col-lg-auto
+							+e.card
+								img(src="img/@2x/name-1.png")
+								+e.link(href="#")
+									+e.img-wrap
+										.img-wrap-center
+											+img('img/@2x/sProductsPreview-img-1.png')
+									+e.moreInfo.h3 узнать больше
+				// end sProductsPreview
+			// start sProductsPreview
+			+b.sProductsPreview.section#sProductsPreview&attributes(attributes)
+				+e.container.container-fluid
+					+e.row.row
+						.col-lg
+							+e.wrap
+								+e.blur-wrap
+									img(src='img/@2x/banner-img-1.jpg' loading="lazy").blur
+									img(src='img/@2x/banner-img-1.jpg' loading="lazy")
+								.h1 Где встречаются мощность и портативность 
+						.col-lg-auto
+							+e.card
+								img(src="img/@2x/name-1.png")
+								+e.link--two(href="#")
+									+e.img-wrap
+										.img-wrap-center
+											+img('img/@2x/sProductsPreview-img-1.png')
+									+e.moreInfo--two
+										+e.btn двухцветный
+											+icon('twoColor')
+										+e.btn дневной свет
+											+icon('sun')
+				// end sProductsPreview

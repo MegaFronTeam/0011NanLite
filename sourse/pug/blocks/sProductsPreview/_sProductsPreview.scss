@@ -3,41 +3,52 @@
 	--sPT: #{rem(75)};
 	--sPB: #{rem(75)};
 	// --sTPB: ;
-	--cp: #{rem(25)};
+	--cp: 5%;
 	@include media-breakpoint-up(lg) {
-		--cp: #{rem(100)};
+		--sPT: #{rem(100)};
+		--sPB: #{rem(100)};
+	}
+	@include media-breakpoint-up(xxl) {
 		--sPT: #{rem(150)};
 		--sPB: #{rem(150)};
 	}
 	&__container {
-		padding-left: var(--cp);
-		padding-right: var(--cp);
+		// padding-left: var(--cp);
+		// padding-right: var(--cp);
 		position: relative;
+		max-width: rem(1720);
 		&::before {
 			content: '';
 			position: absolute;
 			display: block;
-			width: 100%;
+			width: 200vw;
 			height: calc(100% - 120px);
-			left: 0;
+			left: -50vw;
 			top: 0;
 			background-color: rgba($color: #000000, $alpha: .4);
 			z-index: -1;
 		}
 	}
 	&__row {
-		--bs-gutter-x: 0;
 		--bs-gutter-y: #{rem(20)};
+		--asideW: calc(538px + var(--bs-gutter-x));
 		justify-content: space-between;
+		@include media-breakpoint-up(xxl) {
+			--bs-gutter-x: 5vw;
+		}
 	}
 	&__card {
 		z-index: 1;
-		width: 100%;
-		max-width: rem(620);
+		// width: 100%;
+		// max-width: rem(620);
 		margin-left: auto;
+		width: 100%;
+		max-width: calc(var(--asideW) - var(--bs-gutter-x));
+		margin-right: auto;
+		// position: relative;
 		@include media-breakpoint-up(lg) {
-			width: rem(620);
-			max-width: none;
+			width: calc(var(--asideW) - var(--bs-gutter-x));
+			margin-right: 0;
 		}
 		& > img {
 			display: block;
@@ -54,6 +65,11 @@
 		overflow: hidden;
 		border-radius: 20px;
 		background-color: $primary;
+		position: relative;
+		z-index: 1;
+		&--two {
+			background-color: transparent;
+		}
 		&:hover {
 			.sProductsPreview__img-wrap {
 				box-shadow: none;
@@ -79,10 +95,58 @@
 			padding-top: rem(30);
 			padding-bottom: rem(30);
 		}
+		&--two {
+			display: flex;
+			justify-content: space-between;
+			.sProductsPreview__btn {
+				// padding-left: rem(49);
+				// padding-right: rem(49);
+				width: calc(50% - 4px);
+				font-size: rem(9);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				@include media-breakpoint-up(sm) {
+					font-size: rem(24);
+				}
+				.icon {
+					font-size: rem(9);
+					flex: 0 0 auto;
+					margin-left: rem(8);
+					@include media-breakpoint-up(sm) {
+						font-size: rem(24);
+					}
+				}
+				&:before {
+					content: '';
+					width: calc(50% - 4px);
+					height: 100%;
+					background-color: $primary;
+					position: absolute;
+					display: block;
+					bottom: 0;
+					z-index: -1;
+				}
+				&:nth-child(1) {
+					&:before {
+						left: 0;
+					}
+					
+				}
+				&:nth-child(2) {
+					&:before {
+						right: 0;
+					}
+					
+				}
+			}
+		}
 	}
 	&__blur-wrap {
 		position: relative;
+		height: 100%;
 		.blur {
+			height: 100%;
 			position: absolute;
 			top: -20px;
 			left: 20px;
@@ -92,19 +156,34 @@
 		}
 	}
 	&__wrap {
+		--spx: calc(var(--bs-gutter-x) / -2);
 		position: relative;
+		height: 100%;
+		// background-color: $body-color;
+		// max-width: calc(100% + var(--spx));
+		@include media-breakpoint-up(lg) {
+			--spx: calc(-50vw + 50% - var(--asideW)*-1/2);
+		}
 		img {
 			box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
-			border-radius: 0px 20px 20px 0px;
-			margin-left: calc(var(--cp) * -1);
+			// border-radius: 0px 20px 20px 0px;
+			// margin-left: calc(var(--cp) * -1);
+			width: calc(100%);
+			height: 100%;
+			object-fit: cover;
 		}
 		.h1 {
 			position: absolute;
 			bottom: rem(70);
-			left: 0;
+			left: calc(var(--bs-gutter-x));
+			padding-right: calc(var(--spx) * -1);
 			color: #fff;
 			padding-left: rem(26);
 			margin-bottom: 0;
+			@include media-breakpoint-down(sm) {
+				bottom: rem(70);
+				font-size: rem(18);
+			}
 			&:before {
 				content: '';
 				position: absolute;
@@ -115,6 +194,29 @@
 				background-color: $primary;
 				top: 0;
 				left: 0;
+			}
+		}
+	}
+	&:nth-child(odd) {
+		.sProductsPreview {
+			&__wrap {
+				margin-left: var(--spx);
+				img {
+					border-radius: 0 20px 20px 0;
+				}
+			}
+		}
+	}
+	&:nth-child(even) {
+		.sProductsPreview {
+			&__row {
+				flex-direction: row-reverse;
+			}
+			&__wrap {
+				margin-right: var(--spx);
+				img {
+					border-radius: 20px 0 0 20px;
+				}
 			}
 		}
 	}

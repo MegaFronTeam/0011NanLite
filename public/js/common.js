@@ -261,7 +261,10 @@ function eventHandler() {
 		...defaultSl,
 		spaceBetween: 30,
 		slidesPerView: 1,
-
+		loop: true,
+		autoplay: {
+			delay: 5000,
+		},
 		//
 		// navigation: {
 		// 	nextEl: '.headerBlock .swiper-next',

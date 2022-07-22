@@ -9,6 +9,8 @@ include ../blocks/sArticals/_sArticals.pug
 include ../blocks/sNewsBox/_sNewsBox.pug
 include ../blocks/sSeo/_sSeo.pug
 include ../blocks/sProductsPreview/_sProductsPreview.pug
+include ../blocks/sSubscribe/_sSubscribe.pug
+include ../blocks/sYouTube/_sYouTube.pug
 
 block variables
 	- let  mainPage= 'main-page'
@@ -24,4 +26,6 @@ block pagecontent
 	+top-nav()
 	+headerBlock()
 	+sProductsPreview
+	+sYouTube
+	+sSubscribe()
 	+footer()

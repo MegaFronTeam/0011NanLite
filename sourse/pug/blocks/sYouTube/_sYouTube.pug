@@ -1,0 +1,26 @@
+mixin sYouTube(data)
+	// start sYouTube
+	+b.SECTION.sYouTube.section#sYouTube&attributes(attributes)
+		+e.container.container-fluid
+			+e.row.row
+				.col-xl
+					+e.content
+						+b.section-title
+							.h1 Nanlite в 
+								span YouTube
+							p Ознакомьтесь с&nbsp;нашей обширной библиотекой видео. Новичок или эксперт, фотограф или видеооператор; вы&nbsp;найдете демонстрационные версии продуктов и&nbsp;огромное количество практических советов и&nbsp;полезных.
+						+e.img-wrap
+							+e.main-img
+								+img('img/@2x/sYouTube-img-1.jpg')
+							+e.others-img
+								+img('img/@2x/sYouTube-img-5.jpg')
+								+img('img/@2x/sYouTube-img-4.jpg')
+								+img('img/@2x/sYouTube-img-3.jpg')
+								+img('img/@2x/sYouTube-img-2.jpg')
+						+e.btn(href="#").btn.btn-primary.font-monospace
+							+icon('play')
+							| nanlite в youtube
+				.col-xl-auto
+					+e.video-wrap
+						<iframe src="https://www.youtube.com/embed/L_LUpnjgPso" title="Fireplace 10 hours full HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	// end sYouTube

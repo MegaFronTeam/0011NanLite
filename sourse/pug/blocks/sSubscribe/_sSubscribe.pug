@@ -1,0 +1,13 @@
+mixin sSubscribe(data)
+	// start sSubscribe
+	+b.SECTION.sSubscribe.section#sSubscribe&attributes(attributes).bg-wrap
+		+pic('subscription-bg.png', 'bg', 0).picture-bg
+		+e.container.container-fluid
+			+e.row.row
+				.col-xl-5 
+					.h1 Подписка
+					p Подпишитесь на бесплатный эксклюзивный образовательный контент и первыми узнавайте о наших последних продуктах
+					+e.btn(href="#").btn.btn-primary.font-monospace подписаться
+				.col-xl-7
+					img(src="img/@2x/logoWhiteLg.png").logo
+	// end sSubscribe
