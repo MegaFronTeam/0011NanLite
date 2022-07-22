@@ -3,18 +3,15 @@ mixin mob-mnu()
 		.container
 			+e.search.d-md-none
 				+input('Поиск', 'text', 0, 'search')
-				+e.BUTTON.s-btn(type="button") Искать
+				+e.BUTTON.s-btn(type="button") Найти
 			+e.UL.menu
 				+e.LI.item
 					+e.link--has-dd.has-dd-js Каталог
 					+catalogMobMenu()
-				+e.LI.item: +e.link(href="#") О нас
 				+e.LI.item: +e.link(href="#") Оплата и доставка
 				+e.LI.item: +e.link(href="#") Сервис
 				+e.LI.item: +e.link(href="#") Акции
 				+e.LI.item: +e.link(href="#") Контакты
-				+e.LI.item: +e.link(href="#") Статьи
-				+e.LI.item: +e.link(href="#") Новости
 			//-
 			+e.dd-items.mob-menu-dd-js
 				//-cart
@@ -24,18 +21,18 @@ mixin mob-mnu()
 						+e.cart
 							+e.cart-icon
 								+icon('cart')
-								+e.number 99
+								//- +e.number 99
 							+e.cart-txt Корзина
 						+e.cart-price 236 990 ₽
 				//-user
-				+e.dd-item
-					+e.dd-head.dd-head-js
-						+e.icon-link--user
-							+e.icon-box
-								+icon('user')
-							+e.il-txt Войти
-					+e.dd-content.dd-content-js
-						+lcMob()
+				//- +e.dd-item
+				//- 	+e.dd-head.dd-head-js
+				//- 		+e.icon-link--user
+				//- 			+e.icon-box
+				//- 				+icon('user')
+				//- 			+e.il-txt Войти
+				//- 	+e.dd-content.dd-content-js
+				//- 		+lcMob()
 				//-
 				+e.dd-item
 					+e.dd-head(href='#')
@@ -44,12 +41,12 @@ mixin mob-mnu()
 								+icon('star')
 							+e.il-txt Избранные товары
 				//-
-				+e.dd-item
-					+e.dd-head(href='#')
-						+e.icon-link--bars
-							+e.icon-box
-								+icon('bars')
-							+e.il-txt Список сравнения
+				//- +e.dd-item
+				//- 	+e.dd-head(href='#')
+				//- 		+e.icon-link--bars
+				//- 			+e.icon-box
+				//- 				+icon('bars')
+				//- 			+e.il-txt Список сравнения
 				//-
 				//- +e.dd-item
 				//- 	+e.dd-head.dd-head-js
@@ -69,22 +66,22 @@ mixin mob-mnu()
 				//- 			li: a(href='#') Санкт-Петербург
 				//- 			li: a(href='#') Нижний Новгород
 			+e.contacts
-				+e.c-item
-					+e.c-icon
-					+e.c-txt
-						| г. Москва
-						br
-						| ш. Дмитровское, д.62, строение 5, этаж 1
-						br
-						| помещение X, комната 1
+				//- +e.c-item
+				//- 	+e.c-icon
+					//- +e.c-txt
+					//- 	| г. Москва
+					//- 	br
+					//- 	| ш. Дмитровское, д.62, строение 5, этаж 1
+					//- 	br
+					//- 	| помещение X, комната 1
 				+e.c-item
 					+e.c-icon
 						img(loading="lazy" src="img/svg/icon-tel.svg" alt="")
 					+e.c-txt
-						a(href="tel:84952155063") +7 (495) 109-88-66 (многоканальный)
-				+e.c-item
-					+e.c-icon
-						img(loading="lazy" src="img/svg/icon-mail.svg" alt="")
+						a(href="tel:84952155063")  8 495 215-50-63 (многоканальный)
+				//- +e.c-item
+				//- 	+e.c-icon
+				//- 		img(loading="lazy" src="img/svg/icon-mail.svg" alt="")
 					//- +e.c-txt
 					//- 	a(href="mailto:info@husq.ru") info@husq.ru
 				+e.c-item
@@ -107,7 +104,7 @@ mixin top-nav()
 				+e.burger-col.col-auto.d-lg-none
 					+b.burger--js
 						span
-				+e.logo(href="#").d-inline-block.d-md-none
+				+e.logo(href="#").d-inline-block
 						img(loading="lazy" src="img/logo.png" alt="")
 				.col.align-self-stretch.d-none.d-lg-block
 					+e.UL.menu
@@ -115,16 +112,17 @@ mixin top-nav()
 							+e.link--catalog(href="#")
 								+b.burger
 									span
-								.ms-10 Каталог
+								.ms-10.font-monospace Каталог
 							+catalogDD()
-						+e.LI.item: +e.link(href="#") О нас
 						+e.LI.item: +e.link(href="#") Оплата и доставка
 						+e.LI.item: +e.link(href="#") Сервис
 						+e.LI.item: +e.link(href="#") Акции
 						+e.LI.item: +e.link(href="#") Контакты
-						+e.LI.item: +e.link(href="#") Статьи
-						+e.LI.item: +e.link(href="#") Новости
-				
+				+e.search-col.col-auto.ms-auto
+					+e.search.search-btn-js.muted-down-md
+						+icon('zoom')
+						+e.search-txt.d-none.d-xl-block Поиск
+						+searchDD()
 					//-dd here
 					
 	// end top-nav
@@ -133,48 +131,19 @@ mixin top-nav()
 
 mixin catalogDD()
 	+b.catalog-dd
-		.container
-			.row.catalog-dd__list.UL
-				.col-4.LI
-					+e.link(href="#")
-						+e.img-wrap
-							img(loading="lazy" src="img/@2x/catalog-1.png" alt="")
-						+e.title Аккумуляторные инструменты
-				.col-4.LI
-					+e.link(href="#")
-						+e.img-wrap
-							img(loading="lazy" src="img/@2x/catalog-2.png" alt="")
-						+e.title Инструменты с функцией Connectivity и Bluetooth-модули
-				.col-4.LI
-					+e.link(href="#")
-						+e.img-wrap
-							img(loading="lazy" src="img/@2x/catalog-3.png" alt="")
-						+e.title Дрели, ударные дрели и шуруповерты
-				.col-4.LI
-					+e.link(href="#")
-						+e.img-wrap
-							img(loading="lazy" src="img/@2x/catalog-4.png" alt="")
-						+e.title Перфораторы и отбойные молотки
-				.col-4.LI
-					+e.link(href="#")
-						+e.img-wrap
-							img(loading="lazy" src="img/@2x/catalog-5.png" alt="")
-						+e.title Аккумуляторные инструменты
-				.col-4.LI
-					+e.link(href="#")
-						+e.img-wrap
-							img(loading="lazy" src="img/@2x/catalog-6.png" alt="")
-						+e.title Инструменты с функцией Connectivity и Bluetooth-модули
-				.col-4.LI
-					+e.link(href="#")
-						+e.img-wrap
-							img(loading="lazy" src="img/@2x/catalog-1.png" alt="")
-						+e.title Дрели, ударные дрели и шуруповерты
-				.col-4.LI
-					+e.link(href="#")
-						+e.img-wrap
-							img(loading="lazy" src="img/@2x/catalog-2.png" alt="")
-						+e.title Перфораторы и отбойные молотки
+		ul.catalog-dd__list
+			li
+				+e.link(href="#") Светодиодные лампы-трубки Nanlite PavoTube LED
+				+catalogSubDD()
+			li
+				+e.link(href="#") Светодиодные панели Nanlite LED
+				+catalogSubDD('11')
+			li
+				+e.link(href="#") Осветители направленного света Nanlite LED
+				+catalogSubDD('22')
+			li
+				+e.link(href="#") Принадлежности и аксессуары Nanlite
+				+catalogSubDD('33')
 
 mixin catalogSubDD(diff="")
 	+e.sub-dd

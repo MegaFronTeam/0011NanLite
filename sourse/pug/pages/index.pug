@@ -8,9 +8,10 @@ include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/sArticals/_sArticals.pug
 include ../blocks/sNewsBox/_sNewsBox.pug
 include ../blocks/sSeo/_sSeo.pug
+include ../blocks/sProductsPreview/_sProductsPreview.pug
 
 block variables
-	- let  mainPage= null 
+	- let  mainPage= 'main-page'
 	- let  bg= null
 
 block title
@@ -18,13 +19,9 @@ block title
 	title= title
 block pagecontent
 	//-+mob-mnu()
-	+header()
+	//- +header()
 	+topLine()
 	+top-nav()
 	+headerBlock()
-	+sCatalogHit()
-	+sCatalogNew()
-	+sArticals()
-	+sNewsBox('true')
-	+sSeo()
+	+sProductsPreview
 	+footer()

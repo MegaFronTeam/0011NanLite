@@ -2,9 +2,10 @@
 
 .top-nav {
 	position: relative;
-	padding-bottom: 5px;
+	// padding-bottom: 5px;
 	font-weight: 300;
-	
+	border-bottom: 1px solid $gray-500;
+	background-color: #fff;
 	&__container{
 		padding-top: 14px;
 		padding-bottom: 14px;
@@ -37,9 +38,10 @@
 	}
 	
 	&__item{
-		margin: 0 15px;
+		margin: 0 20px;
 		&:first-child {
 			margin-left: 0;
+			margin-right: 0;
 		}
 		&:last-child{
 			margin-right: 0;
@@ -52,20 +54,33 @@
 			--dd-scale: 1;
 			--burger-bar-col: #{$white};
 			--link-bef-o: 1;
-			& > .top-nav__link{
-				color: $blue!important;
+			& > .top-nav__link--catalog{
+				color: $white!important;
+				background-color: $primary;
+				.burger {
+					color: #fff;
+					span, span:before, span:after {
+						background-color: #fff;
+					}
+				}
 			}
 		}
 	}
 	&__link{
+		@extend .font-monospace;
 		padding: 19px 0;
 		color: $black;
+		font-size: rem(18);
 		
 
 		position: relative;
+		text-transform: uppercase;
 		z-index: 1;
 		&--catalog {
-			color: $blue;
+			padding: rem(18.5) rem(15);
+			margin: rem(13) 0;
+			border-radius: 15px;
+			font-size: rem(18);
 		}
 		// &:before{
 		// 	@include mt();
@@ -91,6 +106,7 @@
 	}
 	&__search{
 		@include mt();
+		cursor: pointer;
 		&.muted-down-md{
 			@include media-breakpoint-down(md){
 				padding: 0;
@@ -104,30 +120,26 @@
 
 		.icon{
 			@include mt();
-			font-size: 20px;
+			font-size: 24px;
 			color: $primary;
+			fill: none;
+			stroke: currentColor;
 		}
 		@include media-breakpoint-up(md){
 			padding: 20px 0px;
 		}
 		@include media-breakpoint-up(xl){
-			padding: 20px 25px;
+			padding: 20px 0 20px 25px;
 		}
 		--dd-scale: 0;
 		&.active{
 			--dd-scale: 1;
-			@include media-breakpoint-up(xl){
-				background-color: $primary;
-				color: $white;
-				.icon{
-					color: $white;
-				}
-			}
 		}
 
 	}
 	&__search-txt{
 		font-size: 16px;
+		color: $gray-900;
 		line-height: math.div(19, 16);
 		margin-left: 10px;
 	}
@@ -143,6 +155,7 @@
 	height: 27px;
 	position: relative;
 	color: $blue;
+	margin-right: rem(15);
 
 	span,
 	span:before,
@@ -153,13 +166,14 @@
 		display: block;
 		content: '';
 		width: 20px;
-		height: 1px;
+		height: 2px;
 		background-color: $blue;
 	}
 
 	span{
 		top: 50%;
 		transform: translateY(-50%);
+		width: rem(14);
 	}
 	span:before{
 		top: -7px;
@@ -194,6 +208,9 @@
 	width: 100%;
 
 	left: -120vw;
+	@include media-breakpoint-up(md) {
+		padding-top: 30px;
+	}
 	&.active{
 		left: 0;
 	}
@@ -228,7 +245,7 @@
 		list-style: none;
 		padding: 0;
 		margin: 0 0 24px;
-		border: 1px solid $secondary;
+		border: 1px solid $gray-200;
 	}
 	&__submenu{
 		position: absolute;
@@ -264,11 +281,11 @@
 
 
 	&__item{
-		border-bottom: 1px solid $secondary;
+		border-bottom: 1px solid $gray-200;
 		&:last-child{
 			border-bottom: none;
 		}
-		background-color: $light;
+		background-color: $white;
 	}
 	&__link{
 		display: flex;

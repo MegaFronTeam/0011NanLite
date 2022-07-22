@@ -23,6 +23,10 @@
 	font-size:math.div(10,10)*1rem;
 	width: math.div(20,10)*1em;
 }
+.icon-bag {
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
+}
 .icon-bars {
 	font-size:math.div(18,10)*1rem;
 	width: math.div(17,18)*1em;
@@ -72,8 +76,8 @@
 	width: math.div(11,18)*1em;
 }
 .icon-clock {
-	font-size:math.div(40,10)*1rem;
-	width: math.div(40,40)*1em;
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
 }
 .icon-coins {
 	font-size:math.div(32,10)*1rem;
@@ -102,6 +106,10 @@
 .icon-exit {
 	font-size:math.div(15,10)*1rem;
 	width: math.div(15,15)*1em;
+}
+.icon-favorite {
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
 }
 .icon-filter {
 	font-size:math.div(16,10)*1rem;
@@ -196,6 +204,6 @@
 	width: math.div(500,500)*1em;
 }
 .icon-zoom {
-	font-size:math.div(19,10)*1rem;
-	width: math.div(20,19)*1em;
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
 }

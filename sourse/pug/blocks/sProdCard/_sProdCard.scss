@@ -574,7 +574,7 @@
 		@include mt();
 		background-color: $white;
 		//border: 1px solid var(--thumbBordCol);
-
+		border-radius: 8px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
