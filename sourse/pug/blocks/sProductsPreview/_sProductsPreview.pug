@@ -1,6 +1,6 @@
 mixin sProductsPreview(data)
 	div
-		- for (var x = 0; x < 4; x++)
+		mixin item(bannerImg, nameImg, sProductsPreviewImg, title, one = true)
 			// start sProductsPreview
 			+b.sProductsPreview.section#sProductsPreview&attributes(attributes)
 				+e.container.container-fluid
@@ -8,38 +8,34 @@ mixin sProductsPreview(data)
 						.col-lg
 							+e.wrap
 								+e.blur-wrap
-									img(src='img/@2x/banner-img-1.jpg' loading="lazy").blur
-									img(src='img/@2x/banner-img-1.jpg' loading="lazy")
-								.h1 Где встречаются мощность и портативность 
+									img(src=`img/@2x/banner-img-${bannerImg}.jpg` loading="lazy").blur
+									img(src=`img/@2x/banner-img-${bannerImg}.jpg` loading="lazy")
+								.h1!= title
 						.col-lg-auto
 							+e.card
-								img(src="img/@2x/name-1.png")
-								+e.link(href="#")
-									+e.img-wrap
-										.img-wrap-center
-											+img('img/@2x/sProductsPreview-img-1.png')
-									+e.moreInfo.h3 узнать больше
+								img(src=`img/@2x/name-${nameImg}.png`)
+								if one
+									+e.link(href="#")
+										+e.img-wrap
+											.img-wrap-center
+												+img(`img/@2x/sProductsPreview-img-${sProductsPreviewImg}.png`)
+										+e.moreInfo.h3 узнать больше
+								else
+									+e.link--two(href="#")
+										+e.img-wrap
+											.img-wrap-center
+												+img(`img/@2x/sProductsPreview-img-${sProductsPreviewImg}.png`)
+										+e.moreInfo--two
+											+e.btn двухцветный
+												+icon('twoColor')
+											+e.btn дневной свет
+												+icon('sun')
 				// end sProductsPreview
-			// start sProductsPreview
-			+b.sProductsPreview.section#sProductsPreview&attributes(attributes)
-				+e.container.container-fluid
-					+e.row.row
-						.col-lg
-							+e.wrap
-								+e.blur-wrap
-									img(src='img/@2x/banner-img-1.jpg' loading="lazy").blur
-									img(src='img/@2x/banner-img-1.jpg' loading="lazy")
-								.h1 Где встречаются мощность и портативность 
-						.col-lg-auto
-							+e.card
-								img(src="img/@2x/name-1.png")
-								+e.link--two(href="#")
-									+e.img-wrap
-										.img-wrap-center
-											+img('img/@2x/sProductsPreview-img-1.png')
-									+e.moreInfo--two
-										+e.btn двухцветный
-											+icon('twoColor')
-										+e.btn дневной свет
-											+icon('sun')
-				// end sProductsPreview
+		+item(1, 1, 1, 'Где встречаются мощность и портативность')
+		+item(2, 2, 2, 'Полный баланс и универсальность благодаря поворотному механизму', false)
+		+item(3, 3, 3, 'Мощный, но легкий и без нагрева')
+		+item(4, 4, 4, 'Цвета нового поколения', false)
+		+item(5, 5, 5, 'Креативность и цвет. Где бы вы ни находились.', false)
+		+item(6, 6, 6, 'Дай волю своей креативности!')
+		+item(7, 7, 7, 'Перенесите свои проекты в блестящее место', false)
+		+item(8, 8, 8, 'Освещение в стиле софтбокса в несколько раз меньшего размера')

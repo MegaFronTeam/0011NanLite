@@ -181,7 +181,7 @@
 			padding-left: rem(26);
 			margin-bottom: 0;
 			@include media-breakpoint-down(sm) {
-				bottom: rem(70);
+				bottom: rem(20);
 				font-size: rem(18);
 			}
 			&:before {
