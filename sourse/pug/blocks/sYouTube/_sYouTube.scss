@@ -164,6 +164,7 @@
 			max-width: rem(170);
 			@include media-breakpoint-down(sm) {
 				margin-top: 5%;
+				width: 47%;
 			}
 			&:not(:first-child) {
 			}
