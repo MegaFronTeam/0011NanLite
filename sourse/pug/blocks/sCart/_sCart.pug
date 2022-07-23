@@ -46,11 +46,12 @@ mixin cartItem()
 	+e.item
 		+e.cross(href='#')
 			+icon('trash')
-		+e.img
-			//- +e.tag Новинка
-			img(loading="lazy" src='img/@2x/catalog-img-1.png' alt="")
-		+e.info-wrap
-				p Комплект Nanlite PavoTube 15C-KIT 4 RGBWW (61 см)
+		+e.link(href="#") 
+			+e.img
+				//- +e.tag Новинка
+				img(loading="lazy" src='img/@2x/catalog-img-1.png' alt="")
+			+e.info-wrap
+					p Комплект Nanlite PavoTube 15C-KIT 4 RGBWW (61 см)
 		+e.inputs
 			+e.i-btn--min -
 			+e.INPUT.amount-input.form-control(type="number" value="1")

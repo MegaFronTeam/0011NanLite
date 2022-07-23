@@ -77,6 +77,7 @@
 			}
 			&:before {
 				box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+				pointer-events: all;
 			}
 		}
 
@@ -93,6 +94,7 @@
 			top: 1px;
 			left: 1px;
 			z-index: 1;
+			pointer-events: none;
 		}
 		&--loc{
 			position: static;
@@ -640,7 +642,7 @@
 			@include mt();
 			&:hover {
 				color: $blue;
-				font-weight: 700;
+				// font-weight: 700;
 			}
 		}
 	}

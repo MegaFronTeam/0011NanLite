@@ -8,9 +8,11 @@
 		--cp: #{rem(25)};
 	}
 	@include media-breakpoint-up(lg) {
-		--cp: #{rem(100)};
 		--sPT: #{rem(91)};
 		--sPB: #{rem(119)};
+	}
+	@include media-breakpoint-up(xl) {
+		--cp: #{rem(100)};
 	}
 	&__container {
 		padding-left: var(--cp);
@@ -64,12 +66,12 @@
 			content: '';
 			position: absolute;
 			display: block;
-			height: 100%;
+			height: calc(100% - 14px);
 			width: 7px;
 			background-color: $primary;
 			border-radius: 5px;
 			left: 0;
-			top: 0;
+			top: 7px;
 			@include media-breakpoint-up(lg) {
 				width: 11px;
 
@@ -97,6 +99,7 @@
 			margin-bottom: 0;
 			@include media-breakpoint-up(lg) {
 				font-size: rem(20);
+				padding-right: rem(38);
 			}
 		}
 	}
@@ -128,6 +131,7 @@
 		margin-bottom: rem(75);
 		@include media-breakpoint-down(sm) {
 			flex-direction: column;
+			margin-bottom: rem(33);
 		}
 	}
 	&__main-img {

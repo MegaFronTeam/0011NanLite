@@ -69,7 +69,9 @@
 	}
 	&__content{
 		margin-bottom: rem(48);
-		.h4 {
+		h1 {
+			@extend .h4;
+			font-size: rem(20) !important;
 			text-transform: uppercase;
 			margin-bottom: rem(18);
 		}

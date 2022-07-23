@@ -57,6 +57,7 @@
 		}
 	}
 	&__item{
+		@include mt;
 		display: flex;
 		flex-wrap: wrap;
 		margin-bottom: 30px;
@@ -65,6 +66,14 @@
 		border-radius: 20px;
 		align-items: center;
 		padding: 10px;
+		&:hover {
+			box-shadow: 0px 3px 20px rgba(30, 159, 204, 0.2);
+			.sCart__link {
+				p {
+					color: $primary;
+				}
+			}
+		}
 		&:last-child{
 			margin-bottom: 40px;
 			@include media-breakpoint-up(md){
@@ -78,6 +87,11 @@
 			padding: 15px;
 		}
 		position: relative;
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
 	}
 	&__cross{
 		// @extend .btn;
@@ -179,11 +193,13 @@
 		@include media-breakpoint-down(sm) {
 			padding-top: 10px;
 			padding-bottom: rem(10);
+			width: 100%;
 		}
 		@include media-breakpoint-down(md) {
 			border: none;
 		}
 		p {
+			@include mt;
 			margin-bottom: 0;
 			color: $gray-700;
 			font-weight: 600;
@@ -278,7 +294,7 @@
 		}
 	}
 	&__inputs{
-
+		width: 100%;
 		@include media-breakpoint-up(md){
 			width: 112px;
 		}
@@ -294,6 +310,7 @@
 
 		display: flex;
 		align-items: flex-start;
+		position: relative;
 	}
 	&__i-btn{
 		flex-shrink: 0;
@@ -319,10 +336,11 @@
 		&:hover{
 			position: relative;
 			z-index: 1;
-			// background-color: $primary!important;
+			background-color: $primary!important;
 			// border-color:$primary!important;
-			color: $primary!important;
-			background-color: transparent!important;
+			// color: $primary!important;
+			color: #fff!important;
+			// background-color: transparent!important;
 		}
 		&:active{
 			background-color: transparent!important;
@@ -333,6 +351,7 @@
 		
 		&--min{
 			margin-right: -1px;
+			padding-bottom: 3px;
 		}
 		&--plus{
 			margin-left: -1px;
@@ -349,6 +368,7 @@
     align-self: center;
 		// border-left: transparent;
 		border-color: transparent;
+		z-index: 2;
 	}
 	&__price-col{
 		flex-grow: 1;
@@ -369,19 +389,19 @@
 		}
 	}
 	&__price--old{
-		font-size: 12px;
+		// font-size: 12px;
 		line-height: 1.40em;
+		font-size: 14px;
 		@include media-breakpoint-up(sm){
-			font-size: 14px;
 		}
 		text-decoration-line: line-through;
 		color: $red;
 	}
 	&__price--new{
-		font-size: 14px;
+		// font-size: 14px;
 		line-height: 1.25em;
+		font-size: 24px;
 		@include media-breakpoint-up(sm){
-			font-size: 24px;
 		}
 	}
 	//box

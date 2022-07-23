@@ -22,6 +22,7 @@ mixin sCatalogPage(data)
 						+catalogPageItem(2, 'Светодиодные панели Nanlite LED')
 						+catalogPageItem(3, 'Осветители направленного света Nanlite LED')
 						+catalogPageItem(4, 'Принадлежности и аксессуары Nanlite')
+					+sSeo()
 	// end sCatalogPage
 
 mixin catalogPageItem(imgNum, name, bootClasses="")
@@ -58,6 +59,7 @@ mixin sCatalogPage2(data)
 						+catalogPageItem(6, 'Шлифмашины и рубанки')
 						+catalogPageItem(7, 'Аккумуляторные инструменты')
 						+catalogPageItem(8, 'Техника для алмазного сверления')
+					+sSeo()
 
 mixin asideItem(name, activeClass='')
 	+e.item(class=activeClass)&attributes(attributes)
@@ -109,6 +111,7 @@ mixin sCatalogPage3(data)
 					+sqprodItemsRow()
 					//- +longProdItemsRow()
 					+pugin()
+					+sSeo()
 
 mixin sCatalogPage4(data)
 	// start sCatalogPage
@@ -146,6 +149,7 @@ mixin sCatalogPage4(data)
 											+icon('lines')
 					+longProdItemsRow()
 					+pugin()
+					+sSeo()
 
 mixin sqprodItemsRow(addClasses)
 	+e.row.row.pb-48.pb-md-60(class=addClasses)

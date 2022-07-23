@@ -16,7 +16,10 @@ mixin headerBlock()
 mixin headerBlockSlide(imgNum='1')
 	+e.slide.swiper-slide
 		+e.slide-link(href='#')
-			img.swiper-lazy(src="#" data-src=`img/@2x/header-slide-${imgNum}.jpg`, alt="")
+			picture
+				source(media="(min-width: 576px)", srcset=`img/@2x/header-slide-${imgNum}.jpg`)
+				img(src=`img/@2x/header-slide-${imgNum}.jpg`)
+			//- img.swiper-lazy(src="#" data-src=`img/@2x/header-slide-${imgNum}.jpg`, alt="")
 			//- +e.container.container.DIV
 			//- 	+e.slider-text
 			//- 		+e.title Доверяйте ремонт техники только профессионалам Bosch

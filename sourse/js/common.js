@@ -423,6 +423,7 @@ function eventHandler() {
 	for (let pcSlider of pcSliders) {
 		const prodCardThumb = new Swiper(pcSlider.querySelector('.sProdCard-thumb-js'), {
 			slidesPerView: 'auto',
+			slideToClickedSlide: true,
 			breakpoints: {
 				0: {
 					direction: 'horizontal',
@@ -430,6 +431,11 @@ function eventHandler() {
 				},
 				768: {
 					// direction: 'vertical',
+					spaceBetween: 20,
+				},
+				992: {
+					// direction: 'vertical',
+					slidesPerView: 7,
 					spaceBetween: 20,
 				},
 			},
@@ -441,10 +447,11 @@ function eventHandler() {
 		});
 		let prodCardSlider = new Swiper(pcSlider.querySelector('.sProdCard-slider-js'), {
 			spaceBetween: 30,
-			navigation: {
-				nextEl: '.pc-sliders .swiper-next',
-				prevEl: '.pc-sliders .swiper-prev',
-			},
+			slideToClickedSlide: true,
+			// navigation: {
+			// 	nextEl: '.pc-sliders .swiper-next',
+			// 	prevEl: '.pc-sliders .swiper-prev',
+			// },
 			thumbs: {
 				swiper: prodCardThumb,
 			},
@@ -454,6 +461,7 @@ function eventHandler() {
 			},
 			loop: true,
 		});
+		prodCardSlider.controller.control = prodCardThumb;
 	}
 
 	// for (let pcSlider of pcSliders) {

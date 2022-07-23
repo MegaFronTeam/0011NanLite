@@ -20,9 +20,9 @@ mixin sProdCard(data)
 					h1.p-0 Светодиодная лампа-трубка Nanlite PavoTube II 15X
 					mixin available(available)
 						if available
-							+e.available.--true в наличии
+							+e.available(style='--color: #35bd63;') в наличии
 						else
-							+e.available.--false нет в наличии
+							+e.available(style="--color: #DF1E1F;") нет в наличии
 					+e.number Артикул: 12C1467P
 					+available('available')
 					+e.desc-item
@@ -90,12 +90,8 @@ mixin productTabs()
 					+prodTabsTableRow('@ 3m 2700K', '38 lux')
 					+prodTabsTableRow('@ 0.5m 3200K', '1399 lux')
 			.tabs__content
-				//- +e.title Инструкция
-				//- +e.docs
-				//- 	+e.docs-item
-				//- 		+icon('doc')
-				//- 		+e.doc-title Аккумуляторная угловая шлифмашина с X-LOCK GBH 36 V-LI PLUS
-				//- 		button.prodTabs__docs-btn Скачать
+				+e.video-wrap
+					<iframe src="https://www.youtube.com/embed/L_LUpnjgPso" title="Fireplace 10 hours full HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 mixin prodTabsTableRow(name, val)
 	+e.t-row.row
@@ -176,23 +172,29 @@ mixin prodCardSliders(addClasses='')
 							+prodCardSlide(1)
 							+prodCardSlide(1)
 							+prodCardSlide(1)
+							+prodCardSlide(1)
+							+prodCardSlide(1)
+							+prodCardSlide(1)
 					//- +arrow('d-none d-sm-flex')
 			.col-12
 				+e.thumb-slider
 					.swiper.sProdCard-thumb-js
 						.swiper-wrapper
 							+prodCardThumb(1)
-							+prodCardThumb(2)
-							+prodCardThumb(3)
-							+prodCardThumb(4)
-							+prodCardThumb(5)
-							+prodCardThumb(6)
-							+prodCardThumb(7)
+							+prodCardThumb(1)
+							+prodCardThumb(1)
+							+prodCardThumb(1)
+							+prodCardThumb(1)
+							+prodCardThumb(1)
+							+prodCardThumb(1)
+							+prodCardThumb(1)
+							+prodCardThumb(1)
+							+prodCardThumb(1)
 
 mixin prodCardThumb(imgNum)
 	.swiper-slide
 		+e.th-item
-			img.swiper-lazy(src=`img/@2x/catalog-img-${imgNum}.png` data-src=`img/@2x/catalog-img-${imgNum}.png` alt="")
+			img.swiper-lazy(src=`img/@2x/prod-card-img.jpg` data-src=`img/@2x/prod-card-img.jpg` alt="")
 
 mixin prodCardSlide(imgNum)
 	.swiper-slide
