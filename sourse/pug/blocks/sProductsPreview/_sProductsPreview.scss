@@ -179,7 +179,7 @@
 		}
 		.h1 {
 			position: absolute;
-			bottom: 0.21em;
+			bottom: rem(70);
 			left: calc(var(--bs-gutter-x));
 			padding-right: calc(var(--spx) * -1);
 			color: #fff;

@@ -614,6 +614,43 @@ function eventHandler() {
 			countdownTimer();
 			timerId = setInterval(countdownTimer, 1000);
 		}
+	let mapId= document.getElementById('map');
+	if(mapId) {
+
+		var myMap;
+	
+		// Дождёмся загрузки API и готовности DOM.
+		ymaps.ready(init);
+	
+		function init () {
+				// Создание экземпляра карты и его привязка к контейнеру с
+				// заданным id ("map").
+				myMap = new ymaps.Map('map', {
+						// При инициализации карты обязательно нужно указать
+						// её центр и коэффициент масштабирования.
+						center:[55.74326143322644,37.65071609761125], // Москва
+						zoom:12
+				}),
+				myPlacemark1 = new ymaps.Placemark([55.74326143322644,37.65071609761125], {
+					// Свойства.
+					hintContent: '',
+					balloonContentHeader: "<img src='img/logo.png'>",
+					balloonContentBody: "115419, Москва, 2-й Рощинский проезд, дом 8. БЦ&nbsp;&laquo;Серпуховской Двор&raquo;. офис 101. вход с&nbsp;основной проходной, внутр. тел 3046. ст. метро &laquo;Ленинский проспект&raquo;",
+				}, {
+					// Необходимо указать данный тип макета.
+					iconLayout: 'default#image',
+					// Своё изображение иконки метки.
+					iconImageHref: '../img/svg/pin.svg',
+					// Размеры метки.
+					iconImageSize: [48, 48],
+					// Смещение левого верхнего угла иконки относительно
+					// её "ножки" (точки привязки).
+					iconImageOffset: [-5, -38]
+				});
+			myMap.geoObjects
+				.add(myPlacemark1);
+		}
+	}
 
 };
 if (document.readyState !== 'loading') {
