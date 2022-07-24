@@ -459,7 +459,7 @@ function eventHandler() {
 				loadPrevNext: true,
 				loadPrevNextAmount: 3,
 			},
-			loop: true,
+			// loop: true,
 		});
 		prodCardSlider.controller.control = prodCardThumb;
 	}

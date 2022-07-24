@@ -369,6 +369,9 @@
 		// border-left: transparent;
 		border-color: transparent;
 		z-index: 2;
+		&:focus {
+			box-shadow: none;
+		}
 	}
 	&__price-col{
 		flex-grow: 1;

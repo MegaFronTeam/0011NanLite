@@ -873,6 +873,9 @@
 		padding: 15px 10px;
 		text-align: center;
 		width: 50px;
+		&:focus {
+			box-shadow: none;
+		}
 	}
 	//
 	&__btn-row{
