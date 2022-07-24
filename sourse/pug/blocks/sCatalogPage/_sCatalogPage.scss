@@ -249,20 +249,6 @@
 		@include media-breakpoint-down(lg) {
 			display: none;
 		}
-		a {
-			padding: rem(10) rem(20);
-			display: block;
-			font-size: rem(14);
-			line-height: 1.5em;
-			color: $gray-700;
-			&:not(:last-child) {
-				border-bottom: 1px solid $gray-100;
-			}
-			&.active {
-				background-color: $primary;
-				color: $white;
-			}
-		}
 	}
 	&__link{
 		padding: rem(10) rem(20);
