@@ -3,30 +3,30 @@ const JSCCommon = {
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 
 	modalCall() {
-		$(".link-modal").fancybox({
-			arrows: false,
-			infobar: false,
-			touch: false,
-			type: 'inline',
-			autoFocus: false,
-			i18n: {
-				en: {
-					CLOSE: "Закрыть",
-					NEXT: "Вперед",
-					PREV: "Назад",
-				},
-			},
-			beforeLoad: function () {
-				document.querySelector("html").classList.add("fixed")
-			},
-			afterClose: function () {
-				document.querySelector("html").classList.remove("fixed")
-			},
-		});
+		// $(".link-modal").fancybox({
+		// 	arrows: false,
+		// 	infobar: false,
+		// 	touch: false,
+		// 	type: 'inline',
+		// 	autoFocus: false,
+		// 	i18n: {
+		// 		en: {
+		// 			CLOSE: "Закрыть",
+		// 			NEXT: "Вперед",
+		// 			PREV: "Назад",
+		// 		},
+		// 	},
+		// 	beforeLoad: function () {
+		// 		document.querySelector("html").classList.add("fixed")
+		// 	},
+		// 	afterClose: function () {
+		// 		document.querySelector("html").classList.remove("fixed")
+		// 	},
+		// });
 		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		})
-		$.fancybox.defaults.backFocus = false;
+		// $.fancybox.defaults.backFocus = false;
 		const linkModal = document.querySelectorAll('.link-modal');
 		function addData() {
 			linkModal.forEach(element => {
