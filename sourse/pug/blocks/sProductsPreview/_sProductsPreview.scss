@@ -30,12 +30,9 @@
 		}
 	}
 	&__row {
-		--bs-gutter-y: #{rem(20)};
+		// --bs-gutter-y: #{rem(20)};
 		--asideW: calc(538px + var(--bs-gutter-x));
 		justify-content: space-between;
-		@include media-breakpoint-up(lg) {
-			--bs-gutter-y: 0;
-		}
 		@include media-breakpoint-up(xxl) {
 			--bs-gutter-x: 5vw;
 		}
@@ -49,9 +46,11 @@
 		max-width: calc(var(--asideW) - var(--bs-gutter-x));
 		margin-right: auto;
 		// position: relative;
+		margin-bottom: rem(30);
 		@include media-breakpoint-up(lg) {
 			width: calc(var(--asideW) - var(--bs-gutter-x));
 			margin-right: 0;
+			margin-top: 0;
 		}
 		& > img {
 			display: block;

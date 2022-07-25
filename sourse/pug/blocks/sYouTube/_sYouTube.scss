@@ -135,15 +135,17 @@
 		}
 	}
 	&__main-img {
+		@include media-breakpoint-down(sm) {
+			width: 93%;
+		}
 		img {
 			border-radius: 10px;
 			width: 100%;
 			@include media-breakpoint-down(xl) {
-				max-width: rem(410);
 			}
 			@include media-breakpoint-up(sm) {
+				max-width: rem(410);
 				width: rem(410);
-				width: auto;
 			}
 		}
 	}
@@ -151,6 +153,7 @@
 		display: flex;
 		width: 100%;
     margin-left: auto;
+		margin-right: auto;
 		flex-wrap: wrap;
 		justify-content: space-around;
 		@include media-breakpoint-up(sm) {
@@ -159,7 +162,7 @@
 			flex-wrap: nowrap;
 		}
 		@include media-breakpoint-down(sm) {
-			
+			width: 96%;
 		}
 		img {
 			border-radius: 10px;
