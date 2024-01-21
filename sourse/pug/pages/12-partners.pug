@@ -1,0 +1,31 @@
+extends layout/main.pug
+
+
+include ../blocks/sHead/_sHead.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sAdv/_sAdv.pug
+include ../blocks/sWhatGEt/_sWhatGEt.pug
+include ../blocks/sFormat/_sFormat.pug
+include ../blocks/sReg/_sReg.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= null
+
+block title
+	- let  title= 'Станьте партнером Nanlite'
+	title= title
+block pagecontent
+	//-+mob-mnu()
+	//- +header()
+	+topLine()
+	+top-nav()
+	+sHead
+	+sAbout
+	+sAdv
+	+sWhatGEt
+	.text-center
+		+img("img/img.jpg").res-i
+	+sFormat
+	+sReg
+	+footer()

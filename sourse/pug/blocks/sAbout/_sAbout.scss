@@ -1,0 +1,58 @@
+// start .sAbout
+.sAbout {
+		--sPT: 110px ;
+		--sPT: 110px ;
+		// --sPB: ;
+		// --sTPB: ;
+		h2{
+			text-transform: uppercase;
+		}
+	.container{
+		display: grid; 
+		gap: 30px;
+		@include media-breakpoint-up(md) {
+			grid-template-columns: minmax(340px, 1fr) 1fr;
+		}
+		// grid-column: repeat(2 1fr);
+
+	}
+	.logo{ 
+		max-width: 100%;
+		margin-bottom: 52px;
+	}
+	&__imgs{
+		display: inline-grid;
+		max-width: 100%;
+		gap: 8px;
+		
+		grid-template-columns: repeat(3, 1fr);
+		img{
+			border-radius: 15px;
+			aspect-ratio: 1;
+			max-width: 100%;
+		}
+	}
+	p{
+		position: relative;
+		padding-left: 32px;
+		&::before{
+			content: '';
+			left: 0;
+			height: 100%;
+			width: 12px;
+			position: absolute;
+			top: 0;
+			background-color: var(--accent-light, #DAF1FC);
+			background-image: url(../img/dots.svg);
+			background-repeat: no-repeat;
+			background-position: center 4px;
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sAbout

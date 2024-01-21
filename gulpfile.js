@@ -42,6 +42,9 @@ function browsersync() {
         server: {
             baseDir: './' + publicPath,
             // middleware: bssi({ baseDir: './' + publicPath, ext: '.html' })
+            serveStaticOptions: {
+                extensions: ['html']
+            }
         },
         // ghostMode: { clicks: false },
         // notify: false,
@@ -135,7 +138,7 @@ function styles() {
         cssnano(),
         gcmq(),
     ];
-    return src(sourse + '/sass/main.scss')
+    return src(sourse + '/sass/*.scss')
         .pipe(sassGlob())
         .pipe(
             sass.sync()

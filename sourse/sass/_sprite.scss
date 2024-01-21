@@ -1,6 +1,6 @@
 @use "sass:math";
 
-.icon {
+.icon-sprite {
 	display: inline-block;
 	width: 1em;
 	height: 1em;
@@ -18,6 +18,14 @@
 .icon-angle-left {
 	font-size:math.div(14,10)*1rem;
 	width: math.div(8,14)*1em;
+}
+.icon-arrow-dublle {
+	font-size:math.div(28,10)*1rem;
+	width: math.div(28,28)*1em;
+}
+.icon-arrow-lg {
+	font-size:math.div(48,10)*1rem;
+	width: math.div(42,48)*1em;
 }
 .icon-back {
 	font-size:math.div(10,10)*1rem;
@@ -135,6 +143,14 @@
 	font-size:math.div(24,10)*1rem;
 	width: math.div(24,24)*1em;
 }
+.icon-icon-telegram {
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
+}
+.icon-icon-vk {
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
+}
 .icon-lines {
 	font-size:math.div(24,10)*1rem;
 	width: math.div(24,24)*1em;
@@ -192,6 +208,10 @@
 	width: math.div(50,50)*1em;
 }
 .icon-tel {
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
+}
+.icon-telegram {
 	font-size:math.div(24,10)*1rem;
 	width: math.div(24,24)*1em;
 }

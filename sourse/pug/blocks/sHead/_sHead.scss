@@ -1,0 +1,69 @@
+// start .sHead
+.sHead {
+		--sPT: 67px;
+		// --sPB: ;
+		--sTB: 140px ;
+		color: #fff;
+		img{
+			object-fit: cover;
+		}
+		.section-title{
+			max-width: 570px;
+			margin-bottom: 123px;
+			h1{
+				display: inline;
+				text-transform: uppercase;
+				margin-right: 20px;
+			}
+			p{
+				display: inline-block;
+				border-radius: 15px;
+				background-color: $primary;
+				max-width: 256px;
+				padding: 10px 20px;
+			}
+		}
+	
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+	.btn-arrow{
+		--bs-btn-bg: #fff;
+	--bs-btn-border-color: #fff;  
+	--bs-btn-color:#{$body-color};
+	}
+	 
+} // end.sHead
+
+
+.btn-arrow{
+	display: inline-flex;
+	align-items: center;
+	border-radius: 15px; 
+	text-align: left;
+	font-family: Play,sans-serif;
+	&__text{	
+		text-transform: uppercase;
+		font-size: 18px;
+		max-width: 260px;
+		margin-right: 20px;
+		line-height: 1.2;
+
+	}
+	&__arrow{
+		color: #fff;border-radius: 15px;
+		background-color: $primary;
+		width: 68px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 68px;
+		.icon-sprite{
+			font-size: 28px;
+		}
+	}
+}

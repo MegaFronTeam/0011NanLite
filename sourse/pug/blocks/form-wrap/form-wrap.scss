@@ -1,13 +1,17 @@
 .form-wrap{
+	&__input-title{
+		font-size: 14px;
+		// display: block;
+	}
  	&__input-wrap{
 			// @extend .form-group;
-			
+			margin-bottom: 20px;
 		}
 		&__input{
 			// @extend .form-control;
 		//  outline: 0 !important;
-		 resize: none;
-		 padding: rem(7) rem(12);
+		//  resize: none;
+		 padding: rem(12) rem(12);
  	}
  	&__btn{
  		cursor: pointer;

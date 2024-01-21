@@ -1,9 +1,13 @@
 // start .headerBlock
 .headerBlock {
 	--sPT: 0;
+	@include media-breakpoint-up(lg){
+
 	--sPB: 0px;
-	
-	
+	}
+	--sPB: 20px;
+
+
 	.container{
 		// @include media-breakpoint-down(xl){
 		// 	max-width: 100% !important;
@@ -13,47 +17,57 @@
 	&__slide {
 		position: relative;
 	}
-	
+
 	&__slider-wrap{
 		.swiper-wrapper{
-			
+
 		}
 		.swiper-slide{
-			
+
 		}
 		.swiper-pagination{
-			position: absolute;
 			z-index: 2;
-			
+
 			// @include media-breakpoint-up(md){
 				// 	bottom: 0 !important;
 				// }
-				bottom: 63px !important;
 				left: 0;
 				justify-content: center;
+			position: relative;
+			margin-top: 35px;
 				@include media-breakpoint-up(lg) {
-				bottom: 129px !important;
-				right: 190px;
-				left: unset;
-				justify-content: flex-end;
+				//bottom: 63px !important;
+			// 		margin-top: 0;
+			// position: absolute;
+			// 	bottom: 129px !important;
+			// 	right: 190px;
+			// 	left: unset;
+			// 	justify-content: flex-end;
 			}
 		}
 	}
 	&__slide-link{
 		position: relative;
 		display: block;
-		padding-top: rem(50);
-		padding-bottom: rem(70);
+		//padding-top: rem(50);
+		//padding-bottom: rem(70);
 		width: 100%;
 		overflow: hidden;
-		height: 500px;
-		@include media-breakpoint-up(lg) {
-			padding-top: rem(190);
-			height: 772px;
+		@include  block(576, 700);
+		text-align: center;
+			max-height: 700px;
+		@media (min-width: 1000px) {
+		//@include  block(1920, 772);
+			//padding-top: rem(190);
+			--ratio: 700 / 1690;
+			//height: 772px;
 		}
-		@include media-breakpoint-down(sm) {
-			height: 430px;
+		@include media-breakpoint-up(sm) {
+			--ratio: 700 / 1000;
+
 		}
+		//	//height: 430px;
+		//}
 		// &::after {
 		// 	position: absolute;
 		// 	content: '';
@@ -63,18 +77,24 @@
 		// 	height: 100%;
 		// 	background: rgba(0, 0, 0, 0.5);
 		// }
-		img{
+		picture{
 			position: absolute;
 			top: 0;
 			left: 0;
 			height: 100%;
 			width: 100%;
-			object-fit: cover;
-			@include media-breakpoint-down(sm) {
-				object-position: left;
-			}
+
 		}
-		
+		img{
+			//object-fit: cover;
+			//@include media-breakpoint-down(sm) {
+			//	object-position: left;
+			//}
+			max-width: 100%;
+			height: auto;
+			max-height: 100%;
+		}
+
 
 		//padding-top: (152/360) * 100%;
 		@include media-breakpoint-up(md){

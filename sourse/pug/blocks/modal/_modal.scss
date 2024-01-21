@@ -1,5 +1,12 @@
 @use "sass:math";
+:root {
+	--fancybox-content-bg: none;
+}
 
+.fancybox__content {
+	padding: 0 !important;
+	max-width: 100%;
+}
 .modal-win {
 	max-width: 555px!important;
 	width: 100% !important;
@@ -13,7 +20,7 @@
 	}
 	&--goods {
 		padding: rem(25) rem(30) !important;
-		max-width: 670px !important;		
+		max-width: 670px !important;
 		@include media-breakpoint-up(sm) {
 			padding: rem(50) rem(98) !important;
 		}
@@ -94,7 +101,7 @@
 		background-color: $gray-100 !important;
 	}
 	.btn-resume {
-		
+
 	}
 	//
 	.form-wrap{
@@ -109,7 +116,7 @@
 			width: 30%;
 			margin-bottom: rem(4);
 		}
-	
+
 		&__inputs{
 			// padding-bottom: 24px;
 		}
@@ -123,7 +130,7 @@
 				margin-bottom: 0;
 			}
 		}
-		
+
 		&__input-title{
 			display: block;
 			margin-bottom: 6px;
@@ -163,7 +170,7 @@
 				max-width: none;
 				width: 100%;
 			}
-			
+
 		}
 		&__forgot {
 			font-size: 12px;
@@ -175,8 +182,8 @@
 				margin-left: 0;
 			}
 		}
-	
-		
+
+
 		//
 		&__{}
 		&__{}
@@ -256,9 +263,12 @@ a {
 		max-width: rem(165);
 		margin-left: auto;
 		margin-right: auto;
+		&:not(.btn-primary) {
+
 		color: $gray-800;
+		}
 		@media (min-width: 450px) {
-			
+
 		}
 	}
 }
@@ -320,7 +330,7 @@ a {
 	min-height: rem(174px);
 	display: flex;
 	align-items: center;
-	justify-content: center;   
+	justify-content: center;
 	padding: 0 10px;
 	text-align: center;
 	&:hover {
@@ -371,7 +381,7 @@ a {
 		color: #4E4E4E;
 		line-height: 1.5;
 		font-size: 14px;
-		
+
 	}
 	&__price {
 		display: flex;
@@ -407,6 +417,30 @@ a {
 			&::after {
 				border: solid #282828;
 			border-width: 0 1px 1px 0;
+			}
+		}
+	}
+}
+
+
+.modal-reviews{
+	max-width: rem(750);
+	border-radius: 20px;
+	&__stars {
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(29);
+		p {
+			margin-bottom: 0;
+			margin-right: rem(7);
+			font-size: 14px;
+			color: #949494;
+		}
+		.icon-sprite {
+			font-size: rem(17);
+			color: rgba( $primary,  20%); 
+			&.active {
+				color: var(--bs-primary);
 			}
 		}
 	}

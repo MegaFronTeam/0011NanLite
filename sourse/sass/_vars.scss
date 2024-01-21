@@ -15,6 +15,7 @@ $rfs-breakpoint: 1200px !default;
 $font-family-sans-serif: $default-font, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default; 
 
 $font-family-monospace: 'Play' ,SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-monospace2: $mono2  ;
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -1549,8 +1550,8 @@ $breadcrumb-padding-x:              0 !default;
 $breadcrumb-item-padding-x:         .5rem !default;
 $breadcrumb-margin-bottom:          1rem !default;
 $breadcrumb-bg:                     null !default;
-$breadcrumb-divider-color:          $white !default;
-$breadcrumb-active-color:           $white !default;
+$breadcrumb-divider-color:          $body-color !default;
+$breadcrumb-active-color:           $body-color !default;
 $breadcrumb-divider:                '/' !default;
 $breadcrumb-divider-flipped:        $breadcrumb-divider !default;
 $breadcrumb-border-radius:          null !default;

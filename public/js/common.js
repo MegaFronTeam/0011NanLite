@@ -3,26 +3,37 @@ const JSCCommon = {
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 
 	modalCall() {
-		// $(".link-modal").fancybox({
-		// 	arrows: false,
-		// 	infobar: false,
-		// 	touch: false,
-		// 	type: 'inline',
-		// 	autoFocus: false,
-		// 	i18n: {
-		// 		en: {
-		// 			CLOSE: "Закрыть",
-		// 			NEXT: "Вперед",
-		// 			PREV: "Назад",
-		// 		},
-		// 	},
-		// 	beforeLoad: function () {
-		// 		document.querySelector("html").classList.add("fixed")
-		// 	},
-		// 	afterClose: function () {
-		// 		document.querySelector("html").classList.remove("fixed")
-		// 	},
-		// });
+		const link = ".link-modal-js";
+		Fancybox.bind(link, {
+			arrows: false,
+			infobar: false,
+			touch: false,
+			type: 'inline',
+			autoFocus: false,
+			keyboard: {
+				CLOSE: "Закрыть",
+				NEXT: "Вперед",
+				PREV: "Назад",
+				// PLAY_START: "Start slideshow",
+				// PLAY_STOP: "Pause slideshow",
+				// FULL_SCREEN: "Full screen",
+				// THUMBS: "Thumbnails",
+				// DOWNLOAD: "Download",
+				// SHARE: "Share",
+				// ZOOM: "Zoom"
+			},
+			//
+			//infinite: false,
+			on: {
+				initCarousel: () => {
+					$('.header').addClass('has-pe');
+				},
+				destroy: () => {
+					$('.header').removeClass('has-pe');
+					console.log(this);
+				},
+			},
+		});
 		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		})
@@ -198,7 +209,7 @@ function eventHandler() {
 	JSCCommon.heightwindow();
 	JSCCommon.customRange();
 
-	// JSCCommon.CustomInputFile(); 
+	// JSCCommon.CustomInputFile();
 	var x = window.location.host;
 	let screenName = '06-1-768.png';
 	if (screenName && x.includes("localhost:30")) {
@@ -261,9 +272,10 @@ function eventHandler() {
 		...defaultSl,
 		spaceBetween: 30,
 		slidesPerView: 1,
+		whatOverflow: true,
 		loop: true,
 		autoplay: {
-			delay: 5000,
+			delay: 2000,
 		},
 		//
 		// navigation: {
@@ -282,6 +294,7 @@ function eventHandler() {
 	for (let sCatalog of catalogSection) {
 		const sliderCatalog = new Swiper(sCatalog.querySelector('.sCatalog__slider--js'), {
 			...defaultSl,
+			loop: false,
 			spaceBetween: 30,
 			preloadImages: false,
 			lazy: true,
@@ -307,7 +320,7 @@ function eventHandler() {
 			},
 		});
 	});
-	
+
 
 	function makeDDGroup(qSelecorts){
 		for (let parentSelect of qSelecorts){
@@ -317,10 +330,10 @@ function eventHandler() {
 				// childHeads, kind of funny))
 				for (const parent of parents) {
 					let ChildHeads = parent.querySelectorAll('.dd-head-js');
-	
+
 					$(ChildHeads).click(function (){
 						let clickedHead = this;
-	
+
 						$(ChildHeads).each(function (){
 							if (this === clickedHead){
 								//parent element gain toggle class, style head change via parent
@@ -569,6 +582,28 @@ function eventHandler() {
 			clickable: true,
 		},
 	});
+	
+
+
+	let slidersServises = new Swiper((".sServises__slider--js"), {
+		...defaultSl,
+		spaceBetween: 0,
+		// preloadImages: false,
+		// lazy: true,
+		loop: false,
+		slidesPerView: 'auto',
+		watchSlidesProgress: true,
+		navigation: {
+			nextEl: '.swiper-next',
+			prevEl: '.swiper-prev',
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+	});
+
 
 		// конечная дата
 		let timer = $('.timer');
@@ -618,10 +653,10 @@ function eventHandler() {
 	if(mapId) {
 
 		var myMap;
-	
+
 		// Дождёмся загрузки API и готовности DOM.
 		ymaps.ready(init);
-	
+
 		function init () {
 				// Создание экземпляра карты и его привязка к контейнеру с
 				// заданным id ("map").
@@ -652,6 +687,11 @@ function eventHandler() {
 		}
 	}
 
+	$(document).on("click", ".btn-more-js", function (e) {
+		e.preventDefault();
+		console.log(this)  
+		$(".prod-rews").find(".sArticle__b-item:hidden").fadeIn().addClass("shown");
+	})
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

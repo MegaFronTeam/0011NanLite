@@ -17,11 +17,6 @@ mixin headerBlockSlide(imgNum='1')
 	+e.slide.swiper-slide
 		+e.slide-link(href='#')
 			picture
-				source(media="(min-width: 576px)", srcset=`img/@2x/header-slide-${imgNum}.jpg`)
-				img(src=`img/@2x/header-slide-${imgNum}.jpg`)
-			//- img.swiper-lazy(src="#" data-src=`img/@2x/header-slide-${imgNum}.jpg`, alt="")
-			//- +e.container.container.DIV
-			//- 	+e.slider-text
-			//- 		+e.title Доверяйте ремонт техники только профессионалам Bosch
-			//- 		+e.descr Все заказы бытовой техники, оформленные в марте, будут доставлены на первой или второй неделе апреля по ранее согласованной и оплаченной стоимости. Надеемся на ваше понимание!
-			//- 		+e.btn Подробнее
+				<source media="(min-width: 1000px)" srcset="img/pavobulb_1690x700.png"/>
+				<source media="(min-width: 576px)" srcset="img/pavobulb_1000x700.png"/>
+				<img loading="lazy" src="img/pavobulb_576x700.png" alt=""/>

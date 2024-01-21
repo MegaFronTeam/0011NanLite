@@ -218,12 +218,12 @@
 			justify-content: center;
 			&:hover{
 				transform: scale(1.1);
-				.icon{
+				.icon-sprite{
 					stroke-width: 1.5px;
 				}
 			}
 
-			.icon{
+			.icon-sprite{
 				@include mt();
 				color: transparent;
 				font-size: 12px;
@@ -394,7 +394,7 @@
 		&:after {
 			transform: rotate(-90deg);
 		}
-		// .icon{
+		// .icon-sprite{
 		// 	@include mt();
 		// 	font-size: 14px;
 		// 	stroke: var(--head-num-col, #{$primary});

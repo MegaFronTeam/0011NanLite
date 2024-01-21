@@ -1,0 +1,52 @@
+// start .sWhatGEt
+.sWhatGEt {
+		--sPT: 80px;
+		--sPB: 80px;
+		// --sTPB: ;
+		h2{
+			text-transform: uppercase;
+			max-width: 633px;
+		}
+		p{
+			
+			max-width: 515px;
+		}
+		.container{
+
+			display: grid;
+			align-items: center;
+			gap: 30px;
+			@include media-breakpoint-up(md) {
+				grid-template-columns: 2fr  minmax(290px, 1fr);
+			}
+		}
+		.btn-arrow{
+			box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.08); 
+			--bs-btn-bg: #fff;
+			--bs-btn-border-color: #fff;  
+			--bs-btn-color:#{$body-color};
+			text-transform:  none;
+			font-weight: bold;
+			&__arrow{ 
+				width: auto;
+				height: auto;
+				background: none;
+			}
+			.icon-sprite{
+				color: $primary;
+				font-size: 48px;
+			}
+			&:hover{
+				.icon-sprite{
+					color: currentColor;
+				}
+			}
+		}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sWhatGEt

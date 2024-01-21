@@ -1,0 +1,13 @@
+mixin sHead(data)
+	// start sHead
+	+b.SECTION.sHead.section.bg-wrap#sHead&attributes(attributes)
+		+img("img/head-bg.jpg",'bg').picture-bg
+		.container
+			+b.section-title
+				h1 Станьте партнером Nanlite
+				p Начните зарабатывать вместе с Nanlite
+			+b.btn-arrow.btn.btn-primary(href="#sFormat")
+				+e.text Зарегистрироваться в партнёрской программе
+				+e.arrow
+					+icon("arrow-dublle")
+	// end sHead

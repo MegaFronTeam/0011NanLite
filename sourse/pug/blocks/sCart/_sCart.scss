@@ -100,7 +100,7 @@
 			// background-color: $danger!important;
 			// border-color: $danger!important;
 			color: $primary;
-			.icon{
+			.icon-sprite{
 				// opacity: .5;
 				// stroke: $primary;
 			}
@@ -120,7 +120,7 @@
 
 		color: $gray-500;
 
-		.icon{
+		.icon-sprite{
 			@include mt;
 			font-size: rem(24);
 			// stroke: $black;
@@ -132,6 +132,7 @@
 	&__img{
 		text-align: center;
 		// width: 138px;
+		flex: 0 0 auto;
 		height: 100%;
 		align-self: center;
 		padding: rem(20) rem(15) rem(20) rem(20);
@@ -348,7 +349,7 @@
 			// color: $primary!important;
 			// background-color: $primary!important;
 		}
-		
+
 		&--min{
 			margin-right: -1px;
 			padding-bottom: 3px;
@@ -369,6 +370,7 @@
 		// border-left: transparent;
 		border-color: transparent;
 		z-index: 2;
+		width: calc(100%  - 72px);
 		&:focus {
 			box-shadow: none;
 		}
@@ -509,14 +511,13 @@
 			box-shadow: none;
 			& ~ .sCart__p-btn {
 				color: $white!important;
-				background-color: $primary !important;
-				border-color: $primary !important;
+				background-color: $primary !important;				border-color: $primary !important;
 			}
 		}
 	}
 	&__p-btn{
 		@extend .btn;
-		background-color: $white!important;
+		// background-color: $white!important;
 		color: $gray-600!important;
 		border-color: transparent;
 		border-left: 1px solid $gray-500;
@@ -541,7 +542,7 @@
 		align-items: center;
 		justify-content: center;
 
-		.icon{
+		.icon-sprite{
 			font-size: 24px;
 			fill: none;
 			stroke: currentColor;
@@ -595,12 +596,14 @@
 	&__{}
 	&__wrap{
 		display: flex;
+		flex-grow: 1;
 	}
 	&__content {
 		padding: 4px 12px 25px;
 		// background: #F1F1F1;
 		display: flex;
 		align-items: center;
+		flex-grow: 1;
 		@include media-breakpoint-up(md){
 			// margin-bottom: 20px;
 			padding: 10px 24px 16px;
@@ -626,7 +629,7 @@
 		display: flex;
 		align-items: center;
 		margin-bottom: rem(5);
-		.icon {
+		.icon-sprite {
 			font-size: rem(17);
 			margin-right: rem(8);
 			color: #0A9C5C;
@@ -635,5 +638,8 @@
 	&__delivery-price {
 		color: #0A9C5C;
 		margin-left: auto;
+	}
+	&__txt-col{
+		flex-grow: 1;
 	}
 } // end.sCart

@@ -1,4 +1,5 @@
 $default-font: "Open Sans";
+$mono2: "CarbonRegular";
 // $file-form: ($file-formats: woff2 woff ttf);
 $addr: '../fonts/';
 $file-format: woff2;
@@ -6,7 +7,7 @@ $file-format: woff2;
 
 // If font from googlefont, next lines remove
 
-// @include font-face ($default-font, $addr + "BoschSansRegular", 400, $file-formats: $file-format);
+@include font-face ($mono2, $addr + "CarbonRegular", 400, $file-formats: $file-format);
 // @include font-face ($default-font, $addr + "BoschSansBold", 700, $file-formats: $file-format);
 // @include font-face ($default-font, $addr + "BoschSansLight", 300, $file-formats: $file-format);
 

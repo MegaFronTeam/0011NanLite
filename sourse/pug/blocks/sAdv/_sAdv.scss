@@ -1,0 +1,119 @@
+// start .sAdv
+.sAdv {
+	--sPT: 80px;
+	--sPB: 80px;
+	// --sTPB: ;
+	h2{
+		text-transform: uppercase;
+	}
+	&__inner{
+		// padding: 80px 0;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 15px;
+		background: var(--light-grey, #F1F1F1);
+	}
+	&__row{
+		display: grid;
+		gap: 30px;
+		@include media-breakpoint-up(lg) { 
+			--count: 3;
+		}
+		
+		@include media-breakpoint-up(sm) {
+
+			--count: 2;
+			grid-template-columns: repeat(var(--count), 1fr);
+		}
+
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			@include a-cent(y);
+			// right: 70%;
+			@include media-breakpoint-up(lg){
+				
+				left: 33.3333%;
+			}
+			left: 50%;
+			transform: translateX(-50%);
+			border-radius: 15px;
+			background: var(--accent-light, #DAF1FC);
+			height: 80%;
+			aspect-ratio: 1;
+		}
+	}
+	&__item{
+		border-radius: 15px;
+		background: var(--text-white, #FFF); 
+		box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.08);
+		padding: 20px;
+		overflow: hidden;
+		position: relative;
+		&:last-child{
+			color: #fff;
+			background: var(--accent, #01AFEC);
+			display: flex;
+			flex-direction: column;
+			@include media-breakpoint-up(sm) {
+				flex-direction: row;
+
+				grid-column: 1 / span 2;
+			}
+			@include media-breakpoint-up(lg) {
+				grid-row: 1 / span 2;
+				grid-column: 3 / 4;
+				flex-direction: column;
+
+			}
+		}
+	}
+	&__img-wrap{
+		padding: 20px;
+		padding-bottom: 0;
+		margin: auto -20px -20px;
+		width: initial;
+		@include media-breakpoint-up(lg) {
+
+		}
+		@include media-breakpoint-between(lg, sm) {
+
+			width: 200px;
+			flex:  0 0 auto;
+			display: flex;
+			// flex-direction: column;
+			align-items: flex-end;
+			justify-content: center;
+			margin:   -20px -20px;
+			margin-left: 20px;
+		}
+		background: var(--accent-light, #DAF1FC);
+		text-align: center; 
+	}
+	&__title{
+		font-size: 24px;
+		padding-right: 60px;
+		position: relative;
+		font-weight: bold;
+		font-family: Play;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 700;
+		margin-bottom: 15px;
+		line-height: normal; 
+	}
+	.icon{
+		position: absolute;
+		// left: 0;
+		right: 0;
+		top: 0;
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sAdv

@@ -1,0 +1,16 @@
+mixin sReg(data)
+	// start sReg
+	+b.SECTION.sReg.section#sReg&attributes(attributes)
+		+e.inner
+			.container
+				+b.section-title
+					h2 Как зарегистрироваться?
+					p Легко, просто заполните анкету и мы перенаправим вас ваш личный кабинет партнера
+				+e.img-wrap.d-none.d-xl-block
+					+img("img/reg-img.png")
+				div
+					+b.btn-arrow.btn.btn-primary(href="#")
+						+e.text заполнить анкету
+						+e.arrow
+							+icon("arrow-dublle")
+	// end sReg

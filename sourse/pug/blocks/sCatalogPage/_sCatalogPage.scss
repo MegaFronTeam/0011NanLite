@@ -16,7 +16,7 @@
 			margin-bottom: 0;
 		}
 	}
-	
+
 
 	&__row{
 		// margin-bottom: 53px;
@@ -202,7 +202,7 @@
 			}
 		}
 	}
-	&__header{		
+	&__header{
 		background-color: $gray-900;
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 		border-radius: 10px;
@@ -263,7 +263,7 @@
 			background-color: $primary;
 			color: $white;
 		}
-		&:hover {
+		&:not(.active):hover {
 			color: $primary;
 		}
 		&:first-child {
@@ -408,7 +408,7 @@ form {
 			transform: translateX(0);
 		}
 	}
-	
+
 	//pop up controll panel
 	&__pop-up-controll-panel{
 		height: 80px;

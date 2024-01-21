@@ -1,0 +1,79 @@
+// start .sFormat
+.sFormat {
+		--sPT: 100px;
+		--sPB: 100px;
+		// --sTPB: ;
+		.row{
+			--bs-gutter-y: 30px;
+		}
+		&__head{
+			padding: 20px;
+			padding-bottom: 5px;
+			margin: -20px;
+			margin-bottom: 25px;
+			border-radius: 15px;
+			background: var(--accent-dark, #0095C9);
+			box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.08);
+		}
+		&__title{
+			position: relative;
+			padding-right: 50px;
+			font-family: Play;
+			font-size: 24px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			margin-bottom: 15px;
+			img{
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+		&__title-sub{
+			font-weight: 600;
+		}
+		p{
+			font-size: 14px;
+			color: var(--text-light-grey, #949494);
+		}
+
+		&__item{
+			padding: 20px;
+			padding-bottom: 10px;
+			border-radius: 15px;
+			background: var(--text-white, #FFF); 
+			box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.08);
+			min-height: 100%;
+			&--color{
+				color: #fff;
+				background: var(--accent, #01AFEC);
+				p{
+					color: #fff;
+				}
+			}
+			&--var{
+				border-bottom: 15px solid #DAF1FC;
+				position: relative;
+				&::after{
+					content: '';
+					position: absolute;
+					left: 20px;
+					height: 15px;
+					width: 100%;top: 100%;
+					background-image: url(../img/dots-horizontal.svg);
+					// background-size: contain;
+					background-position:  0 50%; 
+					background-repeat: no-repeat;
+				}
+			}
+		}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sFormat

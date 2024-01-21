@@ -20,6 +20,11 @@
 		left: 0;
 		z-index: 3;
 	}
+  .row{
+	@include media-breakpoint-down(sm){
+	  --bs-gutter-x: 10px;
+	}
+  }
 	&__container{
 		padding-top: 14px;
 		padding-bottom: 14px;
@@ -43,6 +48,9 @@
 		margin-left: auto;
 		position: relative;
 		z-index: 4;
+	  @include media-breakpoint-down(md){
+		margin-right: auto;
+	  }
 	}
 	&__menu{
 		margin: 0;
@@ -136,7 +144,7 @@
 		display: flex;
 		align-items: center;
 
-		.icon{
+		.icon-sprite{
 			@include mt();
 			font-size: 24px;
 			color: $primary;
@@ -288,7 +296,7 @@
 	&__back-link{
 		justify-content: flex-start!important;
 
-		.icon{
+		.icon-sprite{
 			margin-right: 10px!important;
 			font-size: 14px;
 			color: transparent;
@@ -391,7 +399,7 @@
 		&:hover{
 			color: rgba($primary, .9);
 		}
-		.icon {
+		.icon-sprite {
 			margin-right: 8px;
 			color: $body-color;
 		}
@@ -527,7 +535,7 @@
 		line-height: math.div(14, 12);
 		padding: 10px 16px;
 		
-		.icon{
+		.icon-sprite{
 			font-size: 15px;
 			margin-right: 10px;
 		}
